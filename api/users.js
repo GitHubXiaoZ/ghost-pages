@@ -46,3 +46,58 @@ router.post("/register", (req, res) => {
         }
     })
 })
+
+/* POST api: login
+ * login in existing users
+ * return jwt token
+ */
+router.post("./login", (req, res) => {
+     /*validates login inputs */
+     const { errors, isValid } = validLogInput(req.body)
+
+     if (!isValid) {
+        return res.status(400).json(errors)
+    }
+
+    const email = req.body.email
+    const password = req.body.password
+
+    /*determine if user email exists */
+    User.findOne({ email }).then(user => {
+        if (!user) {
+            return res.status(404).json({ emailnotfound: "Email not registered!"})
+        } 
+
+        /*password check*/
+        bcrypt.compare(password, user.password).then(isEqual => {
+            if (isEqual) {
+                const payload = {
+                    id: user.id,
+                    name: user.name
+                }
+
+                /*jwt sign in token*/
+                jwt.sign (
+                    payload,
+                    keys.secretOrKey,
+                    {
+                        /*expiration in a week*/
+                        expiresIn: 604800 
+                    },
+                    (err, token) => {
+                        res.json({
+                            success: true,
+                            token: "Bearer " + token
+                        })
+                    }
+                )
+            } else {
+                return res
+                    .status(400)
+                    .json({ passwordincorrect: "Password incorrect" })
+            }
+        })
+    })
+})
+
+module.exports = router
