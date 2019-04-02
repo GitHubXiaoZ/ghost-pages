@@ -5,8 +5,11 @@
   "main": "server.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "proxy": "https://localhost:3001",
     "start": "node server.js",
-    "devstart": "nodemon server.js"
+    "server": "nodemon server.js",
+    "client": "npm start --prefix client",
+    "devstart": "concurrently \"npm run server\" \"npm run client\""
   },
   "repository": {
     "type": "git",
