@@ -7,13 +7,14 @@ const initialState = {}
 
 const middleware = [thunk]
 
+const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose
+
 /*redux store*/
 const store = createStore(
     rootReducer,
     initialState,
-    compose(
+    composeEnhancers(
         applyMiddleware(...middleware),
-        window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
     )
 )
 
