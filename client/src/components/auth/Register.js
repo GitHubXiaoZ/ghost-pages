@@ -1,6 +1,11 @@
 /*imports*/
 import React, { Component } from "react"
-import { Link } from "react-router-dom"
+import { Link, withRouter } from "react-router-dom"
+import { connect } from "react-redux"
+import PropTypes from "prop-types"
+
+import { registerUser } from "../../actions/authActions"
+
 
 /* Class: Register
  * Register form
@@ -18,6 +23,14 @@ class Register extends Component {
         }
     }
 
+    componentWillReceiveProps(nextProps) {
+        if (nextProps.errors) {
+            this.setState({
+                errors: nextProps.errors
+            })
+        }
+    }
+
     onChange = e => {
         this.setState({ [e.target.id]: e.target.value })
     }
@@ -32,7 +45,7 @@ class Register extends Component {
             password2: this.state.password2
         }
         
-        console.log(newUser)
+        this.props.registerUser(newUser, this.props.history)
     }
 
     render() {
@@ -58,8 +71,10 @@ class Register extends Component {
                                     error={errors.name}
                                     id="name"
                                     type="text"
+                                    className={{invalid: errors.name}}
                                     />
                                     <label htmlFor="name">Name</label>
+                                    <span className=""> {errors.name} </span>
                             </div>
                             <div className="">
                                 <input 
@@ -68,8 +83,10 @@ class Register extends Component {
                                     error={errors.email}
                                     id="email"
                                     type="email"
+                                    className={{invalid: errors.email}}
                                     />
                                     <label htmlFor="email">Email</label>
+                                    <span className=""> {errors.email} </span>
                             </div>
                             <div className="">
                                 <input 
@@ -78,8 +95,10 @@ class Register extends Component {
                                     error={errors.password}
                                     id="password"
                                     type="password"
+                                    className={{invalid: errors.password}}
                                     />
                                     <label htmlFor="password">Password</label>
+                                    <span className=""> {errors.password} </span>
                             </div>
                             <div className="">
                                 <input 
@@ -88,10 +107,12 @@ class Register extends Component {
                                     error={errors.password2}
                                     id="password2"
                                     type="password"
+                                    className={{invalid: errors.password2}}
                                     />
                                     <label htmlFor="password2">Confirm Password</label>
+                                    <span className=""> {errors.password2} </span>
                             </div>
-                            <div className="" style={{ paddingLeft: "11.250px" }}>
+                            <div className="">
                                 <button
                                     type="submit"
                                     className=""
@@ -107,5 +128,19 @@ class Register extends Component {
     }
 }
 
+Register.propTypes = {
+    registerUser: PropTypes.func.isRequired,
+    auth: PropTypes.object.isRequired,
+    errors: PropTypes.object.isRequired
+}
+
+const mapStateToProps = state => ({
+    auth: state.auth,
+    errors: state.errors
+})
+
 /*exports register */
-export default Register
+export default connect(
+    mapStateToProps,
+    { registerUser }
+) (withRouter(Register))
