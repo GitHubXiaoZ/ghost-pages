@@ -23,6 +23,12 @@ class Register extends Component {
         }
     }
 
+    componentDidMount() {
+        if (this.props.auth.isAuth) {
+            this.props.history.push("/dashboard")
+        }
+    }
+    
     componentWillReceiveProps(nextProps) {
         if (nextProps.errors) {
             this.setState({
