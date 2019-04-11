@@ -5,26 +5,18 @@ const passport = require("passport")
 
 const users = require("./api/users")
 
-const db = require("./config/dbKeys").mongoURI
+const port = process.env.PORT || 3001
 
 /*app*/
 const app = express()
 
-/*passport middleware*/
-app.use(passport.initialize())
-/*config*/
-require("./config/passport")(passport)
-
 /*middleware*/
-app.use(
-    express.urlencoded({
-        extended: false
-    })
-)
-
-app.use(express.json)
+app.use(express.urlencoded({ extended: false }))
+app.use(express.json())
 
 /*database*/
+const db = require("./config/dbKeys").mongoURI
+
 mongoose
     .connect(
         db,
@@ -33,8 +25,13 @@ mongoose
     .then(() => console.log("Connected!"))
     .catch(err => console.log(err))
 
-app.use("/api/users", users)
+/*passport middleware*/
+app.use(passport.initialize())
+/*config*/
+require("./config/passport")(passport)
 
-const port = process.env.PORT || 3001
+app.get("/", (req, res) => res.send("o l l e h"))
+
+app.use("/api/users", users)
 
 app.listen(port, () => console.log(`Server running on port ${port}.`))
