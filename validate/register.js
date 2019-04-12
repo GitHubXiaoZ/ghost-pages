@@ -17,11 +17,15 @@ module.exports = validateRegisterInput = data => {
         errors.name = "Name required!"
     }
 
+    if (!Validator.isLength(data.name, { min: 2, max: 15})) {
+        errors.name = "Name must be between 2 and 15 characters!"
+    }
+
     /*validates email field*/
     if (Validator.isEmpty(data.email)) {
         errors.email = "Email required!"
-    } else if(!Validator.isEmail(data.email)) {
-        errors.email = "Email is invalid!"
+    } else if (!Validator.isEmail(data.email)) {
+        errors.email = "Enter a valid email address!"
     }
 
     /*validates password*/
@@ -29,17 +33,15 @@ module.exports = validateRegisterInput = data => {
         errors.password = "Password required!"
     }
     
-    if (!Validator.isLength(data.password, { min: 6, max: 15 })) {
-        errors.password = "Password must be between 6 and 15 characters!"
+    if (!Validator.isLength(data.password, { min: 6 })) {
+        errors.password = "Password must be at least 6 characters!"
     }
 
     if (Validator.isEmpty(data.password2)) {
-        errors.password2 = "Confirm your password!"
-    }
-
-    if (!Validator.equals(password, password2)) {
-        errors.password2 = "Passwords do not match!"
-    }
+        errors.password2 = 'Confirm your password!';
+      } else if (!Validator.equals(data.password, data.password2)) {
+          errors.password2 = 'Passwords do not match!';
+      }
 
     return {
         errors,
