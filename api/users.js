@@ -18,17 +18,17 @@ router.get("/test", (req, res) => res.json({ msg: "Valid route." }))
  * register new users
  */
 router.post("/register", (req, res) => {
-    /*validates register inputs 
     const { errors, isValid } = validRegInput(req.body)
 
     if (!isValid) {
         return res.status(400).json(errors)
     }
-    */
+
     /*checks if email has already been used */
     User.findOne({ email: req.body.email }).then(user => {
         if (user) {
-            return res.status(400).json({ email: "Email has already been registered!" })
+            errors.email = "Email has already been registered!"
+            return res.status(400).json(errors)
         } else {
             const newUser = new User({
                 name: req.body.name,
@@ -59,12 +59,12 @@ router.post("/register", (req, res) => {
  */
 router.post("/login", (req, res) => {
      /*validates login inputs */
-     //const { errors, isValid } = validLogInput(req.body)
-     /*
+     const { errors, isValid } = validLogInput(req.body)
+     
      if (!isValid) {
         return res.status(400).json(errors)
     }
-    */
+    
     const email = req.body.email
     const password = req.body.password
 
@@ -72,7 +72,8 @@ router.post("/login", (req, res) => {
     User.findOne({ email }).then(user => {
         /*user check*/
         if (!user) {
-            return res.status(404).json({ emailnotfound: "Email not registered!"})
+            errors.email = "Email not registered!"
+            return res.status(404).json(errors)
         } 
 
         /*password check*/
@@ -100,7 +101,8 @@ router.post("/login", (req, res) => {
                     }
                 )
             } else {
-                return res.status(400).json({ passwordincorrect: "Password incorrect" })
+                errors.password = "Password incorrect"
+                return res.status(400).json(errors)
             }
         })
     })
