@@ -4,6 +4,8 @@ const router = express.Router()
 const mongoose = require("mongoose")
 const passport = require("passport")
 
+const validateProfileInput = require("../validate/profile")
+
 const User = require("../models/User")
 const Profile = require("../models/Profile")
 
@@ -13,10 +15,16 @@ router.get("/test", (req, res) => res.json({ msg: "Profile route -- working." })
 /* POST api: profile
  * creates the user's profile
  */
-router.get("/",
+router.post("/",
     passport.authenticate("jwt", { session: false }),
     (req, res) => {
-        const errors = {}
+        const { errors, isValid } = validateProfileInput(req.body)
+
+        if (!isValid) {
+            return res.status(400).json(errors)
+        }
+
+        const profileInfo = {}
         profileInfo.user = req.user.id
         if (req.body.handle) profileInfo.handle = req.body.handle
         if (req.body.location) profileInfo.location = req.body.location
@@ -55,7 +63,9 @@ router.get("/",
     passport.authenticate("jwt", { session: false }), 
     (req, res) => {
         const errors = {}
+        
         Profile.findOne({ user: req.user.id })
+            .populate("user", ["name", "handle"])
             .then(profile => {
                 if (!profile) {
                     errors.nullprofile = "This profile does not exist!"
