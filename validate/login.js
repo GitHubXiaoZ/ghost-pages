@@ -22,6 +22,7 @@ module.exports = validateLoginInput = data => {
         errors.password = "Password required!"
     }
 
+    /*returns errors*/
     return {
         errors,
         isValid: isEmpty(errors)
