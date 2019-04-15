@@ -43,6 +43,7 @@ module.exports = validateRegisterInput = data => {
           errors.password2 = 'Passwords do not match!';
       }
 
+    /*returns errors*/
     return {
         errors,
         isValid: isEmpty(errors)
