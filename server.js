@@ -4,7 +4,7 @@ const mongoose = require("mongoose")
 const passport = require("passport")
 
 const users = require("./api/users")
-const profile =require("./api/profile")
+const profile = require("./api/profiles")
 
 const port = process.env.PORT || 3001
 
@@ -34,6 +34,6 @@ require("./config/passport")(passport)
 app.get("/", (req, res) => res.send("o l l e h"))
 
 app.use("/api/users", users)
-app.use("/api/profile", profile)
+app.use("/api/profiles", profile)
 
 app.listen(port, () => console.log(`Server running on port ${port}.`))
