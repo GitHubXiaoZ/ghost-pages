@@ -4,7 +4,7 @@ const router = express.Router()
 const mongoose = require("mongoose")
 const passport = require("passport")
 
-const validateProfileInput = require("../validate/profile")
+const validProfileInput = require("../validate/profile")
 
 const User = require("../models/User")
 const Profile = require("../models/Profile")
@@ -33,13 +33,73 @@ router.get("/",
         }
 )
 
+/* GET api: profile/handle
+ * returns the profile of the handle
+ */
+router.get("/handle/:handle", 
+    (req, res) => {
+        const errors = {}
+
+        Profile.findOne({ handle: req.params.handle })
+            .populate("user", ["name", "handle"])
+            .then(profile => {
+                if (!profile) {
+                    errors.nullprofile = "This profile does not exist!"
+                    return res.status(404).json(errors)
+                }
+                res.json(profile)
+            })
+            .catch(err => res.status(404).json(err))
+    }
+)
+
+/* GET api: profile/all
+ * returns the profile of the user id
+ */
+router.get("/all", 
+    (req, res) => {
+        const errors = {}
+
+        Profile.find()
+            .populate("user", ["name", "handle"])
+            .then(profiles => {
+                if (!profiles) {
+                    errors.noprofiles = "Cannot find any profiles!"
+                    return res.status(404).json(errors)
+                }
+                res.json(profiles)
+            })
+            .catch(err => res.status(404).json(err))
+    }
+)
+
+/* GET api: profile/user_id
+ * returns the profile of the user id
+ */
+router.get("/user/:user_id", 
+    (req, res) => {
+        const errors = {}
+
+        Profile.findOne({ user: req.params.user_id })
+            .populate("user", ["name", "handle"])
+            .then(profile => {
+                if (!profile) {
+                    errors.nullprofile = "This profile does not exist!"
+                    return res.status(404).json(errors)
+                }
+                res.json(profile)
+            })
+            .catch(err => res.status(404).json(err))
+    }
+)
+
 /* POST api: profile
- * creates the user's profile
+ * creates/updates the user's profile
  */
 router.post("/",
     passport.authenticate("jwt", { session: false }),
     (req, res) => {
-        const { errors, isValid } = validateProfileInput(req.body)
+        const { errors, isValid } = validProfileInput(req.body)
 
         if (!isValid) {
             return res.status(400).json(errors)
@@ -75,6 +135,20 @@ router.post("/",
                     })
                 }
             })
+    }
+)
+
+/* DELETE api: profile
+ * deletes the user's profile
+ */
+router.delete('/',
+    passport.authenticate("jwt", { session: false }),
+    (req, res) => {
+        Profile.findOneAndRemove({ user: req.user.id }).then(() => {
+            User.findOneAndRemove({ _id: req.user.id }).then(() => {
+                res.json({ success: true })
+            })
+        })
     }
 )
 
