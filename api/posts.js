@@ -17,10 +17,11 @@ router.get("/test", (req, res) => res.json({ msg: "Post route -- working." }))
  * returns all posts
  */
 router.get("/", (req, res) => {
+    /*sort posts by recency*/
     Post.find()
         .sort({ date: -1 })
         .then(posts => res.json(posts))
-        .catch(err => res.status(404))
+        .catch(err => res.status(404).json({ noposts: "Posts have not been created!" }))
 })
 
 /* GET api: posts/id
@@ -44,6 +45,7 @@ router.post("/",
             return res.status(400).json(errors)
         }
 
+        /*create a new post*/
         const newPost = new Post({
             text: req.body.text,
             name: req.body.name,
@@ -55,7 +57,7 @@ router.post("/",
 )
 
 /* DELETE api: posts/id
- * deletes a specific posts
+ * deletes a specific post
  */
 router.delete("/:id", 
     passport.authenticate("jwt", { session: false }),
@@ -64,16 +66,37 @@ router.delete("/:id",
         .then(profile => {
             Post.findById(req.params.id)
                 .then(post => {
+                    /*checks if user is the one who created the post*/
                     if (post.user.toString() !== req.user.id) {
                         return res.status(401).json({ nopermission: "Not allowed to delete this post!" })
                     }
-
+                    /*deletes post*/
                     post.remove().then(() => res.json({ success: true }))
                 })
                 .catch(err => res.status(404).json({ nopost: "Post does not exist!" }))
         })
     }
-    
+)
+
+/* POST api: posts/like/id
+ * like a specific post
+ */
+router.post("/like/:id", 
+    passport.authenticate("jwt", { session: false }),
+    (req, res) => {
+        Profile.findOne({ user: req.user.id })
+        .then(profile => {
+            Post.findById(req.params.id)
+                .then(post => {
+                    if (post.likes.filter(like => like.user.toString() === req.user.id).length > 0) {
+                        return res.status(400).json({ liked: "Post already liked!" })
+                    }
+                    post.likes.unshift({ user: req.user.id })
+                    post.save().then(post => res.json(post))
+                })
+                .catch(err => res.status(404).json({ nopost: "Post does not exist!" }))
+        })
+    }
 )
 
 module.exports = router
