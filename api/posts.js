@@ -64,7 +64,7 @@ router.delete("/:id",
         .then(profile => {
             Post.findById(req.params.id)
                 .then(post => {
-                    if (post.user.toString() !== user.id) {
+                    if (post.user.toString() !== req.user.id) {
                         return res.status(401).json({ nopermission: "Not allowed to delete this post!" })
                     }
 
