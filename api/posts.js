@@ -88,10 +88,37 @@ router.post("/like/:id",
         .then(profile => {
             Post.findById(req.params.id)
                 .then(post => {
+                    /*checks if the user has already liked the post*/
                     if (post.likes.filter(like => like.user.toString() === req.user.id).length > 0) {
                         return res.status(400).json({ liked: "Post already liked!" })
                     }
+                    /*adds the user to post.likes indicating they liked the post*/
                     post.likes.unshift({ user: req.user.id })
+                    post.save().then(post => res.json(post))
+                })
+                .catch(err => res.status(404).json({ nopost: "Post does not exist!" }))
+        })
+    }
+)
+
+/* POST api: posts/unlike/id
+ * unlike a previous liked post
+ */
+router.post("/unlike/:id", 
+    passport.authenticate("jwt", { session: false }),
+    (req, res) => {
+        Profile.findOne({ user: req.user.id })
+        .then(profile => {
+            Post.findById(req.params.id)
+                .then(post => {
+                    /*checks if the user has not liked the post*/
+                    if (post.likes.filter(like => like.user.toString() === req.user.id).length === 0) {
+                        return res.status(400).json({ liked: "Post has not been liked!" })
+                    }
+                    /*index is the index of user's post in post.likes array*/
+                    const index = post.likes.map(item => item.user.toString()).indexOf(req.user.id)
+                    /*remove the user's like from post.likes*/
+                    post.likes.splice(index, 1)
                     post.save().then(post => res.json(post))
                 })
                 .catch(err => res.status(404).json({ nopost: "Post does not exist!" }))
