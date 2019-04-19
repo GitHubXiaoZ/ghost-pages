@@ -39,6 +39,7 @@ router.get("/:id", (req, res) => {
 router.post("/",
     passport.authenticate("jwt", { session: false }),
     (req, res) => {
+        /*validates post input*/
         const { errors, isValid } = validPostInput(req.body)
 
         if (!isValid) {
@@ -132,6 +133,7 @@ router.post("/unlike/:id",
 router.post("/comment/:id", 
     passport.authenticate("jwt", { session: false}), 
     (req, res) => {
+        /*validates comment input*/
         const { errors, isValid } = validPostInput(req.body)
 
         if (!isValid) {
@@ -140,12 +142,13 @@ router.post("/comment/:id",
 
         Post.findById(req.params.id)
             .then(post => {
+                /*creates a new comment*/
                 const newComment = {
-                    text = req.body.text,
-                    name = req.body.name,
-                    user = req.user.id
+                    text: req.body.text,
+                    name: req.body.name,
+                    user: req.user.id
                 }
-
+                /*add comment to post.comments array*/
                 post.comments.unshift(newComment)
                 post.save().then(post => res.json(post))
             })
@@ -153,13 +156,12 @@ router.post("/comment/:id",
         }
 )
 
-/* DELETE api: posts/comment/id
+/* DELETE api: posts/comment/id/comment_id
  * delete a comment on a specific post
  */
-router.post("/comment/:id", 
+router.delete("/comment/:id/:comment_id", 
     passport.authenticate("jwt", { session: false}), 
     (req, res) => {
-        
         Post.findById(req.params.id)
             .then(post => {
                 /*check if the user's comment exists*/
