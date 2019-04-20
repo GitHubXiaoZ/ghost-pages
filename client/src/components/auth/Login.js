@@ -32,9 +32,7 @@ class Login extends Component {
         }
 
         if (nextProps.errors) {
-            this.setState({
-                errors: nextProps.errors
-            })
+            this.setState({ errors: nextProps.errors })
         }
     }
     onChange = e => {
@@ -54,17 +52,16 @@ class Login extends Component {
 
     render() {
         const { errors } = this.state
+
         return (
-            <div className="">
+            <div className="login">
                 <div className="">
                     <div className="">
                         <Link to="/" className="">
                             Home
                         </Link>
                         <div>
-                            <h4>
-                                Log in
-                            </h4>
+                            <h1> Log in </h1>
                             <p className="">
                                 Don't have an account? <Link to="/register">Register here</Link>
                             </p>
