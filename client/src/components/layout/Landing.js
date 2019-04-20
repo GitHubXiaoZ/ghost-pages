@@ -7,9 +7,9 @@ class Landing extends Component {
       <div className="">
         <div className="">
           <div className="">
-            <h4>
+            <h1>
               Welcome to Ghost Pages!
-            </h4>
+            </h1>
             <p className="">
               Start your story here.
             </p>
