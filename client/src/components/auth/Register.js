@@ -31,9 +31,7 @@ class Register extends Component {
     
     componentWillReceiveProps(nextProps) {
         if (nextProps.errors) {
-            this.setState({
-                errors: nextProps.errors
-            })
+            this.setState({ errors: nextProps.errors })
         }
     }
 
@@ -56,15 +54,16 @@ class Register extends Component {
 
     render() {
         const { errors } = this.state
+
         return (
-            <div className="">
+            <div className="register">
                 <div className="">
                     <div className="">
                         <Link to="/" className="">
                             Home
                         </Link>
                         <div className="">
-                            <h4> Register </h4>
+                            <h1> Register </h1>
                             <p className="">
                             Already have an account? <Link to="/login">Log in</Link>
                             </p>
