@@ -22,9 +22,9 @@ class Dashboard extends Component {
             <div className="">
                 <div className="">
                     <div className="">
-                        <h4>
+                        <h1>
                             Hello, {user.name}
-                        </h4>
+                        </h1>
                         <button
                          onClick={this.onLogoutClick}
                          className="">
