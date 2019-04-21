@@ -56,18 +56,18 @@ class Login extends Component {
         return (
             <div className="login">
                 <div className="">
-                    <div className="">
-                        <Link to="/" className="">
+                    <div className="home">
+                        <Link to="/">
                             Home
                         </Link>
                         <div>
                             <h1> Log in </h1>
-                            <p className="">
+                            <p className="register">
                                 Don't have an account? <Link to="/register">Register here</Link>
                             </p>
                         </div>
                         <form noValidate onSubmit={this.onSubmit}>
-                            <div className="">
+                            <div className="email">
                                 <input
                                     onChange={this.onChange}
                                     value={this.state.email}
@@ -77,12 +77,12 @@ class Login extends Component {
                                     className={{invalid: errors.email || errors.emailnotfound}}
                                     />
                                     <label htmlFor="email">Email</label>
-                                    <span className="">
+                                    <span className="emailError">
                                         {errors.email}
                                         {errors.emailnotfound}
                                     </span>
                             </div>
-                            <div className="">
+                            <div className="password">
                                 <input
                                     onChange={this.onChange}
                                     value={this.state.password}
@@ -92,15 +92,14 @@ class Login extends Component {
                                     className={{invalid: errors.password || errors.passwordincorrect}}
                                     />
                                     <label htmlFor="password">Password</label>
-                                    <span className="">
+                                    <span className="passwordError">
                                         {errors.password}
                                         {errors.passwordincorrect}
                                     </span>
                             </div>
-                            <div className="">
+                            <div className="submit">
                                 <button
                                     type="submit"
-                                    className=""
                                 >
                                 Log in
                                 </button>
