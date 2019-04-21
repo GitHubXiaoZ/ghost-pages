@@ -4,28 +4,26 @@ import { Link } from "react-router-dom"
 class Landing extends Component {
   render() {
     return (
-      <div className="">
+      <div className="home">
         <div className="">
           <div className="">
             <h1>
-              Welcome to Ghost Pages!
+              Ghost Pages
             </h1>
             <p className="">
               Start your story here.
             </p>
             <br />
-            <div className="">
+            <div className="register">
               <Link
                 to="/register"
-                className=""
               >
                 Register
               </Link>
             </div>
-            <div className="">
+            <div className="login">
               <Link
                 to="/login"
-                className=""
               >
                 Log In
               </Link>
