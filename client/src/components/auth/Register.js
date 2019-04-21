@@ -58,18 +58,18 @@ class Register extends Component {
         return (
             <div className="register">
                 <div className="">
-                    <div className="">
-                        <Link to="/" className="">
+                    <div className="home">
+                        <Link to="/">
                             Home
                         </Link>
-                        <div className="">
+                        <div className="register">
                             <h1> Register </h1>
                             <p className="">
                             Already have an account? <Link to="/login">Log in</Link>
                             </p>
                         </div>
                         <form noValidate onSubmit={this.onSubmit}>
-                            <div className="">
+                            <div className="name">
                                 <input 
                                     onChange={this.onChange}
                                     value={this.state.name}
@@ -79,9 +79,9 @@ class Register extends Component {
                                     className={{invalid: errors.name}}
                                     />
                                     <label htmlFor="name">Name</label>
-                                    <span className=""> {errors.name} </span>
+                                    <span className="nameError"> {errors.name} </span>
                             </div>
-                            <div className="">
+                            <div className="email">
                                 <input 
                                     onChange={this.onChange}
                                     value={this.state.email}
@@ -91,9 +91,9 @@ class Register extends Component {
                                     className={{invalid: errors.email}}
                                     />
                                     <label htmlFor="email">Email</label>
-                                    <span className=""> {errors.email} </span>
+                                    <span className="emailError"> {errors.email} </span>
                             </div>
-                            <div className="">
+                            <div className="password">
                                 <input 
                                     onChange={this.onChange}
                                     value={this.state.password}
@@ -103,9 +103,9 @@ class Register extends Component {
                                     className={{invalid: errors.password}}
                                     />
                                     <label htmlFor="password">Password</label>
-                                    <span className=""> {errors.password} </span>
+                                    <span className="passwordError"> {errors.password} </span>
                             </div>
-                            <div className="">
+                            <div className="confirm">
                                 <input 
                                     onChange={this.onChange}
                                     value={this.state.password2}
@@ -115,12 +115,11 @@ class Register extends Component {
                                     className={{invalid: errors.password2}}
                                     />
                                     <label htmlFor="password2">Confirm Password</label>
-                                    <span className=""> {errors.password2} </span>
+                                    <span className="password2Error"> {errors.password2} </span>
                             </div>
-                            <div className="">
+                            <div className="submit">
                                 <button
                                     type="submit"
-                                    className=""
                                 >
                                 Sign up
                                 </button>
