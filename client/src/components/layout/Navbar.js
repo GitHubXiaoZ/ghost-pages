@@ -4,15 +4,28 @@ import { Link } from "react-router-dom"
 class Navbar extends Component {
     render() {
         return (
-            <div className="">
-                <nav className="">
-                    <div className="">
+            <div className="navbar">
+                <nav className="bar">
+                    <span className="Home">
                         <Link
-                        to="/"
-                        className="">
+                        to="/">
                         GHOST
                         </Link>
-                    </div>
+                    </span>
+                    <span className="Register">
+                        <Link
+                        to="/register">
+                        {' '}
+                        Register
+                        </Link>
+                    </span>
+                    <span className="Login">
+                        <Link
+                        to="/login">
+                        {' '}
+                        Log In
+                        </Link>
+                    </span>
                 </nav>
             </div>
         )
