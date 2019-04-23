@@ -13,7 +13,7 @@ const initialState = {
     loading: false
 }
 
-/*exports authentication user reducer*/
+/*exports user authentication reducer*/
 export default function(state = initialState, action) {
     switch (action.type) {
         case SET_CURRENT_USER:
