@@ -3,16 +3,15 @@ import React, { Component } from "react"
 import { connect } from "react-redux"
 import PropTypes from "prop-types"
 
-import { logoutUser } from "../../actions/authActions"
+import { getCurrentProfile } from "../../actions/profileActions"
 
 /* Class: Dashboard
  * User account page
  * Contains functions such as logout
  */
 class Dashboard extends Component {
-    onLogoutClick = e => {
-        e.preventDefault()
-        this.props.logoutUser()
+    componentDidMount() {
+        this.props.getCurrentProfile()
     }
 
     render() {
@@ -25,11 +24,6 @@ class Dashboard extends Component {
                         <h1>
                             Hello, {user.name}
                         </h1>
-                        <button
-                         onClick={this.onLogoutClick}
-                         className="">
-                            Log out
-                        </button>
                     </div>
                 </div>
             </div>
@@ -38,7 +32,7 @@ class Dashboard extends Component {
 }
 
 Dashboard.propTypes = {
-    logoutUser: PropTypes.func.isRequired,
+    getCurrentProfile: PropTypes.func.isRequired,
     auth: PropTypes.func.isRequired
 } 
 
@@ -49,5 +43,5 @@ const mapStateToProps = state => ({
 /*exports dashboard*/
 export default connect(
     mapStateToProps,
-    { logoutUser }
+    { getCurrentProfile }
 ) (Dashboard)
