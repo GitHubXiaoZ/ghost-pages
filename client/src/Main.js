@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import jwt_decode from "jwt-decode"
 import { setAuthToken } from "./utils/setAuthToken"
 import { setCurrentUser, logoutUser } from "./actions/authActions"
+import { RESET_CURRENT_PROFILE } from "./actions/profileActions"
 
 import { Provider } from "react-redux"
 import store from "./store"
@@ -15,6 +16,7 @@ import Login from "./components/auth/Login"
 import Dashboard from "./components/dashboard/Dashboard"
 import PrivateRoute from "./components/protected-route/PrivateRoute"
 
+
 if (localStorage.jwtToken) {
   const token = localStorage.jwtToken
   setAuthToken(token)
@@ -23,7 +25,8 @@ if (localStorage.jwtToken) {
 
   const currentTime = Date.now() / 1000
   if (decoded.exp < currentTime) {
-    store.dispatch(logoutUser)
+    store.dispatch(logoutUser())
+    store.dispatch(RESET_CURRENT_PROFILE())
     window.location.href = "./login"
   }
 }
