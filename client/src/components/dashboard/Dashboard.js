@@ -1,6 +1,7 @@
 /*imports*/
 import React, { Component } from "react"
 import { connect } from "react-redux"
+import { Link } from "react-router-dom"
 import PropTypes from "prop-types"
 
 import { getCurrentProfile } from "../../actions/profileActions"
@@ -16,14 +17,32 @@ class Dashboard extends Component {
 
     render() {
         const { user } = this.props.auth
+        const { profile, loading } = this.props.profile
+
+        let dashboardFeed
+
+        if (profile === null || loading) {
+            dashboardFeed = <h3>transmitting...</h3>
+        } else {
+            if (Object.keys(profile).length > 0) {
+                dashboardFeed = <h3>Welcome back, { user.name }!</h3>
+            } else {
+                dashboardFeed = (
+                    <div>
+                        <p>Hello, { user.name }</p>
+                        <p>Set up your profile</p>
+                        <Link to="/new_profile">here!</Link>
+                    </div>
+                )
+            }
+        }
 
         return(
-            <div className="">
+            <div className="dashboard">
                 <div className="">
                     <div className="">
-                        <h1>
-                            Hello, {user.name}
-                        </h1>
+                        <h1>Dashboard</h1>
+                        {dashboardFeed}
                     </div>
                 </div>
             </div>
