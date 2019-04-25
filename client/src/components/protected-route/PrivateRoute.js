@@ -5,13 +5,14 @@ import { connect } from "react-redux"
 import PropTypes from "prop-types"
 
 /* PrivateRoute
- * Authenticate user
+ * Authenticate users
+ * Prevent unauthenticated users from viewing private pages
  * If they are unable to be authenticated redirect to login page
  */
 const PrivateRoute = ({ component: Component, auth, ...rest }) => (
     <Route
         {...rest}
-        render={props =>
+        render = {props =>
             auth.isAuth === true ? (
                 <Component {...props}/>
             ) : (
