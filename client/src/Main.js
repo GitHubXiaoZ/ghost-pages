@@ -4,18 +4,19 @@ import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import jwt_decode from "jwt-decode"
 import { setAuthToken } from "./utils/setAuthToken"
 import { setCurrentUser, logoutUser } from "./actions/authActions"
-import { RESET_CURRENT_PROFILE } from "./actions/profileActions"
+import { resetCurrentProfile } from "./actions/profileActions"
 
 import { Provider } from "react-redux"
 import store from "./store"
 
 import Navbar from "./components/layout/Navbar"
 import Home from "./components/layout/Home"
+import Footer from "./components/layout/Footer"
 import Register from "./components/auth/Register"
 import Login from "./components/auth/Login"
 import Dashboard from "./components/dashboard/Dashboard"
 import PrivateRoute from "./components/protected-route/PrivateRoute"
-
+import NewProfile from "./components/profile/new_profile"
 
 if (localStorage.jwtToken) {
   const token = localStorage.jwtToken
@@ -26,7 +27,7 @@ if (localStorage.jwtToken) {
   const currentTime = Date.now() / 1000
   if (decoded.exp < currentTime) {
     store.dispatch(logoutUser())
-    store.dispatch(RESET_CURRENT_PROFILE())
+    store.dispatch(resetCurrentProfile())
     window.location.href = "./login"
   }
 }
@@ -44,7 +45,11 @@ class Main extends Component {
                 <Switch>
                   <PrivateRoute exact path="/dashboard" component={Dashboard}/>
                 </Switch>
+                <Switch>
+                  <PrivateRoute exact path="/new_profile" component={NewProfile}/>
+                </Switch>
               </div>
+              <Footer/>
             </Router>
           </Provider>
         )
