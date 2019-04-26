@@ -3,6 +3,20 @@ import axios from "axios"
 
 import { GET_PROFILE, PROFILE_LOADING, RESET_CURRENT_PROFILE, GET_ERRORS } from "./typesActions"
 
+/*create new profile*/
+export const newProfile = (profileData, history) => dispatch => {
+    axios
+        .post("/api/profiles")
+        .then(res => history.push("/dashboard"))
+        .catch(err => 
+            dispatch({
+                type: GET_ERRORS,
+                payload: err.response.data
+            })
+        )
+}
+
+/*return current profile*/
 export const getCurrentProfile = () => dispatch => {
     dispatch(setProfileLoading())
     axios
