@@ -55,7 +55,7 @@ class Login extends Component {
 
         return (
             <div className="login">
-                <div className="">
+                <div className="form">
                     <div className="home">
                         <Link to="/">
                             Home
