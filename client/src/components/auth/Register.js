@@ -57,7 +57,7 @@ class Register extends Component {
 
         return (
             <div className="register">
-                <div className="">
+                <div className="form">
                     <div className="home">
                         <Link to="/">
                             Home
