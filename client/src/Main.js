@@ -2,7 +2,7 @@
 import React, { Component } from "react"
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import jwt_decode from "jwt-decode"
-import { setAuthToken } from "./utils/setAuthToken"
+import setAuthToken from "./utils/setAuthToken"
 import { setCurrentUser, logoutUser } from "./actions/authActions"
 import { resetCurrentProfile } from "./actions/profileActions"
 
@@ -17,6 +17,7 @@ import Login from "./components/auth/Login"
 import Dashboard from "./components/dashboard/Dashboard"
 import PrivateRoute from "./components/protected-route/PrivateRoute"
 import NewProfile from "./components/profile/new_profile"
+import EditProfile from "./components/profile/edit_profile"
 
 if (localStorage.jwtToken) {
   const token = localStorage.jwtToken
@@ -47,6 +48,9 @@ class Main extends Component {
                 </Switch>
                 <Switch>
                   <PrivateRoute exact path="/new_profile" component={NewProfile}/>
+                </Switch>
+                <Switch>
+                  <PrivateRoute exact path="/edit_profile" component={EditProfile}/>
                 </Switch>
               </div>
               <Footer/>
