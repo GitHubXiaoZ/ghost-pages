@@ -33,7 +33,7 @@ class NewProfile extends Component {
     }
 
     onChange = e => {
-        this.setState({ [e.target.id]: e.target.value })
+        this.setState({ [e.target.name]: e.target.value })
     }
 
     onSubmit = e => {
@@ -57,6 +57,7 @@ class NewProfile extends Component {
         return (
             <div className="profile-form">
                 <div className="form">
+                    <h1>Create Profile</h1>
                     <form noValidate onSubmit={this.onSubmit}>
                                 <div className="handle">
                                     <input
