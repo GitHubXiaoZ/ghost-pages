@@ -1,7 +1,13 @@
 /*imports*/
 import axios from "axios"
 
-import { GET_PROFILE, PROFILE_LOADING, SET_CURRENT_USER, RESET_CURRENT_PROFILE, GET_ERRORS } from "./typesActions"
+import { 
+    GET_PROFILE, 
+    GET_PROFILE_LIST, 
+    PROFILE_LOADING, 
+    SET_CURRENT_USER, 
+    RESET_CURRENT_PROFILE, 
+    GET_ERRORS } from "./typesActions"
 
 /*create new profile*/
 export const newProfile = (profileData, history) => dispatch => {
@@ -34,6 +40,24 @@ export const getCurrentProfile = () => dispatch => {
         )
 }
 
+/*delete profile action*/
+export const getProfileList = () => dispatch => {
+    dispatch(setProfileLoading())
+    axios
+        .delete("/api/profile/all")
+        .then(res =>
+            dispatch({
+                type: GET_PROFILE_LIST,
+                payload: res.data
+            })
+        ).catch(err=> 
+            dispatch({
+                type: GET_ERRORS,
+                payload: null
+            })
+        )
+}
+
 /*profile loading action*/
 export const setProfileLoading = () => {
     return {
@@ -60,7 +84,7 @@ export const deleteAccount = () => dispatch => {
         ).catch(err=> 
             dispatch({
                 type: GET_ERRORS,
-                payload:err.response.data
+                payload: err.response.data
             })
         )
 }
