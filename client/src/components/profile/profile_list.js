@@ -4,6 +4,7 @@ import { connect } from "react-redux"
 import PropTypes from "prop-types"
 
 import { getProfileList } from "../../actions/profileActions"
+import ProfileItems from "./profile_items"
 
 /* Class: ProfileList
  * List of Profiles
@@ -22,7 +23,9 @@ class ProfileList extends Component {
             profileItems = <h3>transmitting...</h3>
         } else {
             if (profiles.length > 0) {
-                profileItems = <h1>User Profiles</h1>
+                profileItems = profiles.map(profile => (
+                    <ProfileItems key={profile.id} profile={profile}/>
+                ))
             } else {
                 profileItems = <h3>No profiles found!</h3>
             }
