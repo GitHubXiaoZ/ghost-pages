@@ -40,6 +40,24 @@ export const getCurrentProfile = () => dispatch => {
         )
 }
 
+/*return handle's profile*/
+export const getProfileByHandle = handle => dispatch => {
+    dispatch(setProfileLoading())
+    axios
+        .get(`/api/profiles/${handle}`)
+        .then(res => 
+            dispatch({
+                type: GET_PROFILE,
+                payload: res.data
+            })
+        ).catch(err =>
+            dispatch({
+                type: GET_PROFILE,
+                payload: null
+            })
+        )
+}
+
 /*delete profile action*/
 export const getProfileList = () => dispatch => {
     dispatch(setProfileLoading())
