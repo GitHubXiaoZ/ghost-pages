@@ -16,8 +16,12 @@ import Register from "./components/auth/Register"
 import Login from "./components/auth/Login"
 import Dashboard from "./components/dashboard/Dashboard"
 import PrivateRoute from "./components/protected-route/PrivateRoute"
+import NotFound from "./components/layout/NotFound"
+
+import Profile from "./components/profile/Profile"
 import NewProfile from "./components/profile/new_profile"
 import EditProfile from "./components/profile/edit_profile"
+
 
 if (localStorage.jwtToken) {
   const token = localStorage.jwtToken
@@ -40,18 +44,22 @@ class Main extends Component {
             <Router>
               <div className="main">
                 <Navbar/>
-                <Route exact path="/" component={Home}/>
-                <Route exact path="/register" component={Register}/>
-                <Route exact path="/login" component={Login}/>
                 <Switch>
-                  <PrivateRoute exact path="/dashboard" component={Dashboard}/>
+                  <Route exact path="/" component={Home}/>
+                  <Route exact path="/register" component={Register}/>
+                  <Route exact path="/login" component={Login}/>
+                  <Route exact path="/profile" component={Profile}/>
+                  <Route component={NotFound}/>
                 </Switch>
-                <Switch>
-                  <PrivateRoute exact path="/new_profile" component={NewProfile}/>
-                </Switch>
-                <Switch>
-                  <PrivateRoute exact path="/edit_profile" component={EditProfile}/>
-                </Switch>
+                  <Switch>
+                    <PrivateRoute exact path="/dashboard" component={Dashboard}/>
+                  </Switch>
+                  <Switch>
+                    <PrivateRoute exact path="/new_profile" component={NewProfile}/>
+                  </Switch>
+                  <Switch>
+                    <PrivateRoute exact path="/edit_profile" component={EditProfile}/>
+                  </Switch>
               </div>
               <Footer/>
             </Router>
