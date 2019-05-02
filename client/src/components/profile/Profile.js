@@ -4,6 +4,8 @@ import { connect } from "react-redux"
 import { Link } from "react-router-dom"
 import PropTypes from "prop-types"
 
+import ProfileHeader from "./profile_header"
+import ProfileContent from "./profile_content"
 import { getProfileByHandle } from "../../actions/profileActions"
 
 /* Class: Profile
@@ -36,6 +38,8 @@ class Profile extends Component {
                         <Link to="/dashboard">Return</Link>
                     </div>
                     <div className="handle-feed">
+                        <ProfileHeader profile={profile}/>
+                        <ProfileContent profile={profile}/>
                     </div>
                 </div>
             )
