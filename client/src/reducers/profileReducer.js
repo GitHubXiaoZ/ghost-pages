@@ -9,7 +9,7 @@ import {
 /*inital state*/
 const initialState = {
     profile: null,
-    profiles: null,
+    profile_list: null,
     loading: false
 }
 
