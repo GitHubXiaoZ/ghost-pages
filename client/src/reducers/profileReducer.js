@@ -30,7 +30,7 @@ export default function(state = initialState, action) {
         case GET_PROFILE_LIST:
             return {
                 ...state,
-                profile: action.payload,
+                profile_list: action.payload,
                 loading: false
             }
         case RESET_CURRENT_PROFILE:
