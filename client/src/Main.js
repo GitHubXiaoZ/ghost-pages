@@ -22,15 +22,24 @@ import Profile from "./components/profile/Profile"
 import NewProfile from "./components/profile/new_profile"
 import EditProfile from "./components/profile/edit_profile"
 
+import PostList from "./components/post/post_list"
 
+//check local storage for token
 if (localStorage.jwtToken) {
   const token = localStorage.jwtToken
+  //decode token
   setAuthToken(token)
   const decoded = jwt_decode(token)
+  //set user and authenicate
   store.dispatch(setCurrentUser(decoded))
 
+  //check token expiration
   const currentTime = Date.now() / 1000
   if (decoded.exp < currentTime) {
+    /*log out user
+     *reset the logged in profile
+     *redirect to login page
+     */
     store.dispatch(logoutUser())
     store.dispatch(resetCurrentProfile())
     window.location.href = "./login"
@@ -60,6 +69,9 @@ class Main extends Component {
                   <Switch>
                     <PrivateRoute exact path="/edit_profile" component={EditProfile}/>
                   </Switch>
+                  <Switch>
+                    <PrivateRoute exact path="/stories" component={PostList}/>
+                  </Switch>
               </div>
               <Footer/>
             </Router>
@@ -67,5 +79,6 @@ class Main extends Component {
         )
       }
     }
-//export main page
+
+/*export main*/
 export default Main;
