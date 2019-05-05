@@ -4,6 +4,7 @@ import { connect } from "react-redux"
 import { Link } from "react-router-dom"
 import PropTypes from "prop-types"
 
+import PostForm from "./post_form"
 import { getPostList } from "../../actions/postActions"
 
 /* Class: Post
@@ -34,6 +35,7 @@ class PostList extends Component {
                 <div className="user-feed">
                     <Link to="/dashboard">Return</Link>
                 </div>
+                <PostForm/>
                 {postFeed}
             </div>
         )
