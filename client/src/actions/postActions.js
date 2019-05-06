@@ -1,7 +1,7 @@
 /*imports*/
 import axios from "axios"
 
-import { ADD_POST, GET_POST, GET_POST_LIST, GET_ERRORS } from "./typesActions"
+import { ADD_POST, GET_POST, GET_POST_LIST, POST_LOADING, GET_ERRORS } from "./typesActions"
 
 /*add a post*/
 export const addPost = postData => dispatch => {
@@ -23,8 +23,9 @@ export const addPost = postData => dispatch => {
 
 /*return a post*/
 export const getPost = id => dispatch => {
+    dispatch(setPostLoading())
     axios
-        .post( `/api/posts/${id}`)
+        .get( `/api/posts/${id}`)
         .then(res =>
             dispatch({
                 type: GET_POST,
@@ -41,8 +42,9 @@ export const getPost = id => dispatch => {
 
 /*return all post*/
 export const getPostList = () => dispatch => {
+    dispatch(setPostLoading())
     axios
-        .post( "/api/posts")
+        .get( "/api/posts")
         .then(res =>
             dispatch({
                 type: GET_POST_LIST,
@@ -55,4 +57,11 @@ export const getPostList = () => dispatch => {
                 payload: null
             })
         )
+}
+
+/*post loading action*/
+export const setPostLoading = () => {
+    return {
+        type: POST_LOADING
+    }
 }
