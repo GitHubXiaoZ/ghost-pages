@@ -3,7 +3,8 @@ import {
     ADD_POST,
     GET_POST,
     GET_POST_LIST,
-    POST_LOADING
+    POST_LOADING,
+    DELETE_POST
 } from "../actions/typesActions"
 
 /*inital state*/
@@ -37,6 +38,11 @@ export default function(state = initialState, action) {
             return {
                 ...state,
                 post_list: [action.payload, ...state.post_list]
+            }
+        case DELETE_POST:
+            return {
+                ...state,
+                post_list: state.post_list.filter(post => post._id !== action.payload)
             }
         default: 
             return state 
