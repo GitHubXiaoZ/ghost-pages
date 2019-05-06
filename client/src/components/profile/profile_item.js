@@ -4,11 +4,11 @@ import PropTypes from "prop-types"
 import { Link } from "react-router-dom"
 import isEmpty from "is-empty"
 
-/* Class: ProfileItems
- * ProfileItem tag
- * Display user name, status, location in profile list
+/* Class: ProfileItem
+ * Single Profile
+ * Profile contains username, status, and location
  */
-class ProfileItems extends Component {
+class ProfileItem extends Component {
     render() {
         const { profile } = this.props
         
@@ -25,9 +25,9 @@ class ProfileItems extends Component {
     }
 }
 
-ProfileItems.propTypes = {
+ProfileItem.propTypes = {
     profile: PropTypes.object.isRequired
 }
 
-/*export profileitems*/
-export default ProfileItems
+/*export profileitem*/
+export default ProfileItem
