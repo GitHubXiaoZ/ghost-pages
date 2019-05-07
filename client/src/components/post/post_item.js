@@ -87,6 +87,7 @@ const mapStateToProps = state => ({
     auth: state.auth
 })
 
+/*export postitem*/
 export default connect(
     mapStateToProps,
     { likePost, 
