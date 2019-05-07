@@ -5,9 +5,10 @@ import { Link } from "react-router-dom"
 import PropTypes from "prop-types"
 
 import PostForm from "./post_form"
+import PostFeed from "./post_feed"
 import { getPostList } from "../../actions/postActions"
 
-/* Class: Post
+/* Class: PostList
  * Post component
  * Displays post feed containing all posts
  */
@@ -23,11 +24,7 @@ class PostList extends Component {
         if (post_list === null || loading) {
             postFeed = <h3>transmitting...</h3>
         } else {
-            postFeed = (
-                <div>
-                    Posts
-                </div>
-            )
+            postFeed = <PostFeed post_list={post_list}/>
         }
 
         return(
@@ -51,7 +48,7 @@ const mapStateToProp = state => ({
     post: state.post
 })
 
-/*exports post*/
+/*exports postlist*/
 export default connect(
     mapStateToProp,
      { getPostList }
