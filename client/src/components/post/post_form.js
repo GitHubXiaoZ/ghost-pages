@@ -50,7 +50,7 @@ class PostForm extends Component {
 
         return(
             <div className="post-form">
-                <div className="form-header">PAGE</div>
+                <div className="form-header">GHOST</div>
                 <div className="form-body">
                     <form noValidate onSubmit={this.onSubmit}>
                         <input
