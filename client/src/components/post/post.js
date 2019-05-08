@@ -7,6 +7,8 @@ import PropTypes from "prop-types"
 import PostItem from "./post_item"
 import { getPost } from "../../actions/postActions"
 
+import CommentForm from "./comment/comment_form"
+
 /* Class: Post
  * Post component
  * Displays a single post from post feed
@@ -26,6 +28,7 @@ class Post extends Component {
             postThread =(
                 <div>
                     <PostItem post={post} displayActions={false}/>
+                    <CommentForm post_id={post._id}/>
                 </div>
             )
         }
