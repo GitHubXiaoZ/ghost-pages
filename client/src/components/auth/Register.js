@@ -36,7 +36,7 @@ class Register extends Component {
     }
 
     onChange = e => {
-        this.setState({ [e.target.id]: e.target.value })
+        this.setState({ [e.target.name]: e.target.value })
     }
 
     onSubmit = e => {
@@ -71,50 +71,46 @@ class Register extends Component {
                         <form noValidate onSubmit={this.onSubmit}>
                             <div className="name">
                                 <input 
+                                    placeholder="Username"
+                                    name="name"
+                                    type="name"
                                     onChange={this.onChange}
                                     value={this.state.name}
                                     error={errors.name}
-                                    id="name"
-                                    type="text"
-                                    className={{invalid: errors.name}}
                                     />
-                                    <label htmlFor="name">Name</label>
                                     <span className="nameError"> {errors.name} </span>
                             </div>
                             <div className="email">
                                 <input 
+                                    placeholder="Email Address"
+                                    name="email"
+                                    type="email"
                                     onChange={this.onChange}
                                     value={this.state.email}
                                     error={errors.email}
-                                    id="email"
-                                    type="email"
-                                    className={{invalid: errors.email}}
                                     />
-                                    <label htmlFor="email">Email</label>
                                     <span className="emailError"> {errors.email} </span>
                             </div>
                             <div className="password">
                                 <input 
+                                    placeholder="Password"
+                                    name="password"
+                                    type="password"
                                     onChange={this.onChange}
                                     value={this.state.password}
                                     error={errors.password}
-                                    id="password"
-                                    type="password"
-                                    className={{invalid: errors.password}}
                                     />
-                                    <label htmlFor="password">Password</label>
                                     <span className="passwordError"> {errors.password} </span>
                             </div>
                             <div className="confirm">
                                 <input 
+                                    placeholder="Confirm your password"
+                                    name="password2"
+                                    type="password"
                                     onChange={this.onChange}
                                     value={this.state.password2}
                                     error={errors.password2}
-                                    id="password2"
-                                    type="password"
-                                    className={{invalid: errors.password2}}
                                     />
-                                    <label htmlFor="password2">Confirm Password</label>
                                     <span className="password2Error"> {errors.password2} </span>
                             </div>
                             <div className="submit">
