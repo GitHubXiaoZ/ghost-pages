@@ -16,7 +16,7 @@ class Login extends Component {
         this.state = {
             email: "",
             password: "",
-            errors: ""
+            errors: {}
         }
     }
 
@@ -36,7 +36,7 @@ class Login extends Component {
         }
     }
     onChange = e => {
-        this.setState({ [e.target.id]: e.target.value })
+        this.setState({ [e.target.name]: e.target.value })
     }
 
     onSubmit = e => {
@@ -69,14 +69,13 @@ class Login extends Component {
                         <form noValidate onSubmit={this.onSubmit}>
                             <div className="email">
                                 <input
+                                    placeholder="Email Address"
+                                    name="email"
+                                    type="email"
                                     onChange={this.onChange}
                                     value={this.state.email}
                                     error={errors.email}
-                                    id="email"
-                                    type="email"
-                                    className={{invalid: errors.email || errors.emailnotfound}}
                                     />
-                                    <label htmlFor="email">Email</label>
                                     <span className="emailError">
                                         {errors.email}
                                         {errors.emailnotfound}
@@ -84,14 +83,13 @@ class Login extends Component {
                             </div>
                             <div className="password">
                                 <input
+                                    placeholder="Password"
+                                    name="password"
+                                    type="password"
                                     onChange={this.onChange}
                                     value={this.state.password}
                                     error={errors.password}
-                                    id="password"
-                                    type="password"
-                                    className={{invalid: errors.password || errors.passwordincorrect}}
                                     />
-                                    <label htmlFor="password">Password</label>
                                     <span className="passwordError">
                                         {errors.password}
                                         {errors.passwordincorrect}
