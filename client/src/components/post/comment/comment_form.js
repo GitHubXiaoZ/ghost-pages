@@ -58,7 +58,7 @@ class CommentForm extends Component {
                             onChange={this.onChange}
                             value={this.state.text}
                             error={errors.text}
-                            id="post"
+                            name="text"
                             type="text"                        
                             >
                         </input>
