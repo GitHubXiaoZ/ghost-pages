@@ -7,10 +7,12 @@ import {
     GET_POST_LIST, 
     POST_LOADING, 
     DELETE_POST,
-    GET_ERRORS } from "./typesActions"
+    GET_ERRORS,
+    RESET_ERRORS } from "./typesActions"
 
 /*add a post*/
 export const addPost = postData => dispatch => {
+    dispatch(resetErrors())
     axios
         .post("/api/posts", postData)
         .then(res => 
@@ -115,6 +117,7 @@ export const unlikePost = id => dispatch => {
 
 /*add a comment to post*/
 export const addComment = (post_id, commentData) => dispatch => {
+    dispatch(resetErrors())
     axios
         .post(`/api/posts/comment/${post_id}`, commentData)
         .then(res => 
@@ -153,5 +156,12 @@ export const deleteComment = (post_id, comment_id) => dispatch => {
 export const setPostLoading = () => {
     return {
         type: POST_LOADING
+    }
+}
+
+/*resets errors before new action*/
+export const resetErrors = () => {
+    return {
+        type: RESET_ERRORS
     }
 }
