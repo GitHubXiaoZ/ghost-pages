@@ -23,19 +23,6 @@ module.exports = validateProfileInput = data => {
         errors.status = "Profile status required!"
     }
 
-    /*validate social media links*/
-    if (!isEmpty(data.twitter)) {
-        if (!Validator.isURL(data.twitter)) {
-          errors.twitter = 'Not a valid URL'
-        }
-    }
-
-    if (!isEmpty(data.facebook)) {
-        if (!Validator.isURL(data.facebook)) {
-          errors.twitter = 'Not a valid URL'
-        }
-    }
-
     /*returns errors*/
     return {
         errors,
