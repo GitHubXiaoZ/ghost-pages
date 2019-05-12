@@ -112,10 +112,6 @@ router.post("/",
         if (req.body.bio) profileInfo.bio = req.body.bio
         if (req.body.status) profileInfo.status = req.body.status
 
-        profileInfo.social = {}
-        if (req.body.twitter) profileInfo.social.twitter = req.body.twitter
-        if (req.body.facebook) profileInfo.social.facebook = req.body.facebook
-
         Profile.findOne({ user: req.user.id })
             .then(profile => {
                 if (profile) {
