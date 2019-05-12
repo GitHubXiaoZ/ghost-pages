@@ -22,14 +22,6 @@ const ProfileSchema = new Schema({
     bio: {
         type: String
     },
-    social: {
-        twitter: {
-            type: String
-        },
-        facebook: {
-            type: String
-        },
-    },
     date: {
         type: Date,
         default: Date.now
