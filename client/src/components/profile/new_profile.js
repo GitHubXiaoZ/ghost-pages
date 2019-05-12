@@ -17,8 +17,6 @@ class NewProfile extends Component {
             status: "",
             location: "",
             bio: "",
-            twitter: "",
-            facebook: "",
             errors: {}
         }
 
@@ -44,8 +42,6 @@ class NewProfile extends Component {
             status: this.state.status,
             location: this.state.location,
             bio: this.state.bio,
-            twitter: this.state.twitter,
-            facebook: this.state.facebook
         }
 
         this.props.newProfile(profileData, this.props.history)
@@ -101,28 +97,6 @@ class NewProfile extends Component {
                                         <label htmlFor="bio">Bio</label>
                                         <span className="bioError">
                                             {errors.bio}
-                                        </span>
-                                </div>
-                                <div className="twitter">
-                                    <input
-                                        onChange={this.onChange}
-                                        value={this.state.twitter}
-                                        error={errors.twitter}
-                                        />
-                                        <label htmlFor="twitter">Twitter</label>
-                                        <span className="twitterError">
-                                            {errors.twitter}
-                                        </span>
-                                </div>
-                                <div className="facebook">
-                                    <input
-                                        onChange={this.onChange}
-                                        value={this.state.facebook}
-                                        error={errors.facebook}
-                                        />
-                                        <label htmlFor="facebook">Facebook</label>
-                                        <span className="facebookError">
-                                            {errors.facebook}
                                         </span>
                                 </div>
                                 <div className="submit">
