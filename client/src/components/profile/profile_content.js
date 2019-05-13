@@ -5,7 +5,7 @@ import isEmpty from "is-empty"
 
 /* Class: ProfileContent
  * Profile body component
- * Content of user profile containing name, status, location, and socials
+ * Content of user profile containing name and bio
  */
 class ProfileContent extends Component {
     render() {
