@@ -108,6 +108,7 @@ router.post("/",
         const profileInfo = {}
         profileInfo.user = req.user.id
         if (req.body.handle) profileInfo.handle = req.body.handle
+        if (req.body.pfp) profileInfo.pfp = req.body.pfp
         if (req.body.location) profileInfo.location = req.body.location
         if (req.body.bio) profileInfo.bio = req.body.bio
         if (req.body.status) profileInfo.status = req.body.status
