@@ -15,9 +15,6 @@ const UserSchema = new Schema({
         type: String,
         required: true
     },
-    pfp: {
-        type: String
-    },
     date: {
         type: Date,
         default: Date.now
