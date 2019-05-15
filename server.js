@@ -1,31 +1,20 @@
 /*imports*/
 const express =  require("express")
-const mongoose = require("mongoose")
+const connectToDB = require("./config/db")
 const passport = require("passport")
 
 const users = require("./api/users")
 const profiles = require("./api/profiles")
 const posts = require("./api/posts")
 
-const port = process.env.PORT || 3001
-
 /*app*/
 const app = express()
 
 /*middleware*/
-app.use(express.urlencoded({ extended: false }))
-app.use(express.json())
+app.use(express.json({ extended: false }))
 
 /*database*/
-const db = require("./config/dbKeys").mongoURI
-
-mongoose
-    .connect(
-        db,
-        { useNewUrlParser: true }
-    )
-    .then(() => console.log("Connected!"))
-    .catch(err => console.log(err))
+connectToDB()
 
 /*passport middleware*/
 app.use(passport.initialize())
@@ -37,5 +26,7 @@ app.get("/", (req, res) => res.send("o l l e h"))
 app.use("/api/users", users)
 app.use("/api/profiles", profiles)
 app.use("/api/posts", posts)
+
+const port = process.env.PORT || 3001
 
 app.listen(port, () => console.log(`Server running on port ${port}.`))
