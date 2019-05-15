@@ -35,12 +35,19 @@ const PostSchema = new Schema({
             name: {
                 type: String
             },
+            pfp: {
+                type: String
+            },
             data: {
                 type: Date,
                 default: Date.now()
             }
         }
-    ]
+    ],
+    date: {
+        type: Date,
+        default: Date.now()
+    }
 })
 
 /*exports*/
