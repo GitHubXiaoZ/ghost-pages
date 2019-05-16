@@ -43,8 +43,7 @@ class Dashboard extends Component {
                 dashboardFeed = (
                     <div>
                         <p>Hello, { user.name }</p>
-                        <p>Set up your profile</p>
-                        <Link to="/new_profile">here!</Link>
+                        <p>Set up your profile <Link to="/new_profile">here!</Link></p>
                     </div>
                 )
             }
@@ -66,7 +65,7 @@ class Dashboard extends Component {
 Dashboard.propTypes = {
     getCurrentProfile: PropTypes.func.isRequired,
     deleteAccount: PropTypes.func.isRequired,
-    auth: PropTypes.func.isRequired,
+    auth: PropTypes.object.isRequired,
     profile: PropTypes.object.isRequired
 } 
 
