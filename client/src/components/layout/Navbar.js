@@ -24,9 +24,9 @@ class Navbar extends Component {
                         </Link>
                     </li>
                     <li>
-                        <p onClick={this.onLogoutClick.bind(this)}>
+                        <button onClick={this.onLogoutClick.bind(this)}>
                         Log out
-                        </p>
+                        </button>
                     </li>
                 </ul>
             </div>
