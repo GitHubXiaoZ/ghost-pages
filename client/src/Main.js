@@ -58,20 +58,12 @@ class Main extends Component {
                   <Route exact path="/register" component={Register}/>
                   <Route exact path="/login" component={Login}/>
                   <Route exact path="/profile" component={Profile}/>
+                  <PrivateRoute exact path="/dashboard" component={Dashboard}/>
+                  <PrivateRoute exact path="/new_profile" component={NewProfile}/>
+                  <PrivateRoute exact path="/edit_profile" component={EditProfile}/>
+                  <PrivateRoute exact path="/stories" component={PostList}/>
                   <Route component={NotFound}/>
                 </Switch>
-                  <Switch>
-                    <PrivateRoute exact path="/dashboard" component={Dashboard}/>
-                  </Switch>
-                  <Switch>
-                    <PrivateRoute exact path="/new_profile" component={NewProfile}/>
-                  </Switch>
-                  <Switch>
-                    <PrivateRoute exact path="/edit_profile" component={EditProfile}/>
-                  </Switch>
-                  <Switch>
-                    <PrivateRoute exact path="/stories" component={PostList}/>
-                  </Switch>
               </div>
               <Footer/>
             </Router>
