@@ -39,20 +39,19 @@ class EditProfile extends Component {
 
             profile.location = !isEmpty(profile.location) ? profile.location : ""
             profile.bio = !isEmpty(profile.bio) ? profile.bio : ""
-            profile.social = !isEmpty(profile.social) ? profile.social : {}
 
-            this.setState = {
+            this.setState({
                 handle: profile.handle,
                 status: profile.status,
                 location: profile.location,
-                bio: profile.bio,
-            }
+                bio: profile.bio
+            })
         }
     }
 
     onChange = e => {
         this.setState({ [e.target.name]: e.target.value })
-    }
+      }
 
     onSubmit = e => {
         e.preventDefault()
@@ -61,7 +60,7 @@ class EditProfile extends Component {
             handle: this.state.handle,
             status: this.state.status,
             location: this.state.location,
-            bio: this.state.bio,
+            bio: this.state.bio
         }
 
         this.props.newProfile(profileData, this.props.history)
@@ -76,57 +75,69 @@ class EditProfile extends Component {
                     <Link to="/dashboard">Back</Link>
                     <h1>Edit Profile</h1>
                     <form noValidate onSubmit={this.onSubmit}>
-                                <div className="handle">
-                                    <input
-                                        onChange={this.onChange}
-                                        value={this.state.handle}
-                                        error={errors.handle}
-                                        />
-                                        <label htmlFor="handle">Handle</label>
-                                        <span className="handleError">
-                                            {errors.handle}
-                                        </span>
-                                </div>
-                                <div className="status">
-                                    <input
-                                        onChange={this.onChange}
-                                        value={this.state.status}
-                                        error={errors.status}
-                                        />
-                                        <label htmlFor="status">Status</label>
-                                        <span className="statusError">
-                                            {errors.status}
-                                        </span>
-                                </div>
-                                <div className="location">
-                                    <input
-                                        onChange={this.onChange}
-                                        value={this.state.location}
-                                        error={errors.location}
-                                        />
-                                        <label htmlFor="location">Location</label>
-                                        <span className="locationError">
-                                            {errors.location}
-                                        </span>
-                                </div>
-                                <div className="bio">
-                                    <input
-                                        onChange={this.onChange}
-                                        value={this.state.bio}
-                                        error={errors.bio}
-                                        />
-                                        <label htmlFor="bio">Bio</label>
-                                        <span className="bioError">
-                                            {errors.bio}
-                                        </span>
-                                </div>
-                                <div className="submit">
-                                    <button
-                                        type="submit"
-                                    >
-                                    Submit
-                                    </button>
-                                </div>
+                        <div className="handle">
+                            <input
+                                placeholder="Handle"
+                                name="handle"
+                                type="text"
+                                onChange={this.onChange}
+                                value={this.state.handle}
+                                error={errors.handle}
+                                />
+                                <label>Handle</label>
+                                 <span className="handleError">
+                                    {errors.handle}
+                                </span>
+                        </div>
+                        <div className="status">
+                            <input
+                                placeholder="Status"
+                                name="status"
+                                type="text"
+                                onChange={this.onChange}
+                                value={this.state.status}
+                                error={errors.status}
+                                />
+                                <label>Status</label>
+                                <span className="statusError">
+                                    {errors.status}
+                                </span>
+                        </div>
+                        <div className="location">
+                            <input
+                                placeholder="Location"
+                                name="location"
+                                type="text"
+                                onChange={this.onChange}
+                                value={this.state.location}
+                                error={errors.location}
+                                />
+                                <label>Location</label>
+                                <span className="locationError">
+                                    {errors.location}
+                                </span>
+                        </div>
+                        <div className="bio">
+                            <input
+                                placeholder="About yourself!"
+                                name="bio"
+                                type="text"
+                                onChange={this.onChange}
+                                value={this.state.bio}
+                                error={errors.bio}
+                                />
+                                <label>About</label>
+                                <span className="bioError">
+                                    {errors.bio}
+                                </span>
+                        </div>
+                        <div className="submit">
+                            <button
+                                type="submit"
+                            >
+                            Submit
+                            </button>
+                        </div>
                      </form>
                 </div>
             </div>
@@ -135,7 +146,7 @@ class EditProfile extends Component {
 }
 
 EditProfile.propTypes = {
-    createProfile: PropTypes.func.isRequired,
+    newProfile: PropTypes.func.isRequired,
     getCurrentProfile: PropTypes.func.isRequired,
     profile: PropTypes.object.isRequired,
     errors: PropTypes.object.isRequired
