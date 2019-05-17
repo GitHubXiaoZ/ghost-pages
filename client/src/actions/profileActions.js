@@ -58,11 +58,11 @@ export const getProfileByHandle = handle => dispatch => {
         )
 }
 
-/*delete profile action*/
+/*return list of all profiles*/
 export const getProfileList = () => dispatch => {
     dispatch(setProfileLoading())
     axios
-        .delete("/api/profile/all")
+        .delete("/api/profiles/all")
         .then(res =>
             dispatch({
                 type: GET_PROFILE_LIST,
@@ -93,7 +93,7 @@ export const resetCurrentProfile = () => {
 /*delete profile action*/
 export const deleteAccount = () => dispatch => {
     axios
-        .delete("/api/profile")
+        .delete("/api/profiles")
         .then(res =>
             dispatch({
                 type: SET_CURRENT_USER,
