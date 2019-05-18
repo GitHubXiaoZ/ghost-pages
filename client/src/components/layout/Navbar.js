@@ -57,6 +57,11 @@ class Navbar extends Component {
                         GHOST
                         </Link>
                     </span>
+                    <span className="users">
+                        <Link to="/profiles">
+                        PAGES
+                        </Link>
+                    </span>
                     { isAuth ? userLinks : guestLinks }
                 </nav>
             </div>
