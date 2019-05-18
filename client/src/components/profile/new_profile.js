@@ -55,65 +55,76 @@ class NewProfile extends Component {
                 <div className="form">
                     <h1>Create Profile</h1>
                     <form noValidate onSubmit={this.onSubmit}>
-                                <div className="handle">
-                                    <input
-                                        placeholder="Handle"
-                                        name="handle"
-                                        type="text"
-                                        onChange={this.onChange}
-                                        value={this.state.handle}
-                                        error={errors.handle}
-                                        />
-                                        <span className="handleError">
-                                            {errors.handle}
-                                        </span>
-                                </div>
-                                <div className="status">
-                                    <input
-                                        placeholder="Status"
-                                        name="status"
-                                        type="text"
-                                        onChange={this.onChange}
-                                        value={this.state.status}
-                                        error={errors.status}
-                                        />
-                                        <span className="statusError">
-                                            {errors.status}
-                                        </span>
-                                </div>
-                                <div className="location">
-                                    <input
-                                        placeholder="Location"
-                                        name="location"
-                                        type="text"
-                                        onChange={this.onChange}
-                                        value={this.state.location}
-                                        error={errors.location}
-                                        />
-                                        <span className="locationError">
-                                            {errors.location}
-                                        </span>
-                                </div>
-                                <div className="bio">
-                                    <input
-                                        placeholder="About yourself!"
-                                        name="bio"
-                                        type="text"
-                                        onChange={this.onChange}
-                                        value={this.state.bio}
-                                        error={errors.bio}
-                                        />
-                                        <span className="bioError">
-                                            {errors.bio}
-                                        </span>
-                                </div>
-                                <div className="submit">
-                                    <button
-                                        type="submit"
-                                    >
-                                    Submit
-                                    </button>
-                                </div>
+                        <div className="handle">
+                            Profile Handle
+                            <br/>
+                            <input
+                                placeholder="Handle"
+                                name="handle"
+                                type="text"
+                                onChange={this.onChange}
+                                value={this.state.handle}
+                                error={errors.handle}
+                                />
+                                <span className="handleError">
+                                    {errors.handle}
+                                </span>
+                        </div>
+                        <div className="status">
+                            Profile Status
+                            <br/>
+                            <input
+                                placeholder="Status"
+                                name="status"
+                                type="text"
+                                onChange={this.onChange}
+                                value={this.state.status}
+                                error={errors.status}
+                                />
+                                <label>Status</label>
+                                <span className="statusError">
+                                    {errors.status}
+                                </span>
+                        </div>
+                        <div className="location">
+                            Location
+                            <br/>
+                            <input
+                                placeholder="Location"
+                                name="location"
+                                type="text"
+                                onChange={this.onChange}
+                                value={this.state.location}
+                                error={errors.location}
+                                />
+                                <label>Location</label>
+                                <span className="locationError">
+                                    {errors.location}
+                                </span>
+                        </div>
+                        <div className="bio">
+                            Profile Bio
+                            <br/>
+                            <input
+                                placeholder="About yourself!"
+                                name="bio"
+                                type="text"
+                                onChange={this.onChange}
+                                value={this.state.bio}
+                                error={errors.bio}
+                                />
+                                <label>About</label>
+                                <span className="bioError">
+                                    {errors.bio}
+                                </span>
+                        </div>
+                        <div className="submit">
+                            <button
+                                type="submit"
+                                >
+                                Submit
+                            </button>
+                        </div>
                      </form>
                 </div>
             </div>
