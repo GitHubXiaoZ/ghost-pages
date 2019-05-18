@@ -70,6 +70,8 @@ class Register extends Component {
                         </div>
                         <form noValidate onSubmit={this.onSubmit}>
                             <div className="name">
+                                Username
+                                <br/>
                                 <input 
                                     placeholder="Username"
                                     name="name"
@@ -81,6 +83,8 @@ class Register extends Component {
                                     <span className="nameError"> {errors.name} </span>
                             </div>
                             <div className="email">
+                                Email Address
+                                <br/>
                                 <input 
                                     placeholder="Email Address"
                                     name="email"
@@ -92,6 +96,8 @@ class Register extends Component {
                                     <span className="emailError"> {errors.email} </span>
                             </div>
                             <div className="password">
+                                Password
+                                <br/>
                                 <input 
                                     placeholder="Password"
                                     name="password"
@@ -103,6 +109,8 @@ class Register extends Component {
                                     <span className="passwordError"> {errors.password} </span>
                             </div>
                             <div className="confirm">
+                                Confirmation
+                                <br/>
                                 <input 
                                     placeholder="Confirm your password"
                                     name="password2"
