@@ -44,7 +44,7 @@ export const getCurrentProfile = () => dispatch => {
 export const getProfileByHandle = handle => dispatch => {
     dispatch(setProfileLoading())
     axios
-        .get(`/api/profiles/${handle}`)
+        .get(`/api/profiles/handle/${handle}`)
         .then(res => 
             dispatch({
                 type: GET_PROFILE,
@@ -62,15 +62,15 @@ export const getProfileByHandle = handle => dispatch => {
 export const getProfileList = () => dispatch => {
     dispatch(setProfileLoading())
     axios
-        .delete("/api/profiles/all")
+        .get("/api/profiles/all")
         .then(res =>
             dispatch({
                 type: GET_PROFILE_LIST,
                 payload: res.data
             })
-        ).catch(err=> 
+        ).catch(err => 
             dispatch({
-                type: GET_ERRORS,
+                type: GET_PROFILE_LIST,
                 payload: null
             })
         )
