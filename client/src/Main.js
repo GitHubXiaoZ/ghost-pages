@@ -19,6 +19,7 @@ import PrivateRoute from "./components/protected-route/PrivateRoute"
 import NotFound from "./components/layout/NotFound"
 
 import Profile from "./components/profile/Profile"
+import ProfileList from "./components/profile/profile_list"
 import NewProfile from "./components/profile/new_profile"
 import EditProfile from "./components/profile/edit_profile"
 
@@ -57,7 +58,8 @@ class Main extends Component {
                   <Route exact path="/" component={Home}/>
                   <Route exact path="/register" component={Register}/>
                   <Route exact path="/login" component={Login}/>
-                  <Route exact path="/profile" component={Profile}/>
+                  <Route exact path="/profile/:handle" component={Profile}/>
+                  <Route exact path="/profiles" component={ProfileList}/>
                   <PrivateRoute exact path="/dashboard" component={Dashboard}/>
                   <PrivateRoute exact path="/new_profile" component={NewProfile}/>
                   <PrivateRoute exact path="/edit_profile" component={EditProfile}/>
