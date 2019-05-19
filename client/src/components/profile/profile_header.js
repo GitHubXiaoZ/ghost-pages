@@ -12,9 +12,9 @@ class ProfileHeader extends Component {
 
         return (
             <div className="head">
-                <p>{profile.status}</p>
                 <p>
-                    {isEmpty(profile.location) ? null : <p>{profile.location}</p>}
+                    {profile.status}
+                    {isEmpty(profile.location) ? null : <span> in {profile.location}</span>}
                 </p>
             </div>
         )
