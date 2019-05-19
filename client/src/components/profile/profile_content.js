@@ -14,7 +14,7 @@ class ProfileContent extends Component {
 
         return (
             <div className="content">
-                <h2>{username}</h2>
+                <h3>{username}</h3>
                 <p>
                     {isEmpty(profile.bio) ? (
                         <span><i>{username} has a dark and mysterious past.</i></span>
