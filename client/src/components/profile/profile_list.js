@@ -16,14 +16,14 @@ class ProfileList extends Component {
     }
 
     render() {
-        const { profiles, loading } = this.props.profile
+        const { profile_list, loading } = this.props.profile
         let profileItems
 
-        if (profiles == null || loading) {
+        if (profile_list === null || loading) {
             profileItems = <h3>transmitting...</h3>
         } else {
-            if (profiles.length > 0) {
-                profileItems = profiles.map(profile => (
+            if (profile_list.length > 0) {
+                profileItems = profile_list.map(profile => (
                     <ProfileItem key={profile.id} profile={profile}/>
                 ))
             } else {
