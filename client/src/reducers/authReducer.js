@@ -2,7 +2,7 @@
 import {
     SET_CURRENT_USER,
     USER_LOADING
-} from "../actions/typesActions"
+} from "../actions/types"
 
 const isEmpty = require("is-empty")
 

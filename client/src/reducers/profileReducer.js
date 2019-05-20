@@ -4,7 +4,7 @@ import {
     GET_PROFILE_LIST,
     PROFILE_LOADING, 
     RESET_CURRENT_PROFILE 
-} from "../actions/typesActions"
+} from "../actions/types"
 
 /*inital state*/
 const initialState = {

@@ -8,7 +8,7 @@ import {
     POST_LOADING, 
     DELETE_POST,
     GET_ERRORS,
-    RESET_ERRORS } from "./typesActions"
+    RESET_ERRORS } from "./types"
 
 /*add a post*/
 export const addPost = postData => dispatch => {

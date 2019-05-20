@@ -2,7 +2,7 @@
 import axios from "axios"
 import jwt_decode from "jwt-decode"
 import setAuthToken from "../utils/setAuthToken"
-import { GET_ERRORS, SET_CURRENT_USER, USER_LOADING } from "./typesActions"
+import { GET_ERRORS, SET_CURRENT_USER, USER_LOADING } from "./types"
 
 /*sets the logged user as current user*/
 export const setCurrentUser = decoded => {

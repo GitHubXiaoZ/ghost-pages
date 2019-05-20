@@ -7,7 +7,7 @@ import {
     PROFILE_LOADING, 
     SET_CURRENT_USER, 
     RESET_CURRENT_PROFILE, 
-    GET_ERRORS } from "./typesActions"
+    GET_ERRORS } from "./types"
 
 /*create new profile*/
 export const newProfile = (profileData, history) => dispatch => {

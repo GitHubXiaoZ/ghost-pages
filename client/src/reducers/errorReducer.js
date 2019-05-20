@@ -1,5 +1,5 @@
 /*imports action*/
-import { GET_ERRORS, RESET_ERRORS } from "../actions/typesActions"
+import { GET_ERRORS, RESET_ERRORS } from "../actions/types"
 
 /*default*/
 const initialState = {}
