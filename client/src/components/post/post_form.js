@@ -50,17 +50,22 @@ class PostForm extends Component {
 
         return(
             <div className="post-form">
-                <div className="form-header">GHOST</div>
+                <div className="form-header">Untitled</div>
                 <div className="form-body">
                     <form noValidate onSubmit={this.onSubmit}>
                         <input
+                            placeholder="..."
+                            name="text"
+                            type="text" 
                             onChange={this.onChange}
                             value={this.state.text}
-                            error={errors.text}
-                            name="text"
-                            type="text"                        
+                            error={errors.text}                       
                             >
                         </input>
+                        <span className="postError">
+                            {errors.text}
+                        </span>
+                        <br/>
                         <button type="submit">
                             Submit
                         </button>
