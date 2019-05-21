@@ -18,13 +18,13 @@ class PostList extends Component {
     }
 
     render() {
-        const { post_list, loading } = this.props.post
+        const { post, loading } = this.props.post
         let postFeed
 
-        if (post_list === null || loading) {
+        if (post === null || loading) {
             postFeed = <h3>transmitting...</h3>
         } else {
-            postFeed = <PostFeed post_list={post_list}/>
+            postFeed = <PostFeed post_list={post}/>
         }
 
         return(
