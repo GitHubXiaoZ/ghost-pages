@@ -17,7 +17,7 @@ class CommentFeed extends Component {
 
 CommentFeed.propTypes = {
     post_id: PropTypes.string.isRequired,
-    comment: PropTypes.object.isRequired
+    comment: PropTypes.array.isRequired
 }
 
 /*export commentfeed*/
