@@ -52,7 +52,7 @@ export const getPost = id => dispatch => {
 export const getPostList = () => dispatch => {
     dispatch(setPostLoading())
     axios
-        .get( "/api/posts")
+        .get("/api/posts")
         .then(res =>
             dispatch({
                 type: GET_POST_LIST,
