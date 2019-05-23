@@ -57,8 +57,8 @@ class Navbar extends Component {
                         GHOST
                         </Link>
                     </span>
-                    <span className="users">
-                        <Link to="/profiles">
+                    <span className="stories">
+                        <Link to="/stories">
                         PAGES
                         </Link>
                     </span>
