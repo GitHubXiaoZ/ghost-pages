@@ -9,8 +9,8 @@ import {
 
 /*inital state*/
 const initialState = {
-    post: [],
-    post_list: {},
+    post: {},
+    post_list: [],
     loading: false
 }
 
