@@ -11,7 +11,8 @@ const posts = require("./api/posts")
 const app = express()
 
 /*middleware*/
-app.use(express.json({ extended: false }))
+app.use(express.json())
+app.use(express.urlencoded({ extended: false }))
 
 /*database*/
 connectToDB()
@@ -20,8 +21,6 @@ connectToDB()
 app.use(passport.initialize())
 /*config*/
 require("./config/passport")(passport)
-
-app.get("/", (req, res) => res.send("o l l e h"))
 
 app.use("/api/users", users)
 app.use("/api/profiles", profiles)
