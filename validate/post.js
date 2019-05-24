@@ -12,7 +12,7 @@ module.exports = validatePostInput = data => {
         errors.text = "Post must include some content!"
     }
 
-    if (!Validator.isLength(data.text, { min: 1, max: 255 })) {
+    if (!Validator.isLength(data.text, { max: 300 })) {
         errors.text = "Post cannot exceed 300 characters!"
     }
 
