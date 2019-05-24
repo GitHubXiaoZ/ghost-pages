@@ -2,7 +2,7 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 import { connect } from "react-redux"
-
+import { Link } from "react-router-dom"
 import { likePost, unlikePost, deletePost } from "../../actions/postActions"
 
 /* Class: PostItem
@@ -25,7 +25,7 @@ class PostItem extends Component {
     findLike = likes => {
         const { auth } = this.props
 
-        return (likes.filter(like => like.user !== auth.user.id ).length > 0)
+        return (likes.filter(like => like.user === auth.user.id ).length > 0)
     }
 
     render() {
@@ -39,7 +39,6 @@ class PostItem extends Component {
                     <p>{post.text}</p>
                     {displayActions ? (
                         <span className="actions">
-                            <span>{post.likes.length}</span>
                             <button
                                 onClick={this.onLike.bind(this, post._id)}
                                 type="button"
@@ -54,6 +53,9 @@ class PostItem extends Component {
                                 >
                                 Unlike
                             </button>
+                            <Link to={`/posts/${post._id}`}>
+                                Comments
+                            </Link>
                             {post.user === auth.user.id ? (
                                 <button
                                     onClick={this.onDelete.bind(this, post._id)}
