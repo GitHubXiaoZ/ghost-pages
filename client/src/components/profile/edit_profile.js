@@ -123,7 +123,7 @@ class EditProfile extends Component {
                         <div className="bio">
                             Profile Bio
                             <br/>
-                            <input
+                            <textarea cols="25"
                                 placeholder="About yourself!"
                                 name="bio"
                                 type="text"
