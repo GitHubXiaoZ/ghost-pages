@@ -53,15 +53,14 @@ class PostForm extends Component {
                 <div className="form-header">Untitled</div>
                 <div className="form-body">
                     <form noValidate onSubmit={this.onSubmit}>
-                        <input
+                        <textarea rows="5" cols="25"
                             placeholder="..."
                             name="text"
                             type="text" 
                             onChange={this.onChange}
                             value={this.state.text}
                             error={errors.text}                       
-                            >
-                        </input>
+                            />
                         <span className="postError">
                             {errors.text}
                         </span>
