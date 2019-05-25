@@ -18,13 +18,13 @@ class PostList extends Component {
     }
 
     render() {
-        const { post, loading } = this.props.post
+        const { post_list, loading } = this.props.post
         let postFeed
 
-        if (post === null || loading) {
+        if (post_list === null || loading) {
             postFeed = <h3>transmitting...</h3>
         } else {
-            postFeed = <PostFeed post_list={post}/>
+            postFeed = <PostFeed post_list={post_list}/>
         }
 
         return(
@@ -41,15 +41,15 @@ class PostList extends Component {
 
 PostList.propTypes = {
     post: PropTypes.object.isRequired,
-    getPost: PropTypes.func.isRequired
+    getPostList: PropTypes.func.isRequired
 }
 
-const mapStateToProp = state => ({
+const mapStateToProps = state => ({
     post: state.post
 })
 
 /*exports postlist*/
 export default connect(
-    mapStateToProp,
+    mapStateToProps,
      { getPostList }
 ) (PostList)
