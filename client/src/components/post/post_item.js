@@ -34,9 +34,9 @@ class PostItem extends Component {
          return (
              <div className="post-user">
                 <p>{post.name}</p>
-                <br/>
                 <div className="post-content">
                     <p>{post.text}</p>
+                    <span>{post.likes.length}</span>
                     {displayActions ? (
                         <span className="actions">
                             <button
