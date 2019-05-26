@@ -3,7 +3,7 @@ import React, { Component } from "react"
 import { connect } from "react-redux"
 import PropTypes from "prop-types"
 
-import { addComment } from "../../actions/postActions"
+import { addComment } from "../../../actions/postActions"
 
 /* Class: CommentForm
  * Comment field form
@@ -51,17 +51,18 @@ class CommentForm extends Component {
 
         return(
             <div className="comment-form">
-                <div className="form-header">PAGE</div>
+                <div className="form-header">Comments</div>
                 <div className="form-body">
                     <form noValidate onSubmit={this.onSubmit}>
-                        <input
+                        <textarea rows="2" cols="25"
+                            placeholder="..."
+                            name="text"
+                            type="text" 
                             onChange={this.onChange}
                             value={this.state.text}
-                            error={errors.text}
-                            name="text"
-                            type="text"                        
-                            >
-                        </input>
+                            error={errors.text}                       
+                            />
+                        <br/>
                         <button type="submit">
                             Submit
                         </button>
