@@ -24,6 +24,7 @@ import NewProfile from "./components/profile/new_profile"
 import EditProfile from "./components/profile/edit_profile"
 
 import PostList from "./components/post/post_list"
+import Post from "./components/post/post"
 
 //check local storage for token
 if (localStorage.jwtToken) {
@@ -64,6 +65,7 @@ class Main extends Component {
                   <PrivateRoute exact path="/new_profile" component={NewProfile}/>
                   <PrivateRoute exact path="/edit_profile" component={EditProfile}/>
                   <PrivateRoute exact path="/stories" component={PostList}/>
+                  <PrivateRoute exact path="/posts/:id" component={Post}/>
                   <Route component={NotFound}/>
                 </Switch>
               </div>
