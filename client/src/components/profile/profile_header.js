@@ -9,9 +9,11 @@ import isEmpty from "is-empty"
 class ProfileHeader extends Component {
     render() {
         const { profile } = this.props
+        const username = profile.user.name
 
         return (
             <div className="head">
+                <h3>{username}</h3>
                 <p>
                     {profile.status}
                     {isEmpty(profile.location) ? null : <span> in {profile.location}</span>}
