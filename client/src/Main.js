@@ -65,7 +65,7 @@ class Main extends Component {
                   <PrivateRoute exact path="/new_profile" component={NewProfile}/>
                   <PrivateRoute exact path="/edit_profile" component={EditProfile}/>
                   <PrivateRoute exact path="/stories" component={PostList}/>
-                  <PrivateRoute exact path="/posts/:id" component={Post}/>
+                  <PrivateRoute exact path="/stories/:id" component={Post}/>
                   <Route component={NotFound}/>
                 </Switch>
               </div>
