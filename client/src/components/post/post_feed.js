@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import PostItem from "./post_item"
 
 /* Class: PostFeed
- * Collection of posts
+ * Array of posts
  * Render a postitem for each post in post_list
  */
 class PostFeed extends Component {
