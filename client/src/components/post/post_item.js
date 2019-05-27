@@ -53,7 +53,8 @@ class PostItem extends Component {
                                 >
                                 Unlike
                             </button>
-                            <Link to={`/posts/${post._id}`}>
+                            {post.comments.length}
+                            <Link to={`/stories/${post._id}`}>
                                 Comments
                             </Link>
                             {post.user === auth.user.id ? (
