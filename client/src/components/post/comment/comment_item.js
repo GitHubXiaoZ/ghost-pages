@@ -3,7 +3,7 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 import { connect } from "react-redux"
 
-import { deleteComment } from "../../actions/postActions"
+import { deleteComment } from "../../../actions/postActions"
 
 /* Class: CommentItem
  * Single comment
@@ -19,8 +19,7 @@ class CommentItem extends Component {
 
          return (
              <div className="comment-user">
-                <p>{comment.name}</p>
-                <br/>
+                <p>{comment.name} {comment.date}</p>
                 <div className="comment-content">
                     <p>{comment.text}</p>
                         <span className="actions">
