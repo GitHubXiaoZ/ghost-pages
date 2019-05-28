@@ -33,7 +33,7 @@ class PostItem extends Component {
 
          return (
              <div className="post-user">
-                <p>{post.name}</p>
+                <p>{post.name} {post.date}</p>
                 <div className="post-content">
                     <p>{post.text}</p>
                     <span>{post.likes.length} &#10084; </span>
