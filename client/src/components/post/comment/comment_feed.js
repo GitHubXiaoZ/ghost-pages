@@ -9,15 +9,15 @@ import CommentItem from "./comment_item"
  */
 class CommentFeed extends Component {
     render() {
-        const { comment_list, post_id } = this.props
+        const { comments, post_id } = this.props
         
-        return comment_list.map(comment => <CommentItem key={comment._id} comment={comment} post_id={post_id}/>)
+        return comments.map(comment => <CommentItem key={comment._id} comment={comment} post_id={post_id}/>)
     }
 }
 
 CommentFeed.propTypes = {
     post_id: PropTypes.string.isRequired,
-    comment: PropTypes.array.isRequired
+    comments: PropTypes.array.isRequired
 }
 
 /*export commentfeed*/
