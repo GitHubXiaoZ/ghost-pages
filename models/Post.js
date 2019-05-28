@@ -38,7 +38,7 @@ const PostSchema = new Schema({
             pfp: {
                 type: String
             },
-            data: {
+            date: {
                 type: Date,
                 default: Date.now()
             }
