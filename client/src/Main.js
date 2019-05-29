@@ -61,11 +61,11 @@ class Main extends Component {
                   <Route exact path="/login" component={Login}/>
                   <Route exact path="/profile/:handle" component={Profile}/>
                   <Route exact path="/profiles" component={ProfileList}/>
+                  <Route exact path="/stories" component={PostList}/>
+                  <Route exact path="/stories/:id" component={Post}/>
                   <PrivateRoute exact path="/dashboard" component={Dashboard}/>
                   <PrivateRoute exact path="/new_profile" component={NewProfile}/>
                   <PrivateRoute exact path="/edit_profile" component={EditProfile}/>
-                  <PrivateRoute exact path="/stories" component={PostList}/>
-                  <PrivateRoute exact path="/stories/:id" component={Post}/>
                   <Route component={NotFound}/>
                 </Switch>
               </div>
