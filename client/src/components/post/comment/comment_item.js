@@ -19,7 +19,17 @@ class CommentItem extends Component {
 
          return (
              <div className="comment-user">
-                <p>{comment.name} {comment.date}</p>
+                <span>
+                    {comment.name} &#9674; &nbsp;
+                    {new Intl.DateTimeFormat('en-US', {
+                        year: "numeric",
+                        month: "short",
+                        day: "2-digit",
+                        hour: "numeric",
+                        minute: "numeric",
+                        hour12: true
+                    }).format(Date.parse(comment.date))}
+                </span>
                 <div className="comment-content">
                     <p>{comment.text}</p>
                         <span className="actions">
