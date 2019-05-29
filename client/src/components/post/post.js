@@ -8,6 +8,7 @@ import PostItem from "./post_item"
 import { getPost } from "../../actions/postActions"
 
 import CommentForm from "./comment/comment_form"
+import CommentFeed from "./comment/comment_feed"
 
 /* Class: Post
  * Post component
@@ -29,6 +30,7 @@ class Post extends Component {
                 <div>
                     <PostItem post={post} displayActions={false}/>
                     <CommentForm post_id={post._id}/>
+                    <CommentFeed post_id={post._id} comments={post.comments}/>
                 </div>
             )
         }
