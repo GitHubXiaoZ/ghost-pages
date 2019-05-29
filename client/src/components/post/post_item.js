@@ -33,7 +33,17 @@ class PostItem extends Component {
 
          return (
              <div className="post-user">
-                <p>{post.name} {post.date}</p>
+                <span>
+                    {post.name} &#9830; &nbsp;
+                    {new Intl.DateTimeFormat('en-US', {
+                        year: "numeric",
+                        month: "short",
+                        day: "2-digit",
+                        hour: "numeric",
+                        minute: "numeric",
+                        hour12: true
+                    }).format(Date.parse(post.date))}
+                </span>
                 <div className="post-content">
                     <p>{post.text}</p>
                     <span>{post.likes.length} &#10084; </span>
