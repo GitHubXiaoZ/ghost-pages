@@ -1,7 +1,11 @@
-/*imports*/
+/*import*/
 import axios from "axios"
 
-/*exports*/
+/**
+ * function setAuthToken
+ * @param token jwt token
+ * authenticates user using jwt token
+ */
 const setAuthToken = token => {
     if (token) {
         //sets an authorize token to every request
