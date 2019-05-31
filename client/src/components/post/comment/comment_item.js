@@ -2,7 +2,7 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 import { connect } from "react-redux"
-
+import millsToDaysHoursMinutes from "../../../utils/millsToDaysHoursMinutes"
 import { deleteComment } from "../../../actions/postActions"
 
 /* Class: CommentItem
@@ -16,11 +16,12 @@ class CommentItem extends Component {
 
     render() {
         const { comment, auth, post_id } = this.props
+        let timelapsed = Date.now() - Date.parse(comment.date)
 
          return (
              <div className="comment-user">
                 <span>
-                    {comment.name} &#9674; &nbsp;
+                    {comment.name} &#9674;&nbsp;
                     {new Intl.DateTimeFormat('en-US', {
                         year: "numeric",
                         month: "short",
@@ -28,7 +29,8 @@ class CommentItem extends Component {
                         hour: "numeric",
                         minute: "numeric",
                         hour12: true
-                    }).format(Date.parse(comment.date))}
+                    }).format(Date.parse(comment.date))} &#9674;&nbsp;
+                    {millsToDaysHoursMinutes(timelapsed)}
                 </span>
                 <div className="comment-content">
                     <p>{comment.text}</p>
