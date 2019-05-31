@@ -3,6 +3,7 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 import { connect } from "react-redux"
 import { Link } from "react-router-dom"
+import millsToDaysHoursMinutes from "../../utils/millsToDaysHoursMinutes"
 import { likePost, unlikePost, deletePost } from "../../actions/postActions"
 
 /* Class: PostItem
@@ -30,11 +31,12 @@ class PostItem extends Component {
 
     render() {
         const { post, auth, displayActions } = this.props
+        let timelapsed = Date.now() - Date.parse(post.date)
 
          return (
              <div className="post-user">
                 <span>
-                    {post.name} &#9830; &nbsp;
+                    {post.name} &#9830;&nbsp;
                     {new Intl.DateTimeFormat('en-US', {
                         year: "numeric",
                         month: "short",
@@ -42,7 +44,8 @@ class PostItem extends Component {
                         hour: "numeric",
                         minute: "numeric",
                         hour12: true
-                    }).format(Date.parse(post.date))}
+                    }).format(Date.parse(post.date))} &#9830;&nbsp;
+                    {millsToDaysHoursMinutes(timelapsed)}
                 </span>
                 <div className="post-content">
                     <p>{post.text}</p>
