@@ -57,6 +57,28 @@ router.post("/",
     }
 )
 
+/* PATCH api: posts/id
+ * edits a specific post
+ */
+router.patch("/:id", 
+    passport.authenticate("jwt", { session: false }),
+    (req, res) => {
+        Profile.findOne({ user: req.user.id })
+        .then(profile => {
+            Post.findById(req.params.id)
+                .then(post => {
+                    /*checks if user is the one who created the post*/
+                    if (post.user.toString() !== req.user.id) {
+                        return res.status(401).json({ nopermission: "Not allowed to edit this post!" })
+                    }
+                    post.text = req.body.text
+                    post.save().then(post => res.json(post))
+                })
+                .catch(err => res.status(404).json({ nopost: "Post does not exist!" }))
+        })
+    }
+)
+
 /* DELETE api: posts/id
  * deletes a specific post
  */
