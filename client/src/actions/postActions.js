@@ -29,6 +29,26 @@ export const addPost = postData => dispatch => {
         )
 }
 
+/*add a post*/
+export const editPost = (postData, id, history) => dispatch => {
+    dispatch(resetErrors())
+    axios
+        .patch(`/api/posts/${id}`, postData)
+        .then(res => 
+            dispatch({
+                type: ADD_POST,
+                payload: res.data
+            }),
+            history.push(`/stories/${id}`)
+        )
+        .catch(err =>
+            dispatch({
+                type: GET_ERRORS,
+                payload: err.response.data
+            })
+        )
+}
+
 /*return a post*/
 export const getPost = id => dispatch => {
     dispatch(setPostLoading())
