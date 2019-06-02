@@ -13,7 +13,7 @@ class ProfileHeader extends Component {
 
         return (
             <div className="head">
-                <h3>{username}</h3>
+                <h3>{username} ({profile.handle})</h3>
                 <p>
                     {profile.status}
                     {isEmpty(profile.location) ? null : <span> in {profile.location}</span>}
