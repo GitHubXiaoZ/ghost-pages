@@ -53,7 +53,7 @@ router.get("/handle/:handle",
 )
 
 /* GET api: profile/all
- * returns the profile of the user id
+ * return all profiles
  */
 router.get("/all", 
     (req, res) => {
