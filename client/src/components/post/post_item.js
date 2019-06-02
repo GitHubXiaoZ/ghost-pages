@@ -49,6 +49,13 @@ class PostItem extends Component {
                 </span>
                 <div className="post-content">
                     <p>{post.text}</p>
+                    <div>
+                        {post.user === auth.user.id ? (
+                            <Link to={`/stories/edit/${post._id}`}>
+                                Edit
+                            </Link>
+                        ): null}
+                    </div>
                     <span>{post.likes.length} &#10084; </span>
                     {displayActions ? (
                         <span className="actions">
