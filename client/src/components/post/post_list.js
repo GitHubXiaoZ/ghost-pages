@@ -19,6 +19,7 @@ class PostList extends Component {
 
     render() {
         const { post_list, loading } = this.props.post
+        const { isAuth } = this.props.auth
         let postFeed
 
         if (post_list === null || loading) {
@@ -32,7 +33,7 @@ class PostList extends Component {
                 <div className="user-feed">
                     <Link to="/dashboard">Return</Link>
                 </div>
-                <PostForm/>
+                {isAuth ? <PostForm/> : null}
                 {postFeed}
             </div>
         )
@@ -41,11 +42,13 @@ class PostList extends Component {
 
 PostList.propTypes = {
     post: PropTypes.object.isRequired,
-    getPostList: PropTypes.func.isRequired
+    getPostList: PropTypes.func.isRequired,
+    auth: PropTypes.object.isRequired
 }
 
 const mapStateToProps = state => ({
-    post: state.post
+    post: state.post,
+    auth: state.auth
 })
 
 /*exports postlist*/
