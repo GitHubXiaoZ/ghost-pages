@@ -58,6 +58,24 @@ export const getProfileByHandle = handle => dispatch => {
         )
 }
 
+/*return id's profile*/
+export const getProfileByID = id => dispatch => {
+    dispatch(setProfileLoading())
+    axios
+        .get(`/api/profiles/user/${id}`)
+        .then(res => 
+            dispatch({
+                type: GET_PROFILE,
+                payload: res.data
+            })
+        ).catch(err =>
+            dispatch({
+                type: GET_PROFILE,
+                payload: null
+            })
+        )
+}
+
 /*return list of all profiles*/
 export const getProfileList = () => dispatch => {
     dispatch(setProfileLoading())
