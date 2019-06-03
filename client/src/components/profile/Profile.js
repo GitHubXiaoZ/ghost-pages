@@ -7,6 +7,7 @@ import PropTypes from "prop-types"
 import ProfileHeader from "./profile_header"
 import ProfileContent from "./profile_content"
 import { getProfileByHandle } from "../../actions/profileActions"
+import { getProfileByID } from "../../actions/profileActions"
 
 /* Class: Profile
  * Profile component
@@ -16,6 +17,8 @@ class Profile extends Component {
     componentDidMount() {
         if (this.props.match.params.handle) {
             this.props.getProfileByHandle(this.props.match.params.handle)
+        } else if (this.props.match.params.id) {
+            this.props.getProfileByID(this.props.match.params.id)
         }
     }
 
@@ -54,7 +57,8 @@ class Profile extends Component {
 }
 Profile.propTypes = {
     profile: PropTypes.object.isRequired,
-    getProfileByHandle: PropTypes.func.isRequired
+    getProfileByHandle: PropTypes.func.isRequired,
+    getProfileByID: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({
@@ -64,5 +68,6 @@ const mapStateToProps = state => ({
 /*exports profile*/
 export default connect(
     mapStateToProps,
-    { getProfileByHandle }
+    { getProfileByHandle,
+    getProfileByID }
 ) (Profile)
