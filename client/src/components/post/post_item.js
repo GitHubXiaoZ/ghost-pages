@@ -36,7 +36,10 @@ class PostItem extends Component {
          return (
              <div className="post-user">
                 <span>
-                    {post.name} &#9830;&nbsp;
+                    <Link to={`/user/${post.user}`}>
+                        {post.name}
+                    </Link>
+                    &#9830;&nbsp;
                     {new Intl.DateTimeFormat('en-US', {
                         year: "numeric",
                         month: "short",
