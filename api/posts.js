@@ -48,6 +48,7 @@ router.post("/",
 
         /*create a new post*/
         const newPost = new Post({
+            title: req.body.title,
             text: req.body.text,
             name: req.body.name,
             user: req.user.id
