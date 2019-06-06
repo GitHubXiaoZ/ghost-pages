@@ -72,6 +72,7 @@ router.patch("/:id",
                     if (post.user.toString() !== req.user.id) {
                         return res.status(401).json({ nopermission: "Not allowed to edit this post!" })
                     }
+                    post.title = req.body.title
                     post.text = req.body.text
                     post.save().then(post => res.json(post))
                 })
