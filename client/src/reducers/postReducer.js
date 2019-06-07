@@ -2,6 +2,7 @@
 import {
     ADD_POST,
     GET_POST,
+    EDIT_POST,
     GET_POST_LIST,
     POST_LOADING,
     DELETE_POST
@@ -38,6 +39,11 @@ export default function(state = initialState, action) {
             return {
                 ...state,
                 post_list: [action.payload, ...state.post_list]
+            }
+        case EDIT_POST:
+            return {
+                ...state,
+                post: action.payload
             }
         case DELETE_POST:
             return {
