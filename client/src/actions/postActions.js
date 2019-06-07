@@ -3,7 +3,8 @@ import axios from "axios"
 
 import { 
     ADD_POST, 
-    GET_POST, 
+    GET_POST,
+    EDIT_POST, 
     GET_POST_LIST, 
     POST_LOADING, 
     DELETE_POST,
@@ -36,7 +37,7 @@ export const editPost = (postData, id, history) => dispatch => {
         .patch(`/api/posts/${id}`, postData)
         .then(res => 
             dispatch({
-                type: ADD_POST,
+                type: EDIT_POST,
                 payload: res.data
             }),
             history.push(`/stories/${id}`)
