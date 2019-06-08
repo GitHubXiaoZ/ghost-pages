@@ -13,6 +13,7 @@ class EditPost extends Component {
     constructor(props) {
         super(props)
         this.state = {
+            title: "",
             text: "",
             errors: {}
         }
@@ -33,7 +34,10 @@ class EditPost extends Component {
         if (newProps.post.post) {
             const post = newProps.post.post
 
-            this.setState({text: post.text})
+            this.setState({
+                title: post.title,
+                text: post.text
+            })
         }
     }
 
@@ -48,6 +52,7 @@ class EditPost extends Component {
         const { post } = this.props.post
 
         const postData = {
+            title: this.state.title,
             text: this.state.text,
             name: user.name
         }
@@ -62,7 +67,16 @@ class EditPost extends Component {
             <div className="post-form">
                 <div className="form-body">
                     <form noValidate onSubmit={this.onSubmit}>
-                        <textarea rows="5" cols="25"
+                        <textarea
+                            placeholder="Title"
+                            name="title"
+                            type="title"
+                            onChange={this.onChange}
+                            value={this.state.title}
+                            error={errors.text}
+                            />
+                        <br/>
+                        <textarea rows="5" cols="20"
                             placeholder="..."
                             name="text"
                             type="text" 
