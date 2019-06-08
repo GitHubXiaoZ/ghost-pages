@@ -2,6 +2,7 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 import { connect } from "react-redux"
+import { Link } from "react-router-dom"
 import millsToDaysHoursMinutes from "../../../utils/millsToDaysHoursMinutes"
 import { deleteComment } from "../../../actions/postActions"
 
@@ -21,7 +22,10 @@ class CommentItem extends Component {
          return (
              <div className="comment-user">
                 <span>
-                    {comment.name} &#9674;&nbsp;
+                    <Link to={`/user/${comment.user}`}>
+                        {comment.name} 
+                    </Link>
+                    &#9674;&nbsp;
                     {new Intl.DateTimeFormat('en-US', {
                         year: "numeric",
                         month: "short",
