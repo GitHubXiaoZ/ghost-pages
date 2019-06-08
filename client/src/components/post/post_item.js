@@ -35,11 +35,14 @@ class PostItem extends Component {
 
          return (
              <div className="post-user">
-                <span>
+                <h4>
+                    {post.title ? "『" + post.title + "』by " : " "} 
                     <Link to={`/user/${post.user}`}>
                         {post.name}
                     </Link>
-                    &#9830;&nbsp;
+                </h4>
+                <span>
+                    Posted on&nbsp;
                     {new Intl.DateTimeFormat('en-US', {
                         year: "numeric",
                         month: "short",
