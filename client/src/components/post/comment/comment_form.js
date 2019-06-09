@@ -62,6 +62,9 @@ class CommentForm extends Component {
                             value={this.state.text}
                             error={errors.text}                       
                             />
+                        <span>
+                            {errors.text}
+                        </span>
                         <br/>
                         <button type="submit">
                             Submit
