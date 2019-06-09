@@ -30,10 +30,12 @@ class CommentItem extends Component {
                         year: "numeric",
                         month: "short",
                         day: "2-digit",
+                    }).format(Date.parse(comment.date))} at&nbsp;
+                    {new Intl.DateTimeFormat('en-US', {
                         hour: "numeric",
                         minute: "numeric",
                         hour12: true
-                    }).format(Date.parse(comment.date))} &#9674;&nbsp;
+                    }).format(Date.parse(comment.date))} &#9830;&nbsp;
                     {millsToDaysHoursMinutes(timelapsed)}
                 </span>
                 <div className="comment-content">
