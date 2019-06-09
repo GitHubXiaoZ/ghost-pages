@@ -47,6 +47,8 @@ class PostItem extends Component {
                         year: "numeric",
                         month: "short",
                         day: "2-digit",
+                    }).format(Date.parse(post.date))} at&nbsp;
+                    {new Intl.DateTimeFormat('en-US', {
                         hour: "numeric",
                         minute: "numeric",
                         hour12: true
