@@ -10,7 +10,6 @@
 
 body {
     font-family: 'Ubuntu', sans-serif;
-    line-height: 2;
     background-color: var(--main-bg-color);
     color: var(--main-font-color);
   }
