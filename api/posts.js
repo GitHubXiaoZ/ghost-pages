@@ -74,6 +74,7 @@ router.patch("/:id",
                     }
                     post.title = req.body.title
                     post.text = req.body.text
+                    post.e_date = Date.now()
                     post.save().then(post => res.json(post))
                 })
                 .catch(err => res.status(404).json({ nopost: "Post does not exist!" }))
