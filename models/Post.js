@@ -55,7 +55,10 @@ const PostSchema = new Schema({
     date: {
         type: Date,
         default: Date.now()
-    }
+    },
+    e_date: {
+        type: Date
+    } 
 })
 
 /*exports*/
