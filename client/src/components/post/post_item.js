@@ -64,6 +64,18 @@ class PostItem extends Component {
                             </Link>
                         ): null}
                     </div>
+                    <div>
+                        {post.e_date ? "*Edited on " +
+                         new Intl.DateTimeFormat('en-US', {
+                            year: "numeric",
+                            month: "short",
+                            day: "2-digit", 
+                            hour: "numeric",
+                            minute: "numeric",
+                            hour12: true
+                         }).format(Date.parse(post.e_date)
+                         ): null}
+                    </div>
                     <span>{post.likes.length} &#10084; </span>
                     {displayActions ? (
                         <span className="actions">
@@ -81,7 +93,7 @@ class PostItem extends Component {
                                 >
                                 Unlike
                             </button>
-                            {post.comments.length}
+                            {post.comments.length}&nbsp;
                             <Link to={`/stories/${post._id}`}>
                                 Comments
                             </Link>
