@@ -15,6 +15,14 @@ class ProfileHeader extends Component {
             <div className="head">
                 <h3>{username} ({profile.handle})</h3>
                 <p>
+                    EST&nbsp;
+                    {new Intl.DateTimeFormat('en-US', {
+                        year: "numeric",
+                        month: "short",
+                        day: "2-digit",
+                    }).format(Date.parse(profile.date))}
+                </p>
+                <p>
                     {profile.status}
                     {isEmpty(profile.location) ? null : <span> in {profile.location}</span>}
                 </p>
