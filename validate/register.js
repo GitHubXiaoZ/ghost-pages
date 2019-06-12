@@ -5,6 +5,7 @@ const isEmpty = require("is-empty")
 /*exports*/
 module.exports = validateRegisterInput = data => {
     let errors = {}
+    const regex = /^[a-zA-z ,.'-]+$/g
 
     /*sets fields to empty strings if no input was given */
     data.name = !isEmpty(data.name) ? data.name : ""
@@ -12,9 +13,14 @@ module.exports = validateRegisterInput = data => {
     data.password = !isEmpty(data.password) ? data.password : ""
     data.password2 = !isEmpty(data.password2) ? data.password2 : ""
 
+    const valid_name = data.name.match(regex)
+
     /*validates name field*/
     if (Validator.isEmpty(data.name)) {
         errors.name = "Name required!"
+    } else if (!valid_name) {
+        errors.name = "Name can only include alphabetical characters, "
+        errors.name += "space( ), comma (,), period(.), apostrophe('), underscore(_), and hypen(-)"
     }
 
     if (!Validator.isLength(data.name, { min: 2, max: 15})) {
