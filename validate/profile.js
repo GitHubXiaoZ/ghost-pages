@@ -9,7 +9,6 @@ module.exports = validateProfileInput = data => {
 
     /*sets fields to empty string if no input is given*/
     data.handle = !isEmpty(data.handle) ? data.handle : ""
-    data.status = !isEmpty(data.status) ? data.status : ""
 
     const valid_profile = data.handle.match(regex)
 
@@ -22,10 +21,6 @@ module.exports = validateProfileInput = data => {
 
     if (!Validator.isLength(data.handle, { min: 2, max: 20 })) {
         errors.handle = "Profile handle length must be between 2 and 20 characters!"
-    }
-
-    if (Validator.isEmpty(data.status)) {
-        errors.status = "Profile status required!"
     }
 
     /*returns errors*/
