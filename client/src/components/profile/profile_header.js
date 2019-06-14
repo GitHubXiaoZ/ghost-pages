@@ -23,7 +23,6 @@ class ProfileHeader extends Component {
                     }).format(Date.parse(profile.date))}
                 </p>
                 <p>
-                    {profile.status}
                     {isEmpty(profile.location) ? null : <span> in {profile.location}</span>}
                 </p>
             </div>
