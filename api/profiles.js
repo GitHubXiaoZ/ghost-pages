@@ -110,7 +110,6 @@ router.post("/",
         if (req.body.pfp) profileInfo.pfp = req.body.pfp
         if (req.body.location) profileInfo.location = req.body.location
         if (req.body.bio) profileInfo.bio = req.body.bio
-        if (req.body.status) profileInfo.status = req.body.status
 
         Profile.findOne({ user: req.user.id })
             .then(profile => {
