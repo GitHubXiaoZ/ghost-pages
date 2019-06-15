@@ -20,7 +20,7 @@ module.exports = validateRegisterInput = data => {
         errors.name = "Name required!"
     } else if (!valid_name) {
         errors.name = "Name can only include alphabetical characters, "
-        errors.name += "space( ), comma (,), period(.), apostrophe('), underscore(_), and hypen(-)"
+        errors.name += "spaces( ), commas(,), periods(.), apostrophes('), underscores(_), and hypens(-)"
     }
 
     if (!Validator.isLength(data.name, { min: 2, max: 15})) {
@@ -46,7 +46,7 @@ module.exports = validateRegisterInput = data => {
     if (Validator.isEmpty(data.password2)) {
         errors.password2 = 'Confirm your password!';
       } else if (!Validator.equals(data.password, data.password2)) {
-          errors.password2 = 'Passwords do not match!';
+        errors.password2 = 'Passwords do not match!';
       }
 
     /*returns errors*/
