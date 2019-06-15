@@ -50,6 +50,7 @@ router.post("/",
         const newPost = new Post({
             title: req.body.title,
             text: req.body.text,
+            tags: req.body.tags,
             name: req.body.name,
             user: req.user.id
         })
