@@ -39,7 +39,6 @@ class NewProfile extends Component {
 
         const profileData = {
             handle: this.state.handle,
-            status: this.state.status,
             location: this.state.location,
             bio: this.state.bio,
         }
@@ -68,22 +67,6 @@ class NewProfile extends Component {
                                 />
                                 <span className="handleError">
                                     {errors.handle}
-                                </span>
-                        </div>
-                        <div className="status">
-                            Profile Status
-                            <br/>
-                            <input
-                                placeholder="Status"
-                                name="status"
-                                type="text"
-                                onChange={this.onChange}
-                                value={this.state.status}
-                                error={errors.status}
-                                />
-                                <label>Status</label>
-                                <span className="statusError">
-                                    {errors.status}
                                 </span>
                         </div>
                         <div className="location">
