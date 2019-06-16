@@ -65,6 +65,13 @@ router.post("/",
 router.patch("/:id", 
     passport.authenticate("jwt", { session: false }),
     (req, res) => {
+        /*validates post input*/
+        const { errors, isValid } = validPostInput(req.body)
+
+        if (!isValid) {
+            return res.status(400).json(errors)
+        }
+
         Profile.findOne({ user: req.user.id })
         .then(profile => {
             Post.findById(req.params.id)
@@ -75,7 +82,7 @@ router.patch("/:id",
                     }
                     post.title = req.body.title
                     post.text = req.body.text
-                    post.e_date = Date.now()
+                    post.update = Date.now()
                     post.save().then(post => res.json(post))
                 })
                 .catch(err => res.status(404).json({ nopost: "Post does not exist!" }))
@@ -152,6 +159,23 @@ router.post("/unlike/:id",
         })
     }
 )
+
+/* GET api: posts/comment/id/comment_id
+ * returns a specific posts
+ */
+router.get("/comment/:id/:comment_id", (req, res) => {
+    Post.findById(req.params.id)
+        .then(post => {
+            /*check if the user's comment exists*/
+            if (post.comments.filter(comment => comment._id.toString() === req.params.comment_id).length === 0) {
+                return res.status(404).json({ nocomment: "Comment does not exist! "})
+            }
+            /*index is the index of user's comment in post.comments array*/
+            const index = post.comments.map(item => item._id.toString()).indexOf(req.params.comment_id)
+            res.json(post.comments[index])
+        })
+        .catch(err => res.status(404).json({ nopost: "Post does not exist!" }))
+})
 
 /* POST api: posts/comment/id
  * comment on a specific post
