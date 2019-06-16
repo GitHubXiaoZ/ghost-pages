@@ -9,7 +9,7 @@ module.exports = validatePostInput = data => {
     data.text = !isEmpty(data.text) ? data.text : ""
 
     if (Validator.isEmpty(data.text)) {
-        errors.text = "Post must include some content!"
+        errors.text = "Post cannot be empty!"
     }
 
     if (!Validator.isLength(data.text, { max: 300 })) {
