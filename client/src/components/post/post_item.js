@@ -65,7 +65,7 @@ class PostItem extends Component {
                         ): null}
                     </div>
                     <div>
-                        {post.e_date ? "*Edited on " +
+                        {post.update ? "*Edited on " +
                          new Intl.DateTimeFormat('en-US', {
                             year: "numeric",
                             month: "short",
@@ -73,7 +73,7 @@ class PostItem extends Component {
                             hour: "numeric",
                             minute: "numeric",
                             hour12: true
-                         }).format(Date.parse(post.e_date)
+                         }).format(Date.parse(post.update)
                          ): null}
                     </div>
                     <span>{post.likes.length} &#10084; </span>
