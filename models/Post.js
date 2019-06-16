@@ -56,7 +56,7 @@ const PostSchema = new Schema({
         type: Date,
         default: Date.now()
     },
-    e_date: {
+    update: {
         type: Date
     } 
 })
