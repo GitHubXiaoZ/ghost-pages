@@ -206,6 +206,35 @@ router.post("/comment/:id",
         }
 )
 
+/* PATCH api: posts/comment/id
+ * edit comment on a specific post
+ */
+router.patch("/comment/:id/:comment_id", 
+    passport.authenticate("jwt", { session: false}), 
+    (req, res) => {
+        /*validates comment input*/
+        const { errors, isValid } = validPostInput(req.body)
+
+        if (!isValid) {
+            return res.status(400).json(errors)
+        }
+
+        Post.findById(req.params.id)
+            .then(post => {
+                /*check if the user's comment exists*/
+                if (post.comments.filter(comment => comment._id.toString() === req.params.comment_id).length === 0) {
+                    return res.status(404).json({ nocomment: "Comment does not exist! "})
+                }
+                /*index is the index of user's comment in post.comments array*/
+                const index = post.comments.map(item => item._id.toString()).indexOf(req.params.comment_id)
+                post.comments[index].text = req.body.text
+                post.comments[index].update = Date.now()
+                post.save().then(post => res.json(post))
+            })
+            .catch(err => res.status(404).json({ nopost: "Post does not exist!" }))
+        }
+)
+
 /* DELETE api: posts/comment/id/comment_id
  * delete a comment on a specific post
  */
