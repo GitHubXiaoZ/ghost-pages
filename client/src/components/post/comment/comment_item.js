@@ -40,8 +40,8 @@ class CommentItem extends Component {
                 </span>
                 <div className="comment-content">
                     <p>{comment.text}</p>
-                        <span className="actions">
-                            {comment.user === auth.user.id ? (
+                        {comment.user === auth.user.id ? (
+                            <span className="actions">
                                 <button
                                     onClick={this.onDelete.bind(this, post_id, comment._id)}
                                     type="button"
@@ -49,8 +49,8 @@ class CommentItem extends Component {
                                     >
                                     Delete
                                 </button>
-                            ): null}
-                        </span>
+                            </span>
+                        ): null}                   
                 </div>
              </div>
          )
