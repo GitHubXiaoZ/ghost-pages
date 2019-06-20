@@ -21,6 +21,7 @@ class Post extends Component {
 
     render() {
         const { post, loading } = this.props.post
+        const { isAuth } = this.props.auth
         let postThread
 
         if (post === null || loading || Object.keys(post).length === 0) {
@@ -29,7 +30,7 @@ class Post extends Component {
             postThread =(
                 <div>
                     <PostItem post={post} displayActions={false}/>
-                    <CommentForm post_id={post._id}/>
+                    { isAuth ? <CommentForm post_id={post._id}/> : "Sign in to comment." }
                     <CommentFeed post_id={post._id} comments={post.comments}/>
                 </div>
             )
@@ -48,11 +49,13 @@ class Post extends Component {
 
 Post.propTypes = {
     getPost: PropTypes.func.isRequired,
-    post: PropTypes.object.isRequired
+    post: PropTypes.object.isRequired,
+    auth: PropTypes.object.isRequired
 }
 
 const mapStateToProps = state => ({
-    post: state.post
+    post: state.post,
+    auth: state.auth
 })
 
 /*export post*/
