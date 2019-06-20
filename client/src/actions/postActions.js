@@ -4,7 +4,6 @@ import axios from "axios"
 import { 
     ADD_POST, 
     GET_POST,
-    EDIT_POST, 
     GET_POST_LIST, 
     POST_LOADING, 
     DELETE_POST,
@@ -37,7 +36,7 @@ export const editPost = (postData, id, history) => dispatch => {
         .patch(`/api/posts/${id}`, postData)
         .then(res => 
             dispatch({
-                type: EDIT_POST,
+                type: GET_POST,
                 payload: res.data
             }),
             history.push(`/stories/${id}`)
@@ -141,6 +140,25 @@ export const addComment = (post_id, commentData) => dispatch => {
     dispatch(resetErrors())
     axios
         .post(`/api/posts/comment/${post_id}`, commentData)
+        .then(res => 
+            dispatch({
+                type: GET_POST,
+                payload: res.data
+            })
+        )
+        .catch(err =>
+            dispatch({
+                type: GET_ERRORS,
+                payload: err.response.data
+            })
+        )
+}
+
+/*add a comment to post*/
+export const editComment = (post_id, comment_id, commentData) => dispatch => {
+    dispatch(resetErrors())
+    axios
+        .patch(`/api/posts/comment/${post_id}/${comment_id}`, commentData)
         .then(res => 
             dispatch({
                 type: GET_POST,
