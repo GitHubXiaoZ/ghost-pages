@@ -19,7 +19,7 @@ const PostSchema = new Schema({
     },
     tags: [
         {
-            text: String
+            type: String
         }
     ],
     likes: [
