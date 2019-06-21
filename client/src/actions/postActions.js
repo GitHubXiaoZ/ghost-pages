@@ -173,6 +173,25 @@ export const editComment = (post_id, comment_id, commentData) => dispatch => {
         )
 }
 
+/*return a comment*/
+export const getComment = (id, comment_id) => dispatch => {
+    dispatch(setPostLoading())
+    axios
+        .get( `/api/posts/${id}/${comment_id}`)
+        .then(res =>
+            dispatch({
+                type: GET_POST,
+                payload: res.data
+            })
+        )
+        .catch(err =>
+            dispatch({
+                type: GET_POST,
+                payload: null
+            })
+        )
+}
+
 /*add a comment to post*/
 export const deleteComment = (post_id, comment_id) => dispatch => {
     axios
