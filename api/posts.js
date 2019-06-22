@@ -46,11 +46,18 @@ router.post("/",
             return res.status(400).json(errors)
         }
 
+        const tag_list = []
+        //tags are lowercase with no whitespace
+        const tags = req.body.tags.split(",").map(tag => tag.trim().toLowerCase())
+        //prevent duplicate tags
+        tags.map(tag => !tag_list.includes(tag) ? tag_list.unshift(tag) : null)
+
         /*create a new post*/
         const newPost = new Post({
             title: req.body.title,
             text: req.body.text,
-            tags: req.body.tags,
+            //alphabetical order
+            tags: tag_list.sort(),
             name: req.body.name,
             user: req.user.id
         })
