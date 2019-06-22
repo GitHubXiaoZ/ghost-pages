@@ -15,6 +15,7 @@ class PostForm extends Component {
         this.state = {
             title: "",
             text: "",
+            tags: "",
             errors: {}
         }
         
@@ -40,13 +41,15 @@ class PostForm extends Component {
         const newPost = {
             title: this.state.title,
             text: this.state.text,
+            tags: this.state.tags,
             name: user.name
         }
 
         this.props.addPost(newPost)
         this.setState({ 
             title: "",
-            text: "" 
+            text: "",
+            tags: ""
         })
     }
     
@@ -74,6 +77,15 @@ class PostForm extends Component {
                             value={this.state.text}
                             error={errors.text}                       
                             />
+                        <br/>
+                        <textarea
+                            placeholder="Tags"
+                            name="tags"
+                            type="text"
+                            onChange={this.onChange}
+                            value={this.state.tags}
+                            error={errors.text}
+                            />                        
                         <span className="postError">
                             {errors.text}
                         </span>
