@@ -57,6 +57,7 @@ class PostItem extends Component {
                 </span>
                 <div className="post-content">
                     <p>{post.text}</p>
+                    <p>{post.tags.map(tag => "#" + tag + " ")}</p>
                     <div>
                         {post.user === auth.user.id ? (
                             <Link to={`/stories/edit/${post._id}`}>
