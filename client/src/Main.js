@@ -26,6 +26,7 @@ import EditProfile from "./components/profile/edit_profile"
 import PostList from "./components/post/post_list"
 import Post from "./components/post/post"
 import EditPost from "./components/post/edit_post"
+import EditComment from "./components/post/comment/edit_comment"
 
 //check local storage for token
 if (localStorage.jwtToken) {
@@ -66,6 +67,7 @@ class Main extends Component {
                   <Route exact path="/stories" component={PostList}/>
                   <Route exact path="/stories/:id" component={Post}/>
                   <PrivateRoute exact path="/stories/edit/:id" component={EditPost}/>
+                  <PrivateRoute exact path="/stories/edit/:id/:comment_id" component={EditComment}/>
                   <PrivateRoute exact path="/dashboard" component={Dashboard}/>
                   <PrivateRoute exact path="/new_profile" component={NewProfile}/>
                   <PrivateRoute exact path="/edit_profile" component={EditProfile}/>
