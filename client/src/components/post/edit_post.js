@@ -15,6 +15,7 @@ class EditPost extends Component {
         this.state = {
             title: "",
             text: "",
+            tags: "",
             errors: {}
         }
         
@@ -36,7 +37,8 @@ class EditPost extends Component {
 
             this.setState({
                 title: post.title,
-                text: post.text
+                text: post.text,
+                tags: post.tags
             })
         }
     }
@@ -54,6 +56,7 @@ class EditPost extends Component {
         const postData = {
             title: this.state.title,
             text: this.state.text,
+            tags: this.state.tags,
             name: user.name
         }
 
@@ -84,6 +87,15 @@ class EditPost extends Component {
                             value={this.state.text}
                             error={errors.text}                       
                             />
+                        <br/>
+                        <textarea
+                            placeholder="Tags"
+                            name="tags"
+                            type="text"
+                            onChange={this.onChange}
+                            value={this.state.tags}
+                            error={errors.text}
+                            />                                  
                         <span className="postError">
                             {errors.text}
                         </span>
