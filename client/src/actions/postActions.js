@@ -177,7 +177,7 @@ export const editComment = (post_id, comment_id, commentData) => dispatch => {
 export const getComment = (id, comment_id) => dispatch => {
     dispatch(setPostLoading())
     axios
-        .get( `/api/posts/${id}/${comment_id}`)
+        .get( `/api/posts/comment/${id}/${comment_id}`)
         .then(res =>
             dispatch({
                 type: GET_POST,
