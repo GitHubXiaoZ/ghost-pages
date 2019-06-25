@@ -3,6 +3,7 @@ import React, { Component } from "react"
 import PropTypes from "prop-types"
 import { connect } from "react-redux"
 import { Link } from "react-router-dom"
+
 import millsToDaysHoursMinutes from "../../../utils/millsToDaysHoursMinutes"
 import { deleteComment } from "../../../actions/postActions"
 
@@ -42,6 +43,9 @@ class CommentItem extends Component {
                     <p>{comment.text}</p>
                         {comment.user === auth.user.id ? (
                             <span className="actions">
+                                <Link to={`/stories/edit/${post_id}/${comment._id}`}>
+                                    Edit
+                                </Link>
                                 <button
                                     onClick={this.onDelete.bind(this, post_id, comment._id)}
                                     type="button"
