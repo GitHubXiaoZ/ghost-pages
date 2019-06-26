@@ -4,6 +4,7 @@ import { connect } from "react-redux"
 import { Link } from "react-router-dom"
 import PropTypes from "prop-types"
 
+import Loading from "../layout/Loading"
 import PostForm from "./post_form"
 import PostFeed from "./post_feed"
 import { getPostList } from "../../actions/postActions"
@@ -23,7 +24,7 @@ class PostList extends Component {
         let postFeed
 
         if (post_list === null || loading) {
-            postFeed = <h3>transmitting...</h3>
+            postFeed = <Loading/>
         } else {
             postFeed = <PostFeed post_list={post_list}/>
         }
