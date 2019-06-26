@@ -4,6 +4,8 @@ import { connect } from "react-redux"
 import { Link } from "react-router-dom"
 import PropTypes from "prop-types"
 
+import Loading from "../layout/Loading"
+
 import PostItem from "./post_item"
 import { getPost } from "../../actions/postActions"
 
@@ -25,7 +27,7 @@ class Post extends Component {
         let postThread
 
         if (post === null || loading || Object.keys(post).length === 0) {
-            postThread = <h3>transmitting</h3>
+            postThread = <Loading/>
         } else {
             postThread =(
                 <div>
