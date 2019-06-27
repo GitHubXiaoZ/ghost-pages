@@ -4,6 +4,7 @@ import { connect } from "react-redux"
 import { Link } from "react-router-dom"
 import PropTypes from "prop-types"
 
+import Loading from "../layout/Loading"
 import { getCurrentProfile, deleteAccount } from "../../actions/profileActions"
 import ProfilePreference from "./ProfilePreference"
 
@@ -27,7 +28,7 @@ class Dashboard extends Component {
         let dashboardFeed
 
         if (profile === null || loading) {
-            dashboardFeed = <h3>transmitting...</h3>
+            dashboardFeed = <Loading/>
         } else {
             if (Object.keys(profile).length > 0) {
                 dashboardFeed = (
