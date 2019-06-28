@@ -54,7 +54,7 @@ class EditComment extends Component {
             name: user.name
         }
 
-        this.props.editComment(post._id, commentData)
+        this.props.editComment(post.postID, post._id, commentData, this.props.history)
     }
     
     render() {
@@ -77,7 +77,7 @@ class EditComment extends Component {
                         </span>
                         <br/>
                         <button type="submit">
-                            Add Comment
+                            Edit Comment
                         </button>
                     </form>
                 </div>
