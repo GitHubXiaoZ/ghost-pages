@@ -155,7 +155,7 @@ export const addComment = (post_id, commentData) => dispatch => {
 }
 
 /*add a comment to post*/
-export const editComment = (post_id, comment_id, commentData) => dispatch => {
+export const editComment = (post_id, comment_id, commentData, history) => dispatch => {
     dispatch(resetErrors())
     axios
         .patch(`/api/posts/comment/${post_id}/${comment_id}`, commentData)
@@ -163,7 +163,8 @@ export const editComment = (post_id, comment_id, commentData) => dispatch => {
             dispatch({
                 type: GET_POST,
                 payload: res.data
-            })
+            }),
+            history.push(`/stories`)
         )
         .catch(err =>
             dispatch({
@@ -174,10 +175,10 @@ export const editComment = (post_id, comment_id, commentData) => dispatch => {
 }
 
 /*return a comment*/
-export const getComment = (id, comment_id) => dispatch => {
+export const getComment = (post_id, comment_id) => dispatch => {
     dispatch(setPostLoading())
     axios
-        .get( `/api/posts/comment/${id}/${comment_id}`)
+        .get( `/api/posts/comment/${post_id}/${comment_id}`)
         .then(res =>
             dispatch({
                 type: GET_POST,
