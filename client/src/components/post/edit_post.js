@@ -1,6 +1,7 @@
 /*imports*/
 import React, { Component } from "react"
 import { connect } from "react-redux"
+import { Link } from "react-router-dom"
 import PropTypes from "prop-types"
 
 import { editPost, getPost } from "../../actions/postActions"
@@ -50,14 +51,11 @@ class EditPost extends Component {
     onSubmit = e => {
         e.preventDefault()
 
-        const { user } = this.props.auth
         const { post } = this.props.post
 
         const postData = {
             title: this.state.title,
             text: this.state.text,
-            tags: this.state.tags,
-            name: user.name
         }
 
         this.props.editPost(postData, post._id, this.props.history)
@@ -68,6 +66,7 @@ class EditPost extends Component {
 
         return(
             <div className="post-form">
+                <Link to="/stories">Return</Link>
                 <div className="form-body">
                     <form noValidate onSubmit={this.onSubmit}>
                         <textarea
@@ -87,21 +86,13 @@ class EditPost extends Component {
                             value={this.state.text}
                             error={errors.text}                       
                             />
-                        <br/>
-                        <textarea
-                            placeholder="Tags"
-                            name="tags"
-                            type="text"
-                            onChange={this.onChange}
-                            value={this.state.tags}
-                            error={errors.text}
-                            />                                  
+                        <br/>                             
                         <span className="postError">
                             {errors.text}
                         </span>
                         <br/>
                         <button type="submit">
-                            Submit
+                            Edit Post
                         </button>
                     </form>
                 </div>
