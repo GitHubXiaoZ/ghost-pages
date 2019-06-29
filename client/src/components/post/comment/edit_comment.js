@@ -46,12 +46,10 @@ class EditComment extends Component {
     onSubmit = e => {
         e.preventDefault()
 
-        const { user } = this.props.auth
         const { post } = this.props.post
 
         const commentData = {
             text: this.state.text,
-            name: user.name
         }
 
         this.props.editComment(post.postID, post._id, commentData, this.props.history)
