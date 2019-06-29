@@ -47,10 +47,12 @@ router.post("/",
         }
 
         const tag_list = []
-        //tags are lowercase with no whitespace
-        const tags = req.body.tags.split(",").map(tag => tag.trim().toLowerCase())
-        //prevent duplicate tags
-        tags.map(tag => !tag_list.includes(tag) ? tag_list.unshift(tag) : null)
+        if (req.body.tags) {
+            //tags are lowercase with no whitespace           
+            const tags = req.body.tags.split(",").map(tag => tag.trim().toLowerCase())
+            //prevent duplicate tags
+            tags.map(tag => !tag_list.includes(tag) ? tag_list.unshift(tag) : null)
+        } 
 
         /*create a new post*/
         const newPost = new Post({
@@ -203,7 +205,8 @@ router.post("/comment/:id",
                 const newComment = {
                     text: req.body.text,
                     name: req.body.name,
-                    user: req.user.id
+                    user: req.user.id,
+                    postID: post.id
                 }
                 /*add comment to post.comments array*/
                 post.comments.unshift(newComment)
