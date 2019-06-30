@@ -3,6 +3,7 @@ import React, { Component } from "react"
 import { connect } from "react-redux"
 import PropTypes from "prop-types"
 
+import Loading from "../layout/Loading"
 import { getProfileList } from "../../actions/profileActions"
 import ProfileItem from "./profile_item"
 
@@ -20,7 +21,7 @@ class ProfileList extends Component {
         let profileItems
 
         if (profile_list === null || loading) {
-            profileItems = <h3>transmitting...</h3>
+            profileItems = <Loading/>
         } else {
             if (profile_list.length > 0) {
                 profileItems = profile_list.map(profile => (
