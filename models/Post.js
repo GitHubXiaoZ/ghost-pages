@@ -47,9 +47,28 @@ const PostSchema = new Schema({
             name: {
                 type: String
             },
-            pfp: {
-                type: String
-            },
+            comments : [
+                {
+                    user: {
+                        type: Schema.Types.ObjectId,
+                        ref: "users"
+                    },
+                    text: {
+                        type: String,
+                        required: true
+                    },
+                    name: {
+                        type: String
+                    },
+                    date: {
+                        type: Date,
+                        default: Date.now
+                    },
+                    update: {
+                        type: Date
+                    }
+                }
+            ],
             date: {
                 type: Date,
                 default: Date.now()
