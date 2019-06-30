@@ -41,6 +41,18 @@ class CommentItem extends Component {
                 </span>
                 <div className="comment-content">
                     <p>{comment.text}</p>
+                    <div>
+                        {comment.update ? "*Edited on " +
+                         new Intl.DateTimeFormat('en-US', {
+                            year: "numeric",
+                            month: "short",
+                            day: "2-digit", 
+                            hour: "numeric",
+                            minute: "numeric",
+                            hour12: true
+                         }).format(Date.parse(comment.update)
+                         ): null}
+                    </div>                    
                         {comment.user === auth.user.id ? (
                             <span className="actions">
                                 <Link to={`/stories/edit/${post_id}/${comment._id}`}>
