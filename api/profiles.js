@@ -20,7 +20,7 @@ router.get("/",
         const errors = {}
         
         Profile.findOne({ user: req.user.id })
-            .populate("user", ["name", "handle"])
+            .populate("user", ["name"])
             .then(profile => {
                 if (!profile) {
                     errors.nullprofile = "This profile does not exist!"
@@ -40,7 +40,7 @@ router.get("/handle/:handle",
         const errors = {}
 
         Profile.findOne({ handle: req.params.handle })
-            .populate("user", ["name", "handle"])
+            .populate("user", ["name"])
             .then(profile => {
                 if (!profile) {
                     errors.nullprofile = "This profile does not exist!"
@@ -60,7 +60,7 @@ router.get("/all",
         const errors = {}
 
         Profile.find()
-            .populate("user", ["name", "handle"])
+            .populate("user", ["name"])
             .then(profiles => {
                 if (!profiles) {
                     errors.noprofiles = "Cannot find any profiles!"
@@ -80,7 +80,7 @@ router.get("/user/:user_id",
         const errors = {}
 
         Profile.findOne({ user: req.params.user_id })
-            .populate("user", ["name", "handle"])
+            .populate("user", ["name"])
             .then(profile => {
                 if (!profile) {
                     errors.nullprofile = "This profile does not exist!"
