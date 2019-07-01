@@ -2,6 +2,53 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
+const CommentSchema = new Schema({
+    postID: {
+        type: Schema.Types.ObjectId,
+        ref: "post"
+    },
+    user: {
+        type: Schema.Types.ObjectId,
+        ref: "users"
+    },
+    text: {
+        type: String,
+        required: true
+    },
+    name: {
+        type: String
+    },
+    comments : [
+        {
+            user: {
+                type: Schema.Types.ObjectId,
+                ref: "users"
+            },
+            text: {
+                type: String,
+                required: true
+            },
+            name: {
+                type: String
+            },
+            date: {
+                type: Date,
+                default: Date.now
+            },
+            update: {
+                type: Date
+            }
+        }
+    ],
+    date: {
+        type: Date,
+        default: Date.now()
+    },
+    update: {
+        type: Date
+    }
+})
+
 const PostSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
@@ -32,50 +79,7 @@ const PostSchema = new Schema({
     ],
     comments: [
         {
-            postID: {
-                type: Schema.Types.ObjectId,
-                ref: "post"
-            },
-            user: {
-                type: Schema.Types.ObjectId,
-                ref: "users"
-            },
-            text: {
-                type: String,
-                required: true
-            },
-            name: {
-                type: String
-            },
-            comments : [
-                {
-                    user: {
-                        type: Schema.Types.ObjectId,
-                        ref: "users"
-                    },
-                    text: {
-                        type: String,
-                        required: true
-                    },
-                    name: {
-                        type: String
-                    },
-                    date: {
-                        type: Date,
-                        default: Date.now
-                    },
-                    update: {
-                        type: Date
-                    }
-                }
-            ],
-            date: {
-                type: Date,
-                default: Date.now()
-            },
-            update: {
-                type: Date
-            }
+            CommentSchema
         }
     ],
     date: {
