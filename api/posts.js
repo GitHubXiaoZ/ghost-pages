@@ -24,16 +24,6 @@ router.get("/", (req, res) => {
         .catch(err => res.status(404).json({ noposts: "Posts have not been created!" }))
 })
 
-/* GET api: posts
- * returns all posts
- */
-router.get("/tag/:tag", (req, res) => {
-    /*sort posts by recency*/
-    Post.find({tags: [req.params.tag]})
-        .then(posts => res.json(posts))
-        .catch(err => res.status(404).json({ noposts: "Posts have not been created!" }))
-})
-
 /* GET api: posts/id
  * returns a specific posts
  */
@@ -41,6 +31,25 @@ router.get("/:id", (req, res) => {
     Post.findById(req.params.id)
         .then(posts => res.json(posts))
         .catch(err => res.status(404).json({ nopost: "Post does not exist!" }))
+})
+
+/* GET api: posts
+ * returns all posts with requested tag
+ */
+router.get("/tag/:tag", (req, res) => {
+    Post.find({ tags: [req.params.tag] })
+        .then(posts => res.json(posts))
+        .catch(err => res.status(404).json({ noposts: "Posts have not been created!" }))
+})
+
+/* GET api: posts
+ * returns all posts with requested tag
+ */
+router.get("/user/:id", (req, res) => {
+    Post.find({ user: req.params.id })
+        .populate("user", ["name"])
+        .then(posts => res.json(posts))
+        .catch(err => res.status(404).json({ noposts: "Posts have not been created!" }))
 })
 
 /* POST api: posts
