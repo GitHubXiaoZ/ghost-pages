@@ -17,9 +17,11 @@ router.get("/test", (req, res) => res.json({ msg: "Post route -- working." }))
  * returns all posts
  */
 router.get("/", (req, res) => {
-    /*sort posts by recency*/
+    //sorts by query
+    //default by new
+    let sort = req.query.sort ? req.query.sort : -1
     Post.find()
-        .sort({ date: -1 })
+        .sort({ date: sort })
         .then(posts => res.json(posts))
         .catch(err => res.status(404).json({ noposts: "Posts have not been created!" }))
 })
@@ -37,17 +39,21 @@ router.get("/:id", (req, res) => {
  * returns all posts with requested tag
  */
 router.get("/tag/:tag", (req, res) => {
+    let sort = req.query.sort ? req.query.sort : -1
     Post.find({ tags: [req.params.tag] })
+        .sort({ date: sort })
         .then(posts => res.json(posts))
         .catch(err => res.status(404).json({ noposts: "Posts have not been created!" }))
 })
 
 /* GET api: posts
- * returns all posts with requested tag
+ * returns all posts created by the user
  */
 router.get("/user/:id", (req, res) => {
+    let sort = req.query.sort ? req.query.sort : -1
     Post.find({ user: req.params.id })
         .populate("user", ["name"])
+        .sort({ date: sort })
         .then(posts => res.json(posts))
         .catch(err => res.status(404).json({ noposts: "Posts have not been created!" }))
 })
