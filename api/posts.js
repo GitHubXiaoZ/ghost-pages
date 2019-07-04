@@ -58,6 +58,26 @@ router.get("/user/:id", (req, res) => {
         .catch(err => res.status(404).json({ noposts: "Posts have not been created!" }))
 })
 
+/* GET api: posts
+ * returns all posts created by the user
+ */
+router.get("/users/:handle", (req, res) => {
+    let sort = req.query.sort ? req.query.sort : -1
+    Profile.findOne({ handle: req.params.handle })
+            .populate("user", ["name"])
+            .then(profile => {
+                if (!profile) {
+                    errors.nullprofile = "This profile does not exist!"
+                    return res.status(404).json(errors)
+                }
+                Post.find({ user: profile.user._id })
+                    .sort({ date: sort })
+                    .then(posts => res.json(posts))
+                    .catch(err => res.status(404).json({ noposts: "Posts have not been created!" }))
+            })
+            .catch(err => res.status(404).json(err))
+})
+
 /* POST api: posts
  * create a post from a user
  */
