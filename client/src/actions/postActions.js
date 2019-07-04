@@ -29,7 +29,7 @@ export const addPost = postData => dispatch => {
         )
 }
 
-/*add a post*/
+/*edit a post*/
 export const editPost = (postData, id, history) => dispatch => {
     dispatch(resetErrors())
     axios
@@ -68,11 +68,30 @@ export const getPost = id => dispatch => {
         )
 }
 
-/*return all post*/
+/*return all posts*/
 export const getPostList = () => dispatch => {
     dispatch(setPostLoading())
     axios
         .get("/api/posts")
+        .then(res =>
+            dispatch({
+                type: GET_POST_LIST,
+                payload: res.data
+            })
+        )
+        .catch(err =>
+            dispatch({
+                type: GET_POST_LIST,
+                payload: null
+            })
+        )
+}
+
+/*return all user's posts*/
+export const getPostListByUser = user_id => dispatch => {
+    dispatch(setPostLoading())
+    axios
+        .get(`/api/posts/user/${user_id}`)
         .then(res =>
             dispatch({
                 type: GET_POST_LIST,
@@ -154,7 +173,7 @@ export const addComment = (post_id, commentData) => dispatch => {
         )
 }
 
-/*add a comment to post*/
+/*edit a comment*/
 export const editComment = (post_id, comment_id, commentData, history) => dispatch => {
     dispatch(resetErrors())
     axios
@@ -193,7 +212,7 @@ export const getComment = (post_id, comment_id) => dispatch => {
         )
 }
 
-/*add a comment to post*/
+/*delete a comment*/
 export const deleteComment = (post_id, comment_id) => dispatch => {
     axios
         .delete(`/api/posts/comment/${post_id}/${comment_id}`)
