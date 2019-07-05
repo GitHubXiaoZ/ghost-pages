@@ -23,6 +23,7 @@ import ProfileList from "./components/profile/profile_list"
 import NewProfile from "./components/profile/new_profile"
 import EditProfile from "./components/profile/edit_profile"
 
+import ProfilePostList from "./components/post/profile_post_list"
 import PostList from "./components/post/post_list"
 import Post from "./components/post/post"
 import EditPost from "./components/post/edit_post"
@@ -64,6 +65,7 @@ class Main extends Component {
                   <Route exact path="/profile/:handle" component={Profile}/>
                   <Route exact path="/user/:id" component={Profile}/>
                   <Route exact path="/profiles" component={ProfileList}/>
+                  <Route exact path="/profiles/posts/:handle" component={ProfilePostList}/>
                   <Route exact path="/stories" component={PostList}/>
                   <Route exact path="/stories/:id" component={Post}/>
                   <PrivateRoute exact path="/stories/edit/:id" component={EditPost}/>
