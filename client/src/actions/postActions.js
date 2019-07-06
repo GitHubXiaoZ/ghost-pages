@@ -106,6 +106,26 @@ export const getPostListByUser = user_id => dispatch => {
         )
 }
 
+
+/*return all user's posts*/
+export const getPostListByHandle = handle => dispatch => {
+    dispatch(setPostLoading())
+    axios
+        .get(`/api/posts/users/${handle}`)
+        .then(res =>
+            dispatch({
+                type: GET_POST_LIST,
+                payload: res.data
+            })
+        )
+        .catch(err =>
+            dispatch({
+                type: GET_POST_LIST,
+                payload: null
+            })
+        )
+}
+
 /*delete a post*/
 export const deletePost = id => dispatch => {
     axios
