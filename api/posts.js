@@ -35,7 +35,7 @@ router.get("/:id", (req, res) => {
         .catch(err => res.status(404).json({ nopost: "Post does not exist!" }))
 })
 
-/* GET api: posts
+/* GET api: posts/tag
  * returns all posts with requested tag
  */
 router.get("/tag/:tag", (req, res) => {
@@ -46,7 +46,7 @@ router.get("/tag/:tag", (req, res) => {
         .catch(err => res.status(404).json({ noposts: "Posts have not been created!" }))
 })
 
-/* GET api: posts
+/* GET api: posts/user/id
  * returns all posts created by the user
  */
 router.get("/user/:id", (req, res) => {
@@ -58,7 +58,7 @@ router.get("/user/:id", (req, res) => {
         .catch(err => res.status(404).json({ noposts: "Posts have not been created!" }))
 })
 
-/* GET api: posts
+/* GET api: posts/users/handle
  * returns all posts created by the user
  */
 router.get("/users/:handle", (req, res) => {
