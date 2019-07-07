@@ -60,7 +60,7 @@ class PostItem extends Component {
                     <p>{post.tags ? post.tags.map(tag => "#" + tag + " ") : ""}</p>
                     <div>
                         {post.user === auth.user.id ? (
-                            <Link to={`/stories/edit/${post._id}`}>
+                            <Link to={`/notes/edit/${post._id}`}>
                                 Edit
                             </Link>
                         ): null}
@@ -95,7 +95,7 @@ class PostItem extends Component {
                                 Unlike
                             </button>
                             {post.comments.length}&nbsp;
-                            <Link to={`/stories/${post._id}`}>
+                            <Link to={`/notes/${post._id}`}>
                                 Comments
                             </Link>
                             {post.user === auth.user.id ? (
