@@ -24,8 +24,8 @@ class Navbar extends Component {
                         </Link>
                     </li>
                     <li>
-                        <Link to="/stories">
-                        Stories
+                        <Link to="/notes">
+                        Newsfeed
                         </Link>
                     </li>
                     <li>
@@ -62,8 +62,8 @@ class Navbar extends Component {
                         GHOST
                         </Link>
                     </span>
-                    <span className="stories">
-                        <Link to="/stories">
+                    <span className="notes">
+                        <Link to="/notes">
                         PAGES
                         </Link>
                     </span>
