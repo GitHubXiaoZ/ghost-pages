@@ -66,10 +66,10 @@ class Main extends Component {
                   <Route exact path="/user/:id" component={Profile}/>
                   <Route exact path="/profiles" component={ProfileList}/>
                   <Route exact path="/profiles/posts/:handle" component={ProfilePostList}/>
-                  <Route exact path="/stories" component={PostList}/>
-                  <Route exact path="/stories/:id" component={Post}/>
-                  <PrivateRoute exact path="/stories/edit/:id" component={EditPost}/>
-                  <PrivateRoute exact path="/stories/edit/:id/:comment_id" component={EditComment}/>
+                  <Route exact path="/notes" component={PostList}/>
+                  <Route exact path="/notes/:id" component={Post}/>
+                  <PrivateRoute exact path="/notes/edit/:id" component={EditPost}/>
+                  <PrivateRoute exact path="/notes/edit/:id/:comment_id" component={EditComment}/>
                   <PrivateRoute exact path="/dashboard" component={Dashboard}/>
                   <PrivateRoute exact path="/new_profile" component={NewProfile}/>
                   <PrivateRoute exact path="/edit_profile" component={EditProfile}/>
