@@ -39,7 +39,7 @@ export const editPost = (postData, id, history) => dispatch => {
                 type: GET_POST,
                 payload: res.data
             }),
-            history.push(`/stories/${id}`)
+            history.push(`/notes/${id}`)
         )
         .catch(err =>
             dispatch({
@@ -203,7 +203,7 @@ export const editComment = (post_id, comment_id, commentData, history) => dispat
                 type: GET_POST,
                 payload: res.data
             }),
-            history.push(`/stories`)
+            history.push(`/notes`)
         )
         .catch(err =>
             dispatch({
