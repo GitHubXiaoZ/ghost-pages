@@ -55,7 +55,7 @@ class CommentItem extends Component {
                     </div>                    
                         {comment.user === auth.user.id ? (
                             <span className="actions">
-                                <Link to={`/stories/edit/${post_id}/${comment._id}`}>
+                                <Link to={`/notes/edit/${post_id}/${comment._id}`}>
                                     Edit
                                 </Link>
                                 <button
