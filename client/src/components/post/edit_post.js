@@ -66,7 +66,7 @@ class EditPost extends Component {
 
         return(
             <div className="post-form">
-                <Link to="/stories">Return</Link>
+                <Link to="/notes">Return</Link>
                 <div className="form-body">
                     <form noValidate onSubmit={this.onSubmit}>
                         <textarea
@@ -92,7 +92,7 @@ class EditPost extends Component {
                         </span>
                         <br/>
                         <button type="submit">
-                            Edit Post
+                            Edit
                         </button>
                     </form>
                 </div>
