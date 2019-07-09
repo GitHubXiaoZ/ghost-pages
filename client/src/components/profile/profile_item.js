@@ -16,8 +16,7 @@ class ProfileItem extends Component {
             <div className="profile-list">
                 <div className="profile">
                     <h3>{profile.user.name}</h3>
-                    <p>{profile.status}</p>
-                    <p>{isEmpty(profile.location) ? null : (<span>{profile.location}</span>)}</p>
+                    <p>{isEmpty(profile.location) ? null : (<span> @{profile.location}</span>)}</p>
                     <Link to={`profile/${profile.handle}`}>View</Link>
                 </div>
             </div>
