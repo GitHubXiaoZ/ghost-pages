@@ -4,7 +4,7 @@ const router = express.Router()
 const mongoose = require("mongoose")
 const passport = require("passport")
 
-const Post = require("../models/Post")
+const { Post } = require("../models/Post")
 const Profile = require("../models/Profile")
 const User = require("../models/User")
 
