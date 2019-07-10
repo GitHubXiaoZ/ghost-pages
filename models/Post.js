@@ -20,24 +20,8 @@ const CommentSchema = new Schema({
     },
     comments: [
         {
-            user: {
-                type: Schema.Types.ObjectId,
-                ref: "users"
-            },
-            text: {
-                type: String,
-                required: true
-            },
-            name: {
-                type: String
-            },
-            date: {
-                type: Date,
-                default: Date.now
-            },
-            update: {
-                type: Date
-            }
+            type: Schema.Types.ObjectId,
+            ref: "comment"
         }
     ],
     date: {
@@ -79,7 +63,34 @@ const PostSchema = new Schema({
     ],
     comments: [
         {
-            CommentSchema
+            postID: {
+                type: Schema.Types.ObjectId,
+                ref: "post"
+            },
+            user: {
+                type: Schema.Types.ObjectId,
+                ref: "users"
+            },
+            text: {
+                type: String,
+                required: true
+            },
+            name: {
+                type: String
+            },
+            comments: [
+                {
+                    type: Schema.Types.ObjectId,
+                    ref: "comment"
+                }
+            ],
+            date: {
+                type: Date,
+                default: Date.now()
+            },
+            update: {
+                type: Date
+            }
         }
     ],
     date: {
@@ -91,5 +102,11 @@ const PostSchema = new Schema({
     } 
 })
 
+const Post = mongoose.model("post", PostSchema)
+const Comment = mongoose.model("comment", CommentSchema)
+
 /*exports*/
-module.exports = Post = mongoose.model("post", PostSchema)
+module.exports = {
+    Post: Post,
+    Comment: Comment
+}
