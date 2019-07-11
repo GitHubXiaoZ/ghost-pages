@@ -33,7 +33,7 @@ class Dashboard extends Component {
             if (Object.keys(profile).length > 0) {
                 dashboardFeed = (
                 <div>
-                    <h3>Welcome back, <Link to={`/profile/${profile.handle}`}>{ user.name }</Link>!</h3>
+                    <h3>Welcome back, <Link to={`/profile/${profile.handle}`}>{user.name}</Link>!</h3>
                     <ProfilePreference />
                     <button onClick={this.onDeleteClick.bind(this)}>
                         Delete Account
@@ -43,7 +43,7 @@ class Dashboard extends Component {
             } else {
                 dashboardFeed = (
                     <div>
-                        <p>Hello, { user.name }</p>
+                        <p>Hello, {user.name}</p>
                         <p>Set up your profile <Link to="/new_profile">here!</Link></p>
                     </div>
                 )
