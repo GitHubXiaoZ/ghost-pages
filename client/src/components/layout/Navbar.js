@@ -25,7 +25,7 @@ class Navbar extends Component {
                     </li>
                     <li>
                         <Link to="/notes">
-                        Newsfeed
+                        Notebook
                         </Link>
                     </li>
                     <li>
