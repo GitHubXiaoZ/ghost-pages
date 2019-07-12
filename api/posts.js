@@ -35,6 +35,20 @@ router.get("/:id", (req, res) => {
         .catch(err => res.status(404).json({ nopost: "Post does not exist!" }))
 })
 
+/* GET api: posts/tags/all
+ * returns all tags
+ */
+router.get("/tags/all", (req, res) => {
+    Post.find()
+        .then(posts => {
+            const tag_list = []
+            //append the unique tag of each post separately into the master tag list
+            posts.forEach(post => post.tags.forEach(tag => tag_list.includes(tag) ? null : tag_list.unshift(tag)))
+            res.json(tag_list.sort())
+        })
+        .catch(err => res.status(404).json({ noposts: "Posts have not been created!" }))
+})
+
 /* GET api: posts/tag
  * returns all posts with requested tag
  */
@@ -96,7 +110,7 @@ router.post("/",
             //tags are lowercase with no whitespace           
             const tags = req.body.tags.split(",").map(tag => tag.trim().toLowerCase())
             //prevent duplicate tags
-            tags.map(tag => !tag_list.includes(tag) ? tag_list.unshift(tag) : null)
+            tags.map(tag => tag_list.includes(tag) ? null : tag_list.unshift(tag))
         } 
 
         /*create a new post*/
