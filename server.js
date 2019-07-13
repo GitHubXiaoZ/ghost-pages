@@ -6,6 +6,7 @@ const passport = require("passport")
 const users = require("./api/users")
 const profiles = require("./api/profiles")
 const posts = require("./api/posts")
+const comments = require("./api/comments")
 
 /*app*/
 const app = express()
@@ -25,6 +26,7 @@ require("./config/passport")(passport)
 app.use("/api/users", users)
 app.use("/api/profiles", profiles)
 app.use("/api/posts", posts)
+app.use("/api/comments", comments)
 
 const port = process.env.PORT || 3001
 
