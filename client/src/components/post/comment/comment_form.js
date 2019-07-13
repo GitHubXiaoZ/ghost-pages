@@ -67,7 +67,7 @@ class CommentForm extends Component {
                         </span>
                         <br/>
                         <button type="submit">
-                            Add comment
+                            Add Comment
                         </button>
                     </form>
                 </div>
