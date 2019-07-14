@@ -5,7 +5,6 @@ import { Link } from "react-router-dom"
 import PropTypes from "prop-types"
 
 import Loading from "../layout/Loading"
-import PostForm from "./post_form"
 import PostFeed from "./post_feed"
 import { getPostListByUser, getPostListByHandle } from "../../actions/postActions"
 
@@ -24,7 +23,6 @@ class PostList extends Component {
 
     render() {
         const { post_list, loading } = this.props.post
-        const { isAuth } = this.props.auth
         let postFeed
 
         if (post_list === null || loading) {
@@ -38,7 +36,6 @@ class PostList extends Component {
                 <div className="user-feed">
                     <Link to="/dashboard">Return</Link>
                 </div>
-                {isAuth ? <PostForm/> : null}
                 {postFeed}
             </div>
         )
