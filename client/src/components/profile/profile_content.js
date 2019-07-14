@@ -2,6 +2,7 @@
 import React, { Component } from "react"
 import PropTypes from "prop-types"
 import isEmpty from "is-empty"
+import { Link } from "react-router-dom"
 
 /* Class: ProfileContent
  * Profile body component
@@ -21,6 +22,7 @@ class ProfileContent extends Component {
                         <span>{profile.bio}</span>
                     )}
                 </p>
+                <Link to={`/profiles/posts/${profile.handle}`}> {username}'s Post </Link>
             </div>
         )
     }
