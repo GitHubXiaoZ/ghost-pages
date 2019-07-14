@@ -3,11 +3,9 @@ const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
 const TagSchema =  new Schema({
-    name: [
-        {
+    name: {
             type: String
-        }
-    ]
+    }
 })
 
 const CommentSchema = new Schema({
