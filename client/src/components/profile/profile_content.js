@@ -22,7 +22,7 @@ class ProfileContent extends Component {
                         <span>{profile.bio}</span>
                     )}
                 </p>
-                <Link to={`/profiles/posts/${profile.handle}`}> {username}'s Post </Link>
+                <Link to={`/profiles/notes/${profile.handle}`}> {username}'s Post </Link>
             </div>
         )
     }
