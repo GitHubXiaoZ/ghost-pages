@@ -6,8 +6,7 @@ import PropTypes from "prop-types"
 
 import ProfileHeader from "./profile_header"
 import ProfileContent from "./profile_content"
-import { getProfileByHandle } from "../../actions/profileActions"
-import { getProfileByID } from "../../actions/profileActions"
+import { getProfileByHandle, getProfileByID } from "../../actions/profileActions"
 
 /* Class: Profile
  * Profile component
@@ -69,5 +68,5 @@ const mapStateToProps = state => ({
 export default connect(
     mapStateToProps,
     { getProfileByHandle,
-    getProfileByID }
+      getProfileByID }
 ) (Profile)
