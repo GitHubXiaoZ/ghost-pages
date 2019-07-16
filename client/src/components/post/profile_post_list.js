@@ -6,7 +6,9 @@ import PropTypes from "prop-types"
 
 import Loading from "../layout/Loading"
 import PostFeed from "./post_feed"
-import { getPostListByUser, getPostListByHandle } from "../../actions/postActions"
+import { getPostListByUser,
+         getPostListByHandle, 
+         getPostListByTag } from "../../actions/postActions"
 
 /* Class: PostList
  * Post component
@@ -18,7 +20,9 @@ class PostList extends Component {
             this.props.getPostListByUser(this.props.match.params.id)
         } else if (this.props.match.params.handle) {
             this.props.getPostListByHandle(this.props.match.params.handle)
-        } 
+        } else if (this.props.match.params.tag) {
+            this.props.getPostListByTag(this.props.match.params.tag)
+        }
     }
 
     render() {
@@ -46,6 +50,7 @@ PostList.propTypes = {
     post: PropTypes.object.isRequired,
     getPostListByUser: PropTypes.func.isRequired,
     getPostListByHandle: PropTypes.func.isRequired,
+    getPostListByTag: PropTypes.func.isRequired,
     auth: PropTypes.object.isRequired
 }
 
@@ -58,5 +63,6 @@ const mapStateToProps = state => ({
 export default connect(
     mapStateToProps,
      { getPostListByUser,
-       getPostListByHandle }
+       getPostListByHandle,
+       getPostListByTag }
 ) (PostList)
