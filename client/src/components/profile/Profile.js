@@ -4,9 +4,11 @@ import { connect } from "react-redux"
 import { Link } from "react-router-dom"
 import PropTypes from "prop-types"
 
+import PostFeed from "../post/post_feed"
 import ProfileHeader from "./profile_header"
 import ProfileContent from "./profile_content"
 import { getProfileByHandle, getProfileByID } from "../../actions/profileActions"
+import { getPostListByUser, getPostListByHandle } from "../../actions/postActions"
 
 /* Class: Profile
  * Profile component
@@ -16,8 +18,10 @@ class Profile extends Component {
     componentDidMount() {
         if (this.props.match.params.handle) {
             this.props.getProfileByHandle(this.props.match.params.handle)
+            this.props.getPostListByHandle(this.props.match.params.handle)
         } else if (this.props.match.params.id) {
             this.props.getProfileByID(this.props.match.params.id)
+            this.props.getPostListByUser(this.props.match.params.id)
         }
     }
 
@@ -29,10 +33,13 @@ class Profile extends Component {
 
     render() {
         const { profile, loading } = this.props.profile
+        const { post_list } = this.props.post
         let profileFeed 
+        let postFeed
 
         if (profile === null || loading) {
             profileFeed = <h3>transmitting...</h3>
+            postFeed = <h3>transmitting...</h3>
         } else {
             profileFeed = (
                 <div>
@@ -45,11 +52,13 @@ class Profile extends Component {
                     </div>
                 </div>
             )
+            postFeed = <PostFeed post_list={post_list}/>
         }
 
         return (
             <div className="content">
                 {profileFeed}
+                {postFeed}
             </div>
         )
     }
@@ -57,16 +66,21 @@ class Profile extends Component {
 Profile.propTypes = {
     profile: PropTypes.object.isRequired,
     getProfileByHandle: PropTypes.func.isRequired,
-    getProfileByID: PropTypes.func.isRequired
+    getProfileByID: PropTypes.func.isRequired,
+    getPostListByUser: PropTypes.func.isRequired,
+    getPostListByHandle: PropTypes.func.isRequired,
 }
 
 const mapStateToProps = state => ({
-    profile: state.profile
+    profile: state.profile,
+    post: state.post
 })
 
 /*exports profile*/
 export default connect(
     mapStateToProps,
     { getProfileByHandle,
-      getProfileByID }
+      getProfileByID,
+      getPostListByUser,
+      getPostListByHandle }
 ) (Profile)
