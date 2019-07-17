@@ -87,7 +87,7 @@ export const getPostList = () => dispatch => {
         )
 }
 
-/*return all user's posts*/
+/*return all user's posts by user id*/
 export const getPostListByUser = user_id => dispatch => {
     dispatch(setPostLoading())
     axios
@@ -107,7 +107,7 @@ export const getPostListByUser = user_id => dispatch => {
 }
 
 
-/*return all user's posts*/
+/*return all user's posts by user handle*/
 export const getPostListByHandle = handle => dispatch => {
     dispatch(setPostLoading())
     axios
@@ -126,7 +126,7 @@ export const getPostListByHandle = handle => dispatch => {
         )
 }
 
-/*return all user's posts*/
+/*return all posts containing tag*/
 export const getPostListByTag = tag => dispatch => {
     dispatch(setPostLoading())
     axios
