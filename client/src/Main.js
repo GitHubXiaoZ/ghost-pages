@@ -23,8 +23,8 @@ import ProfileList from "./components/profile/profile_list"
 import NewProfile from "./components/profile/new_profile"
 import EditProfile from "./components/profile/edit_profile"
 
-import ProfilePostList from "./components/post/profile_post_list"
 import PostList from "./components/post/post_list"
+import PostListFilter from "./components/post/post_list_filter"
 import Post from "./components/post/post"
 import EditPost from "./components/post/edit_post"
 import EditComment from "./components/post/comment/edit_comment"
@@ -65,10 +65,10 @@ class Main extends Component {
                   <Route exact path="/profile/:handle" component={Profile}/>
                   <Route exact path="/user/:id" component={Profile}/>
                   <Route exact path="/profiles" component={ProfileList}/>
-                  <Route exact path="/profiles/notes/:handle" component={ProfilePostList}/>
+                  <Route exact path="/profiles/notes/:handle" component={PostListFilter}/>
                   <Route exact path="/notes" component={PostList}/>
                   <Route exact path="/notes/:id" component={Post}/>
-                  <Route exact path="/notes/tag/:tag" component={ProfilePostList}/>
+                  <Route exact path="/notes/tag/:tag" component={PostListFilter}/>
                   <PrivateRoute exact path="/notes/edit/:id" component={EditPost}/>
                   <PrivateRoute exact path="/notes/edit/:id/:comment_id" component={EditComment}/>
                   <PrivateRoute exact path="/dashboard" component={Dashboard}/>
