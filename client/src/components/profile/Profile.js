@@ -4,6 +4,7 @@ import { connect } from "react-redux"
 import { Link } from "react-router-dom"
 import PropTypes from "prop-types"
 
+import Loading from "../layout/Loading"
 import PostFeed from "../post/post_feed"
 import ProfileHeader from "./profile_header"
 import ProfileContent from "./profile_content"
@@ -38,8 +39,8 @@ class Profile extends Component {
         let postFeed
 
         if (profile === null || loading) {
-            profileFeed = <h3>transmitting...</h3>
-            postFeed = <h3>transmitting...</h3>
+            profileFeed = <Loading/>
+            postFeed = <Loading/>
         } else {
             profileFeed = (
                 <div>
