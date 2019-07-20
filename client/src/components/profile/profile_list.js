@@ -4,8 +4,8 @@ import { connect } from "react-redux"
 import PropTypes from "prop-types"
 
 import Loading from "../layout/Loading"
-import { getProfileList } from "../../actions/profileActions"
 import ProfileItem from "./profile_item"
+import { getProfileList } from "../../actions/profileActions"
 
 /* Class: ProfileList
  * List of Profiles
