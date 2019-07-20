@@ -5,6 +5,7 @@ import {
     ADD_POST, 
     GET_POST,
     GET_POST_LIST, 
+    GET_TAG_LIST,
     POST_LOADING, 
     DELETE_POST,
     GET_ERRORS,
@@ -265,6 +266,25 @@ export const deleteComment = (post_id, comment_id) => dispatch => {
             dispatch({
                 type: GET_ERRORS,
                 payload: err.response.data
+            })
+        )
+}
+
+/*return all posts*/
+export const getTagList = () => dispatch => {
+    dispatch(setPostLoading())
+    axios
+        .get(`/api/posts/tags/all`)
+        .then(res =>
+            dispatch({
+                type: GET_TAG_LIST,
+                payload: res.data
+            })
+        )
+        .catch(err =>
+            dispatch({
+                type: GET_TAG_LIST,
+                payload: null
             })
         )
 }
