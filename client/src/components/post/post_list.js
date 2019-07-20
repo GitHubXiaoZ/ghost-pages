@@ -7,7 +7,7 @@ import PropTypes from "prop-types"
 import Loading from "../layout/Loading"
 import PostForm from "./post_form"
 import PostFeed from "./post_feed"
-import { getPostList} from "../../actions/postActions"
+import { getPostList } from "../../actions/postActions"
 
 /* Class: PostList
  * Post component
