@@ -10,11 +10,11 @@ import { getPostListByUser,
          getPostListByHandle, 
          getPostListByTag } from "../../actions/postActions"
 
-/* Class: PostList
+/* Class: PostListFilter
  * Post component
- * Displays post feed containing all posts
+ * Displays post feed containing filtered posts
  */
-class PostList extends Component {
+class PostListFilter extends Component {
     componentDidMount() {
         if (this.props.match.params.id) {
             this.props.getPostListByUser(this.props.match.params.id)
@@ -46,17 +46,15 @@ class PostList extends Component {
     }
 }
 
-PostList.propTypes = {
+PostListFilter.propTypes = {
     post: PropTypes.object.isRequired,
     getPostListByUser: PropTypes.func.isRequired,
     getPostListByHandle: PropTypes.func.isRequired,
-    getPostListByTag: PropTypes.func.isRequired,
-    auth: PropTypes.object.isRequired
+    getPostListByTag: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({
-    post: state.post,
-    auth: state.auth
+    post: state.post
 })
 
 /*exports postlist*/
@@ -65,4 +63,4 @@ export default connect(
      { getPostListByUser,
        getPostListByHandle,
        getPostListByTag }
-) (PostList)
+) (PostListFilter)
