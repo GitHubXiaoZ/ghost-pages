@@ -23,9 +23,9 @@ import ProfileList from "./components/profile/profile_list"
 import NewProfile from "./components/profile/new_profile"
 import EditProfile from "./components/profile/edit_profile"
 
+import Post from "./components/post/post"
 import PostList from "./components/post/post_list"
 import PostListFilter from "./components/post/post_list_filter"
-import Post from "./components/post/post"
 import EditPost from "./components/post/edit_post"
 import EditComment from "./components/post/comment/edit_comment"
 
