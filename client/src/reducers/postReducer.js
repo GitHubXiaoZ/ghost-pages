@@ -3,6 +3,7 @@ import {
     ADD_POST,
     GET_POST,
     GET_POST_LIST,
+    GET_TAG_LIST,
     POST_LOADING,
     DELETE_POST
 } from "../actions/types"
@@ -11,6 +12,7 @@ import {
 const initialState = {
     post: {},
     post_list: [],
+    tag_list: [],
     loading: false
 }
 
@@ -32,6 +34,12 @@ export default function(state = initialState, action) {
             return {
                 ...state,
                 post_list: action.payload,
+                loading: false
+            }
+        case GET_TAG_LIST:
+            return {
+                ...state,
+                tag_list: action.payload,
                 loading: false
             }
         case ADD_POST:
