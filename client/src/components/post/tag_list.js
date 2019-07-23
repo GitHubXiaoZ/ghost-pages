@@ -25,7 +25,7 @@ class TagList extends Component {
         } else {
             tagFeed = tag_list.map(tag => 
             <li>
-                {tag}
+                <Link to={`notes/tag/${tag}`}>{tag}</Link>
             </li>
             )
         }
