@@ -57,7 +57,9 @@ class PostItem extends Component {
                 </span>
                 <div className="post-content">
                     <p>{post.text}</p>
-                    <p>{post.tags ? post.tags.map(tag => "#" + tag + " ") : ""}</p>
+                    <p>{post.tags ? post.tags.map(tag => 
+                        <Link to={`notes/tag/${tag}`}>#{tag} </Link>) : ""}
+                    </p>
                     <div>
                         {post.user === auth.user.id ? (
                             <Link to={`/notes/edit/${post._id}`}>
