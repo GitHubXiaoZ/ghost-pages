@@ -7,9 +7,9 @@ import PropTypes from "prop-types"
 import Loading from "../layout/Loading"
 import { getTagList } from "../../actions/postActions"
 
-/* Class: PostList
- * Post component
- * Displays post feed containing all posts
+/* Class: TagList
+ * Tag component
+ * Displays tag feed containing all tags
  */
 class TagList extends Component {
     componentDidMount() {
