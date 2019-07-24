@@ -54,7 +54,7 @@ router.get("/tags/all", (req, res) => {
  */
 router.get("/tag/:tag", (req, res) => {
     let sort = req.query.sort ? req.query.sort : -1
-    Post.find({ tags: [req.params.tag] })
+    Post.find({ tags: req.params.tag })
         .sort({ date: sort })
         .then(posts => res.json(posts))
         .catch(err => res.status(404).json({ noposts: "Posts have not been created!" }))
