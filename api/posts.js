@@ -27,7 +27,7 @@ router.get("/", (req, res) => {
 })
 
 /* GET api: posts/id
- * returns a specific posts
+ * returns a post by post id
  */
 router.get("/:id", (req, res) => {
     Post.findById(req.params.id)
@@ -61,7 +61,7 @@ router.get("/tag/:tag", (req, res) => {
 })
 
 /* GET api: posts/user/id
- * returns all posts created by the user
+ * returns all posts created by user's id
  */
 router.get("/user/:id", (req, res) => {
     let sort = req.query.sort ? req.query.sort : -1
@@ -73,7 +73,7 @@ router.get("/user/:id", (req, res) => {
 })
 
 /* GET api: posts/users/handle
- * returns all posts created by the user
+ * returns all posts created by user's handle
  */
 router.get("/users/:handle", (req, res) => {
     let sort = req.query.sort ? req.query.sort : -1
@@ -93,7 +93,7 @@ router.get("/users/:handle", (req, res) => {
 })
 
 /* POST api: posts
- * create a post from a user
+ * create a post
  */
 router.post("/",
     passport.authenticate("jwt", { session: false }),
@@ -229,7 +229,7 @@ router.post("/unlike/:id",
 )
 
 /* GET api: posts/comment/id/comment_id
- * returns a specific posts
+ * returns a specific comment in a post
  */
 router.get("/comment/:id/:comment_id", (req, res) => {
     Post.findById(req.params.id)
