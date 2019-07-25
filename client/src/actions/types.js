@@ -18,5 +18,4 @@ export const GET_POST_LIST = "GET_POST_LIST"
 export const ADD_POST = "ADD_POST"
 export const DELETE_POST = "DELETE_POST"
 
-export const GET_TAG = "GET_TAG"
 export const GET_TAG_LIST = "GET_TAG_LIST"
