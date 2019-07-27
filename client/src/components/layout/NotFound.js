@@ -1,8 +1,7 @@
 //import
 import React, { Component } from "react";
 
-/*
- * Class: NotFound
+/* Class: NotFound
  * 404 page
  */
 class NotFound extends Component {
