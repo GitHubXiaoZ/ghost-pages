@@ -4,6 +4,10 @@ import { Link } from "react-router-dom"
 import { PropTypes } from 'prop-types';
 import { connect } from 'react-redux';
 
+/* Class: Home
+ * Home page
+ * Page containing register and login routes
+ */
 class Home extends Component {
   componentDidMount() {
     if (this.props.auth.isAuth) {
@@ -52,4 +56,5 @@ const mapStateToProps = state => ({
   auth: state.auth
 })
 
+/*exports home*/
 export default connect(mapStateToProps) (Home)
