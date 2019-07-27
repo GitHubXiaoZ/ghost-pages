@@ -1,7 +1,7 @@
 /*import*/
 import React from "react"
 
-/*export*/
+/*exports webpage footer*/
 export default () => {
     return (
       <footer className="footer">
