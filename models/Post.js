@@ -17,12 +17,12 @@ const CommentSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "users"
     },
+    name: {
+        type: String
+    },
     text: {
         type: String,
         required: true
-    },
-    name: {
-        type: String
     },
     comments: [
         {
@@ -44,13 +44,6 @@ const PostSchema = new Schema({
         type: Schema.Types.ObjectId,
         ref: "users"
     },
-    title: {
-        type: String
-    },
-    text: {
-        type: String,
-        required: true
-    },
     name: {
         type: String
     },
@@ -59,6 +52,10 @@ const PostSchema = new Schema({
             type: String
         }
     ],
+    text: {
+        type: String,
+        required: true
+    },
     likes: [
         {
             user: {
@@ -77,12 +74,12 @@ const PostSchema = new Schema({
                 type: Schema.Types.ObjectId,
                 ref: "users"
             },
+            name: {
+                type: String
+            },
             text: {
                 type: String,
                 required: true
-            },
-            name: {
-                type: String
             },
             comments: [
                 {
