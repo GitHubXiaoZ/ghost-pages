@@ -13,7 +13,6 @@ class PostForm extends Component {
     constructor(props) {
         super(props)
         this.state = {
-            title: "",
             text: "",
             tags: "",
             errors: {}
@@ -39,7 +38,6 @@ class PostForm extends Component {
         const { user } = this.props.auth
 
         const newPost = {
-            title: this.state.title,
             text: this.state.text,
             tags: this.state.tags,
             name: user.name
@@ -47,7 +45,6 @@ class PostForm extends Component {
 
         this.props.addPost(newPost)
         this.setState({ 
-            title: "",
             text: "",
             tags: ""
         })
@@ -60,15 +57,6 @@ class PostForm extends Component {
             <div className="post-form">
                 <div className="form-body">
                     <form noValidate onSubmit={this.onSubmit}>
-                        <textarea
-                            placeholder="Title"
-                            name="title"
-                            type="text"
-                            onChange={this.onChange}
-                            value={this.state.title}
-                            error={errors.text}
-                            />
-                        <br/>
                         <textarea rows="5" cols="20"
                             placeholder="..."
                             name="text"
