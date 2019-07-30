@@ -115,7 +115,6 @@ router.post("/",
 
         /*create a new post*/
         const newPost = new Post({
-            title: req.body.title,
             text: req.body.text,
             //alphabetical order
             tags: tag_list.sort(),
@@ -148,7 +147,6 @@ router.patch("/:id",
                     if (post.user.toString() !== req.user.id) {
                         return res.status(401).json({ nopermission: "Not allowed to edit this post!" })
                     }
-                    post.title = req.body.title
                     post.text = req.body.text
                     post.update = Date.now()
                     post.save().then(post => res.json(post))
