@@ -1,3 +1,4 @@
+/*imports*/
 import React, { Component } from "react"
 import { Link } from "react-router-dom"
 import PropTypes from "prop-types"
@@ -5,6 +6,10 @@ import { connect } from "react-redux"
 import { logoutUser } from "../../actions/authActions"
 import { resetCurrentProfile } from "../../actions/profileActions"
 
+/* Class: Navbar
+ * Navigation bar
+ * Display guest and user options for navigation
+ */
 class Navbar extends Component {
     onLogoutClick = e => {
         e.preventDefault()
@@ -83,6 +88,7 @@ const mapStateToProps = state => ({
     auth: state.auth
 })
 
+/*exports navbar*/
 export default connect(
     mapStateToProps,
     { logoutUser,
