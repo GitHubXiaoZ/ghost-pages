@@ -36,7 +36,6 @@ class PostItem extends Component {
          return (
              <div className="post-user">
                 <h4>
-                    {post.title ? "『" + post.title + "』by " : " "} 
                     <Link to={`/user/${post.user}`}>
                         {post.name}
                     </Link>
