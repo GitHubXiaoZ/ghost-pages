@@ -30,7 +30,7 @@ router.get("/", (req, res) => {
  * returns a post by post id
  */
 router.get("/:id", (req, res) => {
-    Post.findById(req.params.id)
+    Post.findOneAndUpdate({ _id: req.params.id }, { $inc: { views: 1 } })
         .then(posts => res.json(posts))
         .catch(err => res.status(404).json({ nopost: "Post does not exist!" }))
 })
