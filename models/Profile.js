@@ -13,7 +13,7 @@ const ProfileSchema = new Schema({
         max: 25
     },
     pfp: {
-        type: String
+        type: Buffer
     },
     location: {
         type: String
