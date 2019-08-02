@@ -34,6 +34,11 @@ class Navbar extends Component {
                         </Link>
                     </li>
                     <li>
+                        <Link to="/tags">
+                        Tags
+                        </Link>
+                    </li>
+                    <li>
                         <button onClick={this.onLogoutClick.bind(this)}>
                         Log out
                         </button>
