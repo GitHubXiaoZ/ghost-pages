@@ -1,0 +1,85 @@
+/*imports*/
+const express = require("express")
+const router = express.Router()
+const mongoose = require("mongoose")
+const passport = require("passport")
+
+const { Novel } = require("../models/Novel")
+const Profile = require("../models/Profile")
+const User = require("../models/User")
+
+const validNovelInput = require("../validate/novel")
+
+/*test route*/
+router.get("/test", (req, res) => res.json({ msg: "Novel route -- working." }))
+
+/* GET api: novels
+ * returns all novels
+ */
+router.get("/", (req, res) => {
+    //sorts by query
+    //default by new
+    let sort = req.query.sort ? req.query.sort : -1
+    Novel.find()
+        .sort({ date: sort })
+        .then(novels => res.json(novels))
+        .catch(err => res.status(404).json({ noposts: "Novels have not been created!" }))
+})
+
+/* POST api: novels
+ * create a novel
+ */
+router.post("/",
+    passport.authenticate("jwt", { session: false }),
+    (req, res) => {
+        /*validates post input*/
+        const { errors, isValid } = validNovelInput(req.body)
+
+        if (!isValid) {
+            return res.status(400).json(errors)
+        }
+
+        const tag_list = []
+        if (req.body.tags) {
+            //tags are lowercase with no whitespace           
+            const tags = req.body.tags.split(",").map(tag => tag.trim().toLowerCase())
+            //prevent duplicate tags
+            tags.map(tag => tag_list.includes(tag) ? null : tag_list.unshift(tag))
+        } 
+
+        /*create a new novel*/
+        const newNovel = new Novel({
+            title: req.body.title,
+            status: req.body.status,
+            //alphabetical order
+            tags: tag_list.sort(),
+            summary: req.body.summary,
+            name: req.body.name,
+            user: req.user.id
+        })
+
+    newNovel.save().then(novel => res.json(novel))
+    }
+)
+
+/* DELETE api: novels/id
+ * deletes a specific novel
+ */
+router.delete("/:id", 
+    passport.authenticate("jwt", { session: false }),
+    (req, res) => {
+        Profile.findOne({ user: req.user.id })
+        .then(profile => {
+            Novel.findById(req.params.id)
+                .then(novel => {
+                    /*checks if user is the one who created the post*/
+                    if (novel.user.toString() !== req.user.id) {
+                        return res.status(401).json({ nopermission: "Not allowed to delete this novel!" })
+                    }
+                    /*deletes post*/
+                    novel.remove().then(() => res.json({ success: true }))
+                })
+                .catch(err => res.status(404).json({ nonovel: "Novel does not exist!" }))
+        })
+    }
+)
