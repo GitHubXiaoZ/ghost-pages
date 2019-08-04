@@ -6,12 +6,14 @@ const isEmpty = require("is-empty")
 module.exports = validatePostInput = data => {
     let errors = {}
 
+    /*sets field to empty string if no input is given*/
     data.text = !isEmpty(data.text) ? data.text : ""
 
     if (Validator.isEmpty(data.text)) {
         errors.text = "Post cannot be empty!"
     }
 
+    /*post cannot exceed 300 characters*/
     if (!Validator.isLength(data.text, { max: 300 })) {
         errors.text = "Post cannot exceed 300 characters!"
     }
