@@ -6,6 +6,7 @@ const isEmpty = require("is-empty")
 module.exports = validateChapterInput = data => {
     let errors = {}
 
+    /*sets fields to empty string if no input is given*/
     data.title = !isEmpty(data.title) ? data.title : ""
     data.text = !isEmpty(data.text) ? data.text : ""
 
