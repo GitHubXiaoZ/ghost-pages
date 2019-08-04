@@ -7,7 +7,7 @@ module.exports = validateProfileInput = data => {
     let errors = {}
     const regex = /^[a-zA-z0-9-]+$/g
 
-    /*sets fields to empty string if no input is given*/
+    /*sets field to empty string if no input is given*/
     data.handle = !isEmpty(data.handle) ? data.handle : ""
 
     const valid_profile = data.handle.match(regex)
