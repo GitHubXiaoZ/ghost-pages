@@ -23,7 +23,32 @@ router.get("/", (req, res) => {
     Novel.find()
         .sort({ date: sort })
         .then(novels => res.json(novels))
-        .catch(err => res.status(404).json({ noposts: "Novels have not been created!" }))
+        .catch(err => res.status(404).json({ nonovels: "Novels have not been created!" }))
+})
+
+/* GET api: novels/tags/all
+ * returns all tags
+ */
+router.get("/tags/all", (req, res) => {
+    Novel.find()
+        .then(novels => {
+            const tag_list = []
+            //append the unique tag of each post separately into the master tag list
+            novels.forEach(novel => novel.tags.forEach(tag => tag_list.includes(tag) ? null : tag_list.unshift(tag)))
+            res.json(tag_list.sort())
+        })
+        .catch(err => res.status(404).json({ nonovels: "Novels have not been created!" }))
+})
+
+/* GET api: novels/tag/tag
+ * returns all novels with requested tag
+ */
+router.get("/tag/:tag", (req, res) => {
+    let sort = req.query.sort ? req.query.sort : -1
+    Novel.find({ tags: req.params.tag })
+        .sort({ date: sort })
+        .then(novels => res.json(novels))
+        .catch(err => res.status(404).json({ nonovels: "Posts have not been created!" }))
 })
 
 /* POST api: novels
@@ -41,7 +66,7 @@ router.post("/",
 
         const tag_list = []
         if (req.body.tags) {
-            //tags are lowercase with no whitespace           
+            //tags are lowercase          
             const tags = req.body.tags.split(",").map(tag => tag.trim().toLowerCase())
             //prevent duplicate tags
             tags.map(tag => tag_list.includes(tag) ? null : tag_list.unshift(tag))
