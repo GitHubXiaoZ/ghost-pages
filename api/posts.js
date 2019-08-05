@@ -49,7 +49,7 @@ router.get("/tags/all", (req, res) => {
         .catch(err => res.status(404).json({ noposts: "Posts have not been created!" }))
 })
 
-/* GET api: posts/tag
+/* GET api: posts/tag/tag
  * returns all posts with requested tag
  */
 router.get("/tag/:tag", (req, res) => {
@@ -107,7 +107,7 @@ router.post("/",
 
         const tag_list = []
         if (req.body.tags) {
-            //tags are lowercase with no whitespace           
+            //tags are lowercase        
             const tags = req.body.tags.split(",").map(tag => tag.trim().toLowerCase())
             //prevent duplicate tags
             tags.map(tag => tag_list.includes(tag) ? null : tag_list.unshift(tag))
