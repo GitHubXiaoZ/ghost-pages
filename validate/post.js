@@ -6,7 +6,9 @@ const isEmpty = require("is-empty")
 module.exports = validatePostInput = data => {
     let errors = {}
 
-    /*sets field to empty string if no input is given*/
+    /*sets field 
+     *text
+     *to empty string if no input is given*/
     data.text = !isEmpty(data.text) ? data.text : ""
 
     if (Validator.isEmpty(data.text)) {
