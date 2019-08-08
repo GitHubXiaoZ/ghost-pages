@@ -48,7 +48,39 @@ router.get("/tag/:tag", (req, res) => {
     Novel.find({ tags: req.params.tag })
         .sort({ date: sort })
         .then(novels => res.json(novels))
-        .catch(err => res.status(404).json({ nonovels: "Posts have not been created!" }))
+        .catch(err => res.status(404).json({ nonovels: "Novels have not been created!" }))
+})
+
+/* GET api: novels/user/id
+ * returns all novels created by user's id
+ */
+router.get("/user/:id", (req, res) => {
+    let sort = req.query.sort ? req.query.sort : -1
+    Novel.find({ user: req.params.id })
+        .populate("user", ["name"])
+        .sort({ date: sort })
+        .then(novels => res.json(novels))
+        .catch(err => res.status(404).json({ nonovels: "Novels have not been created!" }))
+})
+
+/* GET api: novels/users/handle
+ * returns all novels created by user's handle
+ */
+router.get("/users/:handle", (req, res) => {
+    let sort = req.query.sort ? req.query.sort : -1
+    Profile.findOne({ handle: req.params.handle })
+            .populate("user", ["name"])
+            .then(profile => {
+                if (!profile) {
+                    errors.nullprofile = "This profile does not exist!"
+                    return res.status(404).json(errors)
+                }
+                Novel.find({ user: profile.user._id })
+                    .sort({ date: sort })
+                    .then(novels => res.json(novels))
+                    .catch(err => res.status(404).json({ nonovels: "Novels have not been created!" }))
+            })
+            .catch(err => res.status(404).json(err))
 })
 
 /* POST api: novels
