@@ -42,6 +42,9 @@ const NovelSchema = new Schema({
     title: {
         type: String
     },
+    cover: {
+        type: Buffer
+    },
     status: {
         type: String
     },
