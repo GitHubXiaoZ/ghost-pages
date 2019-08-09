@@ -140,3 +140,33 @@ router.delete("/:id",
         })
     }
 )
+
+/* POST api: novels/comment/id
+ * comment on a specific novel
+ */
+router.post("/comment/:id", 
+    passport.authenticate("jwt", { session: false}), 
+    (req, res) => {
+        /*validates comment input*/
+        const { errors, isValid } = validPostInput(req.body)
+
+        if (!isValid) {
+            return res.status(400).json(errors)
+        }
+
+        Novel.findById(req.params.id)
+            .then(novel => {
+                /*creates a new comment*/
+                const newComment = {
+                    text: req.body.text,
+                    name: req.body.name,
+                    user: req.user.id,
+                    novelID: novel.id
+                }
+                /*add comment to novel.comments array*/
+                novel.comments.unshift(newComment)
+                novel.save().then(novel => res.json(novel))
+            })
+            .catch(err => res.status(404).json({ nonovel: "Novel does not exist!" }))
+        }
+)
