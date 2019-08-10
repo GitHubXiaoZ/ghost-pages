@@ -170,3 +170,25 @@ router.post("/comment/:id",
             .catch(err => res.status(404).json({ nonovel: "Novel does not exist!" }))
         }
 )
+
+/* DELETE api: novels/comment/id/comment_id
+ * delete a comment on a specific novel
+ */
+router.delete("/comment/:id/:comment_id", 
+    passport.authenticate("jwt", { session: false}), 
+    (req, res) => {
+        Novel.findById(req.params.id)
+            .then(novel => {
+                /*check if the user's comment exists*/
+                if (novel.comments.filter(comment => comment._id.toString() === req.params.comment_id).length === 0) {
+                    return res.status(404).json({ nocomment: "Comment does not exist! "})
+                }
+                /*index is the index of user's comment in novel.comments array*/
+                const index = novel.comments.map(item => item._id.toString()).indexOf(req.params.comment_id)
+                /*remove the comment*/
+                novel.comments.splice(index, 1)
+                novel.save().then(novel => res.json(novel))
+            })
+            .catch(err => res.status(404).json({ nonovel: "Novel does not exist!" }))
+        }
+)
