@@ -26,6 +26,16 @@ router.get("/", (req, res) => {
         .catch(err => res.status(404).json({ nonovels: "Novels have not been created!" }))
 })
 
+/* GET api: novels/id
+ * returns a post by post id
+ */
+router.get("/:id", (req, res) => {
+    Novel.findById(req.param.id)
+        .then(novels => res.json(novels))
+        .catch(err => res.status(404).json({ nonovel: "Novel does not exist!" }))
+})
+
+
 /* GET api: novels/tags/all
  * returns all tags
  */
