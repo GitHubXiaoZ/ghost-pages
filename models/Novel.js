@@ -84,6 +84,10 @@ const NovelSchema = new Schema({
             ref: "comment"
         }
     ],
+    views: {
+        type: Number,
+        default: 0
+    },
     date: {
         type: Date,
         default: Date.now()
