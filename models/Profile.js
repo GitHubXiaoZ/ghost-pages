@@ -21,6 +21,10 @@ const ProfileSchema = new Schema({
     bio: {
         type: String
     },
+    views: {
+        type: Number,
+        default: 0
+    },
     date: {
         type: Date,
         default: Date.now
