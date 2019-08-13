@@ -32,26 +32,6 @@ router.get("/",
         }
 )
 
-/* GET api: profile/handle
- * returns the profile of the handle
- */
-router.get("/handle/:handle", 
-    (req, res) => {
-        const errors = {}
-
-        Profile.findOne({ handle: req.params.handle })
-            .populate("user", ["name"])
-            .then(profile => {
-                if (!profile) {
-                    errors.nullprofile = "This profile does not exist!"
-                    return res.status(404).json(errors)
-                }
-                res.json(profile)
-            })
-            .catch(err => res.status(404).json(err))
-    }
-)
-
 /* GET api: profile/all
  * return all profiles
  */
@@ -72,6 +52,26 @@ router.get("/all",
     }
 )
 
+/* GET api: profile/handle
+ * returns the profile of the handle
+ */
+router.get("/handle/:handle", 
+    (req, res) => {
+        const errors = {}
+
+        Profile.findOneAndUpdate({ _id: req.params.id }, { $inc: { views: 1 } })
+            .populate("user", ["name"])
+            .then(profile => {
+                if (!profile) {
+                    errors.nullprofile = "This profile does not exist!"
+                    return res.status(404).json(errors)
+                }
+                res.json(profile)
+            })
+            .catch(err => res.status(404).json(err))
+    }
+)
+
 /* GET api: profile/user_id
  * returns the profile of the user id
  */
@@ -79,7 +79,7 @@ router.get("/user/:user_id",
     (req, res) => {
         const errors = {}
 
-        Profile.findOne({ user: req.params.user_id })
+        Profile.findOneAndUpdate({ _id: req.params.id }, { $inc: { views: 1 } })
             .populate("user", ["name"])
             .then(profile => {
                 if (!profile) {
