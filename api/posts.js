@@ -107,8 +107,6 @@ router.post("/",
 
         const tag_list = []
         if (req.body.tags) {
-            //tags are lowercase        
-            const tags = req.body.tags.split(",").map(tag => tag.trim().toLowerCase())
             //prevent duplicate tags
             tags.map(tag => tag_list.includes(tag) ? null : tag_list.unshift(tag))
         } 
