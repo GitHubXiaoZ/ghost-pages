@@ -27,6 +27,10 @@ module.exports = validateNovelInput = data => {
         errors.status = "Status cannot be empty!"
     }
 
+    if (Validator.isInt(data.rating, { min: 1, max: 10 })) {
+        errors.rating = "Ratings must be between a value of 1 and 10!"
+    }
+
     return {
         errors,
         isValid: isEmpty(errors)
