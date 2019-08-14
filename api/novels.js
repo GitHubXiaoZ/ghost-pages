@@ -151,6 +151,40 @@ router.delete("/:id",
     }
 )
 
+/* POST api: posts/rate/id
+ * rate a specific novel
+ */
+router.post("/rate/:id", 
+    passport.authenticate("jwt", { session: false }),
+    (req, res) => {
+        const { errors, isValid } = validNovelInput(req.body)
+
+        if (!isValid) {
+            return res.status(400).json(errors)
+        }
+
+        Profile.findOne({ user: req.user.id })
+        .then(profile => {
+            Novel.findById(req.params.id)
+                .then(novel => {
+                    /*checks if the user has already rated the novel*/
+                    if (novel.ratings.filter(rating => rating.user.toString() === req.user.id).length > 0) {
+                        return res.status(400).json({ rated: "Novel already rated!" })
+                    }
+                    /*score from 1-10*/
+                    const score = {
+                        rating: req.body.rating,
+                        user: req.user.id
+                    }
+                    /*adds the user to novel.ratings indicating they rated the novel*/
+                    novel.ratings.unshift(score)
+                    novel.save().then(novel => res.json(novel))
+                })
+                .catch(err => res.status(404).json({ nonovel: "Novel does not exist!" }))
+        })
+    }
+)
+
 /* POST api: novels/comment/id
  * comment on a specific novel
  */
@@ -158,7 +192,7 @@ router.post("/comment/:id",
     passport.authenticate("jwt", { session: false}), 
     (req, res) => {
         /*validates comment input*/
-        const { errors, isValid } = validPostInput(req.body)
+        const { errors, isValid } = validNovelInput(req.body)
 
         if (!isValid) {
             return res.status(400).json(errors)
