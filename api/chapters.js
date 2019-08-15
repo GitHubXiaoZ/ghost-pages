@@ -25,3 +25,12 @@ router.get("/", (req, res) => {
         .then(chapters => res.json(chapters))
         .catch(err => res.status(404).json({ nochapters: "Chapters have not been created!" }))
 })
+
+/* GET api: chapters/id
+ * returns a chapter by id
+ */
+router.get("/:id", (req, res) => {
+    Chapter.findOneAndUpdate({ _id: req.params.id }, { $inc: { views: 1 } })
+        .then(chapters => res.json(chapters))
+        .catch(err => res.status(404).json({ nochapters: "Chapters does not exist!" }))
+})
