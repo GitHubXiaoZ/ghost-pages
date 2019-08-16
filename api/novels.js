@@ -9,7 +9,6 @@ const Profile = require("../models/Profile")
 const User = require("../models/User")
 
 const validNovelInput = require("../validate/novel")
-const validPostInput = require("../validate/post")
 
 /*test route*/
 router.get("/test", (req, res) => res.json({ msg: "Novel route -- working." }))
@@ -193,7 +192,7 @@ router.post("/comment/:id",
     passport.authenticate("jwt", { session: false}), 
     (req, res) => {
         /*validates comment input*/
-        const { errors, isValid } = validPostInput(req.body)
+        const { errors, isValid } = validNovelInput(req.body)
 
         if (!isValid) {
             return res.status(400).json(errors)
@@ -203,7 +202,7 @@ router.post("/comment/:id",
             .then(novel => {
                 /*creates a new comment*/
                 const newComment = {
-                    text: req.body.text,
+                    comment: req.body.comment,
                     name: req.body.name,
                     user: req.user.id,
                     novelID: novel.id
