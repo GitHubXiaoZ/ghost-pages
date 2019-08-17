@@ -12,7 +12,7 @@ module.exports = validateNovelInput = data => {
      *status
      *to empty string if no input is given*/
     data.title = !isEmpty(data.title) ? data.title : ""
-    data.summary = !isEmpty(data.summary) ? data.summary : ""
+    data.synopsis = !isEmpty(data.synopsis) ? data.synopsis : ""
     data.status = !isEmpty(data.status) ? data.status : ""
     data.comment = !isEmpty(data.comment) ? data.text : ""
 
@@ -20,8 +20,8 @@ module.exports = validateNovelInput = data => {
         errors.title = "Title cannot be empty!"
     }
 
-    if (Validator.isEmpty(data.summary)) {
-        errors.summary = "Summary cannot be empty!"
+    if (Validator.isEmpty(data.synopsis)) {
+        errors.synopsis = "Synopsis cannot be empty!"
     }
 
     if (Validator.isEmpty(data.status)) {
