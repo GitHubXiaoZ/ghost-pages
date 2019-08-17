@@ -120,7 +120,7 @@ router.post("/",
             status: req.body.status,
             //alphabetical order
             tags: tag_list.sort(),
-            summary: req.body.summary,
+            synopsis: req.body.synopsis,
             name: req.body.name,
             user: req.user.id
         })
