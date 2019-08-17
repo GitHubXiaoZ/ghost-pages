@@ -18,4 +18,11 @@ export const GET_POST_LIST = "GET_POST_LIST"
 export const ADD_POST = "ADD_POST"
 export const DELETE_POST = "DELETE_POST"
 
+export const NOVEL_LOADING = "NOVEL_LOADING"
+
+export const GET_NOVEL = "GET_NOVEL"
+export const GET_NOVEL_LIST = "GET_NOVEL_LIST"
+export const ADD_NOVEL = "ADD_NOVEL"
+export const DELETE_NOVEL = "DELETE_NOVEL"
+
 export const GET_TAG_LIST = "GET_TAG_LIST"
