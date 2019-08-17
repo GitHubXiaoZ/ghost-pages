@@ -69,7 +69,7 @@ const NovelSchema = new Schema({
         type: Number,
         default: 0
     },
-    summary: {
+    synopsis: {
         type: String
     },
     chapters: [
