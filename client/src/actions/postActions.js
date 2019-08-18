@@ -6,8 +6,8 @@ import {
     GET_POST,
     GET_POST_LIST, 
     GET_TAG_LIST,
-    POST_LOADING, 
     DELETE_POST,
+    POST_LOADING,
     GET_ERRORS,
     RESET_ERRORS } from "./types"
 
