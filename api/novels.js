@@ -202,7 +202,7 @@ router.post("/comment/:id",
             .then(novel => {
                 /*creates a new comment*/
                 const newComment = {
-                    comment: req.body.comment,
+                    text: req.body.text,
                     name: req.body.name,
                     user: req.user.id,
                     novelID: novel.id
