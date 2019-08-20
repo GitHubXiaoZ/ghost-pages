@@ -185,6 +185,31 @@ router.post("/rate/:id",
     }
 )
 
+/* POST api: novels/unrate/id
+ * unrate a previously rated novel
+ */
+router.post("/unrate/:id", 
+    passport.authenticate("jwt", { session: false }),
+    (req, res) => {
+        Profile.findOne({ user: req.user.id })
+        .then(profile => {
+            Novel.findById(req.params.id)
+                .then(novel => {
+                    /*checks if the user has not rated the novel*/
+                    if (novel.ratings.filter(rating => rating.user.toString() === req.user.id).length === 0) {
+                        return res.status(400).json({ rated: "Novel has not been rated!" })
+                    }
+                    /*index is the index of user's like in post.likes array*/
+                    const index = novel.ratings.map(item => item.user.toString()).indexOf(req.user.id)
+                    /*remove the user's rating from novel.ratings*/
+                    novel.ratings.splice(index, 1)
+                    novel.save().then(novel => res.json(novel))
+                })
+                .catch(err => res.status(404).json({ nonovel: "Novel does not exist!" }))
+        })
+    }
+)
+
 /* POST api: novels/comment/id
  * comment on a specific novel
  */
