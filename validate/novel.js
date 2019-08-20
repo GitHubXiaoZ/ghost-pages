@@ -8,8 +8,9 @@ module.exports = validateNovelInput = data => {
 
     /*sets fields
      *title
-     *summary
+     *synopsis
      *status
+     *text/comment
      *to empty string if no input is given*/
     data.title = !isEmpty(data.title) ? data.title : ""
     data.synopsis = !isEmpty(data.synopsis) ? data.synopsis : ""
