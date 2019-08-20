@@ -27,7 +27,7 @@ router.get("/", (req, res) => {
 })
 
 /* GET api: novels/id
- * returns a post by post id
+ * returns a novel by novel id
  */
 router.get("/:id", (req, res) => {
     Novel.findOneAndUpdate({ _id: req.params.id }, { $inc: { views: 1 } })
@@ -43,7 +43,7 @@ router.get("/tags/all", (req, res) => {
     Novel.find()
         .then(novels => {
             const tag_list = []
-            //append the unique tag of each post separately into the master tag list
+            //append the unique tag of each novel separately into the master tag list
             novels.forEach(novel => novel.tags.forEach(tag => tag_list.includes(tag) ? null : tag_list.unshift(tag)))
             res.json(tag_list.sort())
         })
@@ -99,7 +99,7 @@ router.get("/users/:handle", (req, res) => {
 router.post("/",
     passport.authenticate("jwt", { session: false }),
     (req, res) => {
-        /*validates post input*/
+        /*validates novel input*/
         const { errors, isValid } = validNovelInput(req.body)
 
         if (!isValid) {
@@ -139,11 +139,11 @@ router.delete("/:id",
         .then(profile => {
             Novel.findById(req.params.id)
                 .then(novel => {
-                    /*checks if user is the one who created the post*/
+                    /*checks if user is the one who created the novel*/
                     if (novel.user.toString() !== req.user.id) {
                         return res.status(401).json({ nopermission: "Not allowed to delete this novel!" })
                     }
-                    /*deletes post*/
+                    /*deletes novel*/
                     novel.remove().then(() => res.json({ success: true }))
                 })
                 .catch(err => res.status(404).json({ nonovel: "Novel does not exist!" }))
@@ -151,7 +151,7 @@ router.delete("/:id",
     }
 )
 
-/* POST api: posts/rate/id
+/* POST api: novels/rate/id
  * rate a specific novel
  */
 router.post("/rate/:id", 
