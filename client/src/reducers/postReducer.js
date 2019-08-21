@@ -5,8 +5,7 @@ import {
     GET_POST_LIST,
     GET_TAG_LIST,
     POST_LOADING,
-    DELETE_POST
-} from "../actions/types"
+    DELETE_POST } from "../actions/types"
 
 /*inital state*/
 const initialState = {
