@@ -4,6 +4,7 @@ import axios from "axios"
 import { 
     ADD_NOVEL,
     GET_NOVEL, 
+    DELETE_NOVEL,
     NOVEL_LOADING,
     GET_ERRORS } from "./types"
 
@@ -40,6 +41,24 @@ export const getNovel = id => dispatch => {
             dispatch({
                 type: GET_NOVEL,
                 payload: null
+            })
+        )
+}
+
+/*delete a novel*/
+export const deleteNovel = id => dispatch => {
+    axios
+        .delete(`/api/novels/${id}`)
+        .then(res =>
+            dispatch({
+                type: DELETE_NOVEL,
+                payload: id
+            })
+        )
+        .catch(err =>
+            dispatch({
+                type: GET_ERRORS,
+                payload: err.response.data
             })
         )
 }
