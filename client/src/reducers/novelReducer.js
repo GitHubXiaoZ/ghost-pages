@@ -2,6 +2,7 @@
 import { 
     ADD_NOVEL,
     GET_NOVEL, 
+    DELETE_NOVEL,
     NOVEL_LOADING } from "../actions/types"
 
 /*inital state*/
@@ -29,6 +30,11 @@ export default function(state = initialState, action) {
             return {
                 ...state,
                 novel_list: [action.payload, ...state.novel_list]
+            }
+        case DELETE_NOVEL:
+            return {
+                ...state,
+                novel_list: state.novel_list.filter(novel => novel._id !== action.payload)
             }
         default: 
             return state 
