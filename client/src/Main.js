@@ -29,6 +29,8 @@ import PostListFilter from "./components/post/post_list_filter"
 import EditPost from "./components/post/edit_post"
 import EditComment from "./components/post/comment/edit_comment"
 
+import Novel from "./components/novel/novel"
+
 import TagList from "./components/post/tag_list"
 
 //check local storage for token
@@ -72,6 +74,7 @@ class Main extends Component {
                   <Route exact path="/notes/:id" component={Post}/>
                   <Route exact path="/notes/tag/:tag" component={PostListFilter}/>
                   <Route exact path="/tags" component={TagList}/>
+                  <Route exact path="/novels/:id" component={Novel}/>
                   <PrivateRoute exact path="/notes/edit/:id" component={EditPost}/>
                   <PrivateRoute exact path="/notes/edit/:id/:comment_id" component={EditComment}/>
                   <PrivateRoute exact path="/dashboard" component={Dashboard}/>
