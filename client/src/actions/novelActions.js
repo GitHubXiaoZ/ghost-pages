@@ -47,7 +47,7 @@ export const getNovel = id => dispatch => {
 }
 
 /*return all novels*/
-export const getPostList = () => dispatch => {
+export const getNovelList = () => dispatch => {
     dispatch(setNovelLoading())
     axios
         .get("/api/novels")
