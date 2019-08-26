@@ -65,8 +65,6 @@ export const getNovelList = () => dispatch => {
         )
 }
 
-
-
 /*delete a novel*/
 export const deleteNovel = id => dispatch => {
     axios
