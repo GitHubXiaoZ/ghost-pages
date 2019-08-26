@@ -10,7 +10,7 @@ import { getNovel } from "../../actions/novelActions"
 
 /* Class: Novel
  * Novel component
- * Displays a single novel from novel feed
+ * Displays a single novel from novel library
  */
 class Novel extends Component {
     componentDidMount() {
