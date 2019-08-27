@@ -30,6 +30,7 @@ import EditPost from "./components/post/edit_post"
 import EditComment from "./components/post/comment/edit_comment"
 
 import Novel from "./components/novel/novel"
+import NovelList from "./components/novel/novel_list"
 
 import TagList from "./components/post/tag_list"
 
@@ -74,6 +75,7 @@ class Main extends Component {
                   <Route exact path="/notes/:id" component={Post}/>
                   <Route exact path="/notes/tag/:tag" component={PostListFilter}/>
                   <Route exact path="/tags" component={TagList}/>
+                  <Route exact path="/novels" component={NovelList}/>
                   <Route exact path="/novels/:id" component={Novel}/>
                   <PrivateRoute exact path="/notes/edit/:id" component={EditPost}/>
                   <PrivateRoute exact path="/notes/edit/:id/:comment_id" component={EditComment}/>
