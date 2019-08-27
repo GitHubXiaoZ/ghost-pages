@@ -4,15 +4,19 @@ import PropTypes from "prop-types"
 import { connect } from "react-redux"
 import { Link } from "react-router-dom"
 import millsToDaysHoursMinutes from "../../utils/millsToDaysHoursMinutes"
+import { deleteNovel } from "../../actions/novelActions"
 
 /* Class: NovelItem
  * Single novel
  * Novel contains username, content
  */
 class NovelItem extends Component {
+    onDelete = id => {
+        this.props.deleteNovel(id)
+    }
 
     render() {
-        const { novel } = this.props
+        const { novel, auth, displayActions } = this.props
         let timelapsed = Date.now() - Date.parse(novel.date)
 
          return (
@@ -53,6 +57,19 @@ class NovelItem extends Component {
                          }).format(Date.parse(novel.update)
                          ): null}
                     </div>
+                    {displayActions ? (
+                        <span className="actions">
+                            {novel.user === auth.user.id ? (
+                                <button
+                                    onClick={this.onDelete.bind(this, novel._id)}
+                                    type="button"
+                                    className="delete-button"
+                                    >
+                                    Delete
+                                </button>
+                            ): null}
+                        </span>
+                    ): null}
                 </div>
              </div>
          )
@@ -66,6 +83,7 @@ NovelItem.defaultProps = {
 NovelItem.propTypes = {
     novel: PropTypes.object.isRequired,
     auth: PropTypes.object.isRequired,
+    deleteNovel: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({
@@ -74,5 +92,6 @@ const mapStateToProps = state => ({
 
 /*export novelitem*/
 export default connect(
-    mapStateToProps
+    mapStateToProps,
+    { deleteNovel }
     ) (NovelItem)
