@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import { connect } from "react-redux"
 import { Link } from "react-router-dom"
 import millsToDaysHoursMinutes from "../../utils/millsToDaysHoursMinutes"
-import { deleteNovel } from "../../actions/novelActions"
+import { deleteNovel, rateNovel } from "../../actions/novelActions"
 
 /* Class: NovelItem
  * Single novel
@@ -13,6 +13,10 @@ import { deleteNovel } from "../../actions/novelActions"
 class NovelItem extends Component {
     onDelete = id => {
         this.props.deleteNovel(id)
+    }
+
+    onRate = id => {
+        this.props.rateNovel(id)
     }
 
     render() {
@@ -83,6 +87,7 @@ NovelItem.defaultProps = {
 NovelItem.propTypes = {
     novel: PropTypes.object.isRequired,
     auth: PropTypes.object.isRequired,
+    rateNovel: PropTypes.func.isRequired,
     deleteNovel: PropTypes.func.isRequired
 }
 
@@ -93,5 +98,6 @@ const mapStateToProps = state => ({
 /*export novelitem*/
 export default connect(
     mapStateToProps,
-    { deleteNovel }
+    { rateNovel,
+      deleteNovel }
     ) (NovelItem)
