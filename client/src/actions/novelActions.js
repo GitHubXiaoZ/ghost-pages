@@ -83,6 +83,21 @@ export const deleteNovel = id => dispatch => {
         )
 }
 
+/*rate a novel*/
+export const rateNovel = id => dispatch => {
+    axios
+        .post(`/api/novels/rate/${id}`)
+        .then(res => 
+            dispatch(getNovelList())
+        )
+        .catch(err =>
+            dispatch({
+                type: GET_ERRORS,
+                payload: err.response.data
+            })
+        )
+}
+
 /*novel loading action*/
 export const setNovelLoading = () => {
     return {
