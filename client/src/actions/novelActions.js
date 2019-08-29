@@ -98,6 +98,21 @@ export const rateNovel = id => dispatch => {
         )
 }
 
+/*unrate a novel*/
+export const unrateNovel = id => dispatch => {
+    axios
+        .post(`/api/posts/unrate/${id}`)
+        .then(res => 
+            dispatch(getNovelList())
+        )
+        .catch(err =>
+            dispatch({
+                type: GET_ERRORS,
+                payload: err.response.data
+            })
+        )
+}
+
 /*novel loading action*/
 export const setNovelLoading = () => {
     return {
