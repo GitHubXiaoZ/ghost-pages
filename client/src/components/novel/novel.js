@@ -26,7 +26,7 @@ class Novel extends Component {
         } else {
             library =(
                 <div>
-                    <NovelItem novel={novel}/>
+                    <NovelItem novel={novel} displayActions={false}/>
                 </div>
             )
         }
