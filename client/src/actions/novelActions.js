@@ -113,6 +113,24 @@ export const unrateNovel = id => dispatch => {
         )
 }
 
+/*add a comment to novel*/
+export const addComment = (novel_id, commentData) => dispatch => {
+    axios
+        .post(`/api/novels/comment/${novel_id}`, commentData)
+        .then(res => 
+            dispatch({
+                type: GET_NOVEL,
+                payload: res.data
+            })
+        )
+        .catch(err =>
+            dispatch({
+                type: GET_ERRORS,
+                payload: err.response.data
+            })
+        )
+}
+
 /*novel loading action*/
 export const setNovelLoading = () => {
     return {
