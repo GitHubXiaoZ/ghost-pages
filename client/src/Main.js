@@ -17,18 +17,18 @@ import Login from "./components/auth/Login"
 import Dashboard from "./components/dashboard/Dashboard"
 import PrivateRoute from "./components/protected-route/PrivateRoute"
 import NotFound from "./components/layout/NotFound"
-
+//Profiles
 import Profile from "./components/profile/Profile"
 import ProfileList from "./components/profile/profile_list"
 import NewProfile from "./components/profile/new_profile"
 import EditProfile from "./components/profile/edit_profile"
-
+//Posts
 import Post from "./components/post/post"
 import PostList from "./components/post/post_list"
 import PostListFilter from "./components/post/post_list_filter"
 import EditPost from "./components/post/edit_post"
 import EditComment from "./components/post/comment/edit_comment"
-
+//Novels
 import Novel from "./components/novel/novel"
 import NovelList from "./components/novel/novel_list"
 
@@ -71,10 +71,10 @@ class Main extends Component {
                   <Route exact path="/user/:id" component={Profile}/>
                   <Route exact path="/profiles" component={ProfileList}/>
                   <Route exact path="/profiles/notes/:handle" component={PostListFilter}/>
+                  <Route exact path="/tags" component={TagList}/>
                   <Route exact path="/notes" component={PostList}/>
                   <Route exact path="/notes/:id" component={Post}/>
                   <Route exact path="/notes/tag/:tag" component={PostListFilter}/>
-                  <Route exact path="/tags" component={TagList}/>
                   <Route exact path="/novels" component={NovelList}/>
                   <Route exact path="/novels/:id" component={Novel}/>
                   <PrivateRoute exact path="/notes/edit/:id" component={EditPost}/>
