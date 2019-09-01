@@ -67,6 +67,13 @@ class NovelItem extends Component {
                     </div>
                     {displayActions ? (
                         <span className="actions">
+                            <button
+                                onClick={this.onRate.bind(this, novel._id)}
+                                type="button"
+                                className="rate-button"
+                                >
+                                Rate
+                            </button>
                             {novel.user === auth.user.id ? (
                                 <button
                                     onClick={this.onDelete.bind(this, novel._id)}
