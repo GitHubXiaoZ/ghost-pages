@@ -15,7 +15,7 @@ module.exports = validateNovelInput = data => {
     data.title = !isEmpty(data.title) ? data.title : ""
     data.synopsis = !isEmpty(data.synopsis) ? data.synopsis : ""
     data.status = !isEmpty(data.status) ? data.status : ""
-    data.text = !isEmpty(data.text) ? data.text : ""
+    data.rating = !isEmpty(data.rating) ? data.rating : ""
 
     if (Validator.isEmpty(data.title)) {
         errors.title = "Title cannot be empty!"
@@ -27,10 +27,6 @@ module.exports = validateNovelInput = data => {
 
     if (Validator.isEmpty(data.status)) {
         errors.status = "Status cannot be empty!"
-    }
-
-    if (Validator.isEmpty(data.text)) {
-        errors.text = "Comment cannot be empty!"
     }
 
     if (Validator.isInt(data.rating, { min: 1, max: 10 })) {
