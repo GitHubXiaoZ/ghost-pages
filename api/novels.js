@@ -9,6 +9,7 @@ const Profile = require("../models/Profile")
 const User = require("../models/User")
 
 const validNovelInput = require("../validate/novel")
+const validPostInput = require("../validate/post")
 
 /*test route*/
 router.get("/test", (req, res) => res.json({ msg: "Novel route -- working." }))
@@ -34,7 +35,6 @@ router.get("/:id", (req, res) => {
         .then(novels => res.json(novels))
         .catch(err => res.status(404).json({ nonovel: "Novel does not exist!" }))
 })
-
 
 /* GET api: novels/tags/all
  * returns all tags
@@ -217,7 +217,7 @@ router.post("/comment/:id",
     passport.authenticate("jwt", { session: false}), 
     (req, res) => {
         /*validates comment input*/
-        const { errors, isValid } = validNovelInput(req.body)
+        const { errors, isValid } = validPostInput(req.body)
 
         if (!isValid) {
             return res.status(400).json(errors)
