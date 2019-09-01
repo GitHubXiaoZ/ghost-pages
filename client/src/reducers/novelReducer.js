@@ -2,6 +2,7 @@
 import { 
     ADD_NOVEL,
     GET_NOVEL, 
+    GET_NOVEL_LIST,
     DELETE_NOVEL,
     NOVEL_LOADING } from "../actions/types"
 
@@ -24,6 +25,12 @@ export default function(state = initialState, action) {
             return {
                 ...state,
                 novel: action.payload,
+                loading: false
+            }
+        case GET_NOVEL_LIST:
+            return {
+                ...state,
+                novel_list: action.payload,
                 loading: false
             }
         case ADD_NOVEL:
