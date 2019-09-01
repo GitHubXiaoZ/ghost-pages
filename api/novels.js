@@ -261,3 +261,5 @@ router.delete("/comment/:id/:comment_id",
             .catch(err => res.status(404).json({ nonovel: "Novel does not exist!" }))
         }
 )
+
+module.exports = router
