@@ -10,6 +10,7 @@ const User = require("../models/User")
 
 const validNovelInput = require("../validate/novel")
 const validPostInput = require("../validate/post")
+const validRatingInput = require("../validate/rating")
 
 /*test route*/
 router.get("/test", (req, res) => res.json({ msg: "Novel route -- working." }))
@@ -157,12 +158,13 @@ router.delete("/:id",
 router.post("/rate/:id", 
     passport.authenticate("jwt", { session: false }),
     (req, res) => {
-        const { errors, isValid } = validNovelInput(req.body)
+        /*validates novel input*/
+        const { errors, isValid } = validRatingInput(req.body)
 
         if (!isValid) {
             return res.status(400).json(errors)
         }
-
+        
         Profile.findOne({ user: req.user.id })
         .then(profile => {
             Novel.findById(req.params.id)
