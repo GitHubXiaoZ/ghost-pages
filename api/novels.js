@@ -180,6 +180,8 @@ router.post("/rate/:id",
                     }
                     /*adds the user to novel.ratings indicating they rated the novel*/
                     novel.ratings.unshift(score)
+                    novel.avg_rating = ((Number(novel.avg_rating) * (novel.ratings.length - 1)) +
+                                         Number(score.rating)) / (novel.ratings.length)
                     novel.save().then(novel => res.json(novel))
                 })
                 .catch(err => res.status(404).json({ nonovel: "Novel does not exist!" }))
