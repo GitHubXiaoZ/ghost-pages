@@ -206,6 +206,13 @@ router.post("/unrate/:id",
                     /*index is the index of user's like in post.likes array*/
                     const index = novel.ratings.map(item => item.user.toString()).indexOf(req.user.id)
                     /*remove the user's rating from novel.ratings*/
+                    const value = novel.ratings[index].rating
+                    if (novel.ratings.length > 1) {
+                        novel.avg_rating = ((Number(novel.avg_rating) * (novel.ratings.length)) - Number(value)) 
+                                            / (novel.ratings.length - 1)
+                    } else {
+                        novel.avg_rating = 0
+                    }
                     novel.ratings.splice(index, 1)
                     novel.save().then(novel => res.json(novel))
                 })
