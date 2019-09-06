@@ -171,7 +171,7 @@ router.post("/rate/:id",
                     if (novel.ratings.filter(rating => rating.user.toString() === req.user.id).length > 0) {
                         return res.status(400).json({ rated: "Novel already rated!" })
                     }
-                    /*score from 1-10*/
+                    /*score from 1-5*/
                     const score = {
                         rating: req.body.rating,
                         user: req.user.id
