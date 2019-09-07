@@ -8,6 +8,9 @@ import Loading from "../layout/Loading"
 import NovelItem from "./novel_item"
 import { getNovel } from "../../actions/novelActions"
 
+import CommentForm from "../post/comment/comment_form"
+import CommentFeed from "../post/comment/comment_feed"
+
 /* Class: Novel
  * Novel component
  * Displays a single novel from novel library
@@ -19,6 +22,7 @@ class Novel extends Component {
 
     render() {
         const { novel, loading } = this.props.novel
+        const { isAuth } = this.props.auth
         let library
 
         if (novel === null || loading || Object.keys(novel).length === 0) {
@@ -27,6 +31,8 @@ class Novel extends Component {
             library =(
                 <div>
                     <NovelItem novel={novel} displayActions={false}/>
+                    { isAuth ? <CommentForm novel_id={novel._id}/> : <Link to="/login">Sign in to comment.</Link> }
+                    <CommentFeed novel_id={novel._id} comments={novel.comments}/>
                 </div>
             )
         }
