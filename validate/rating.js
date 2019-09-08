@@ -15,6 +15,7 @@ module.exports = validRatingInput = data => {
         errors.rating = "Rating cannot be empty!"
     }
 
+    //rating should be between 1 and 5
     if (!Validator.isInt(data.rating, { min: 1, max: 5 })) {
         errors.rating = "Ratings must be between a value of 1 and 5!"
     }
