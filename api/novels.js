@@ -100,7 +100,7 @@ router.get("/users/:handle", (req, res) => {
 router.post("/",
     passport.authenticate("jwt", { session: false }),
     (req, res) => {
-        /*validates novel input*/
+        //validate novel input
         const { errors, isValid } = validNovelInput(req.body)
 
         if (!isValid) {
@@ -138,11 +138,11 @@ router.delete("/:id",
         .then(profile => {
             Novel.findById(req.params.id)
                 .then(novel => {
-                    /*checks if user is the one who created the novel*/
+                    //checks if user is the one who created the novel
                     if (novel.user.toString() !== req.user.id) {
                         return res.status(401).json({ nopermission: "Not allowed to delete this novel!" })
                     }
-                    /*deletes novel*/
+                    //delete novel
                     novel.remove().then(() => res.json({ success: true }))
                 })
                 .catch(err => res.status(404).json({ nonovel: "Novel does not exist!" }))
@@ -156,7 +156,7 @@ router.delete("/:id",
 router.post("/rate/:id", 
     passport.authenticate("jwt", { session: false }),
     (req, res) => {
-        /*validates novel input*/
+        //validates rating input
         const { errors, isValid } = validRatingInput(req.body)
 
         if (!isValid) {
@@ -167,18 +167,18 @@ router.post("/rate/:id",
         .then(profile => {
             Novel.findById(req.params.id)
                 .then(novel => {
-                    /*checks if the user has already rated the novel*/
+                    //checks if the user has already rated the novel
                     if (novel.ratings.filter(rating => rating.user.toString() === req.user.id).length > 0) {
                         return res.status(400).json({ rated: "Novel already rated!" })
                     }
-                    /*score from 1-5*/
+                    //score from 1-5
                     const score = {
                         rating: req.body.rating,
                         user: req.user.id
                     }
-                    /*adds the user to novel.ratings indicating they rated the novel*/
+                    //adds the user to novel.ratings indicating they rated the novel
                     novel.ratings.unshift(score)
-                    /*calculate average rating*/
+                    //calculate average rating
                     novel.avg_rating = ((Number(novel.avg_rating) * (novel.ratings.length - 1)) + Number(score.rating))
                                      / (novel.ratings.length)
                     novel.save().then(novel => res.json(novel))
@@ -198,15 +198,17 @@ router.post("/unrate/:id",
         .then(profile => {
             Novel.findById(req.params.id)
                 .then(novel => {
-                    /*checks if the user has not rated the novel*/
+                    //checks if the user has rated the novel
                     if (novel.ratings.filter(rating => rating.user.toString() === req.user.id).length === 0) {
                         return res.status(400).json({ rated: "Novel has not been rated!" })
                     }
-                    /*index is the index of user's like in post.likes array*/
+                    //index of user's like in post.likes array
                     const index = novel.ratings.map(item => item.user.toString()).indexOf(req.user.id)
-                    /*remove the user's rating from novel.ratings*/
+                    //value of rating being removed
                     const value = novel.ratings[index].rating
+                    //checks items in novel.ratings
                     if (novel.ratings.length > 1) {
+                        //recalculate rating
                         novel.avg_rating = ((Number(novel.avg_rating) * (novel.ratings.length)) - Number(value)) 
                                             / (novel.ratings.length - 1)
                     } else {
@@ -226,7 +228,7 @@ router.post("/unrate/:id",
 router.post("/comment/:id", 
     passport.authenticate("jwt", { session: false}), 
     (req, res) => {
-        /*validates comment input*/
+        //validate comment input
         const { errors, isValid } = validPostInput(req.body)
 
         if (!isValid) {
@@ -235,14 +237,14 @@ router.post("/comment/:id",
 
         Novel.findById(req.params.id)
             .then(novel => {
-                /*creates a new comment*/
+                /*create a new comment*/
                 const newComment = {
                     text: req.body.text,
                     name: req.body.name,
                     user: req.user.id,
                     novelID: novel.id
                 }
-                /*add comment to novel.comments array*/
+                //add comment to novel.comments array
                 novel.comments.unshift(newComment)
                 novel.save().then(novel => res.json(novel))
             })
@@ -258,13 +260,13 @@ router.delete("/comment/:id/:comment_id",
     (req, res) => {
         Novel.findById(req.params.id)
             .then(novel => {
-                /*check if the user's comment exists*/
+                //check if the user's comment exists
                 if (novel.comments.filter(comment => comment._id.toString() === req.params.comment_id).length === 0) {
                     return res.status(404).json({ nocomment: "Comment does not exist! "})
                 }
-                /*index is the index of user's comment in novel.comments array*/
+                //index of user's comment in novel.comments array
                 const index = novel.comments.map(item => item._id.toString()).indexOf(req.params.comment_id)
-                /*remove the comment*/
+                //remove the comment
                 novel.comments.splice(index, 1)
                 novel.save().then(novel => res.json(novel))
             })
