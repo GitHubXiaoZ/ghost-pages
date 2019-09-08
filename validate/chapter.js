@@ -17,6 +17,10 @@ module.exports = validateChapterInput = data => {
         errors.title = "Title cannot be empty!"
     }
 
+    if (!Validator.isLength(data.title, { max: 250 })) {
+        errors.title = "Title cannot exceed 250 characters!"
+    }
+
     if (Validator.isEmpty(data.text)) {
         errors.text = "Chapter cannot be empty!"
     }
