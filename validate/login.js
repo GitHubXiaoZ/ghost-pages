@@ -13,14 +13,14 @@ module.exports = validateLoginInput = data => {
     data.email = !isEmpty(data.email) ? data.email : ""
     data.password = !isEmpty(data.password) ? data.password : ""
 
-    /*validates email field*/
+    //validate email
     if (Validator.isEmpty(data.email)) {
         errors.email = "Email required!"
-    } else if(!Validator.isEmail(data.email)) {
+    } else if (!Validator.isEmail(data.email)) {
         errors.email = "Email is invalid!"
     }
 
-    /*validates password field*/
+    //validate password
     if (Validator.isEmpty(data.password)) {
         errors.password = "Password required!"
     }
