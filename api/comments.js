@@ -45,11 +45,11 @@ router.delete("/:id",
         .then(profile => {
             Comment.findById(req.params.id)
                 .then(comment => {
-                    /*checks if user is the one who created the post*/
+                    //checks if user is the one who created the comment
                     if (comment.user.toString() !== req.user.id) {
                         return res.status(401).json({ nopermission: "Not allowed to delete this comment!" })
                     }
-                    /*deletes post*/
+                    //deletes comment
                     comment.remove().then(() => res.json({ success: true }))
                 })
                 .catch(err => res.status(404).json({ nopost: "Comment does not exist!" }))
