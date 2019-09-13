@@ -6,6 +6,7 @@ const isEmpty = require("is-empty")
 module.exports = validateProfileInput = data => {
     let errors = {}
     //acceptable characters
+    //alphanumeric characters
     const regex = /^[a-zA-z0-9-]+$/g
 
     /*sets field
