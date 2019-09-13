@@ -5,6 +5,7 @@ const isEmpty = require("is-empty")
 /*exports*/
 module.exports = validateNovelInput = data => {
     let errors = {}
+    let status = ["On Going", "Completed", "Hiatus"]
 
     /*sets fields
      *title
