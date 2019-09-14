@@ -98,7 +98,7 @@ router.get("/users/:handle", (req, res) => {
 router.post("/",
     passport.authenticate("jwt", { session: false }),
     (req, res) => {
-        /*validates post input*/
+        //validates post input
         const { errors, isValid } = validPostInput(req.body)
 
         if (!isValid) {
@@ -130,7 +130,7 @@ router.post("/",
 router.patch("/:id", 
     passport.authenticate("jwt", { session: false }),
     (req, res) => {
-        /*validates post input*/
+        //validates post input
         const { errors, isValid } = validPostInput(req.body)
 
         if (!isValid) {
@@ -141,7 +141,7 @@ router.patch("/:id",
         .then(profile => {
             Post.findById(req.params.id)
                 .then(post => {
-                    /*checks if user is the one who created the post*/
+                    //checks if user is the one who created the post
                     if (post.user.toString() !== req.user.id) {
                         return res.status(401).json({ nopermission: "Not allowed to edit this post!" })
                     }
@@ -164,11 +164,11 @@ router.delete("/:id",
         .then(profile => {
             Post.findById(req.params.id)
                 .then(post => {
-                    /*checks if user is the one who created the post*/
+                    //checks if user is the one who created the post
                     if (post.user.toString() !== req.user.id) {
                         return res.status(401).json({ nopermission: "Not allowed to delete this post!" })
                     }
-                    /*deletes post*/
+                    //deletes post
                     post.remove().then(() => res.json({ success: true }))
                 })
                 .catch(err => res.status(404).json({ nopost: "Post does not exist!" }))
@@ -186,11 +186,11 @@ router.post("/like/:id",
         .then(profile => {
             Post.findById(req.params.id)
                 .then(post => {
-                    /*checks if the user has already liked the post*/
+                    //checks if the user has already liked the post
                     if (post.likes.filter(like => like.user.toString() === req.user.id).length > 0) {
                         return res.status(400).json({ liked: "Post already liked!" })
                     }
-                    /*adds the user to post.likes indicating they liked the post*/
+                    //adds the user to post.likes
                     post.likes.unshift({ user: req.user.id })
                     post.save().then(post => res.json(post))
                 })
@@ -209,13 +209,13 @@ router.post("/unlike/:id",
         .then(profile => {
             Post.findById(req.params.id)
                 .then(post => {
-                    /*checks if the user has not liked the post*/
+                    //checks if the user has not liked the post
                     if (post.likes.filter(like => like.user.toString() === req.user.id).length === 0) {
                         return res.status(400).json({ liked: "Post has not been liked!" })
                     }
-                    /*index is the index of user's like in post.likes array*/
+                    //index is the index of user's like in post.likes array
                     const index = post.likes.map(item => item.user.toString()).indexOf(req.user.id)
-                    /*remove the user's like from post.likes*/
+                    //remove the user's like from post.likes
                     post.likes.splice(index, 1)
                     post.save().then(post => res.json(post))
                 })
@@ -230,11 +230,11 @@ router.post("/unlike/:id",
 router.get("/comment/:id/:comment_id", (req, res) => {
     Post.findById(req.params.id)
         .then(post => {
-            /*check if the user's comment exists*/
+            //check if the user's comment exists
             if (post.comments.filter(comment => comment._id.toString() === req.params.comment_id).length === 0) {
                 return res.status(404).json({ nocomment: "Comment does not exist! "})
             }
-            /*index is the index of user's comment in post.comments array*/
+            //index is the index of user's comment in post.comments array
             const index = post.comments.map(item => item._id.toString()).indexOf(req.params.comment_id)
             res.json(post.comments[index])
         })
@@ -247,7 +247,7 @@ router.get("/comment/:id/:comment_id", (req, res) => {
 router.post("/comment/:id", 
     passport.authenticate("jwt", { session: false}), 
     (req, res) => {
-        /*validates comment input*/
+        //validates comment input
         const { errors, isValid } = validPostInput(req.body)
 
         if (!isValid) {
@@ -263,7 +263,7 @@ router.post("/comment/:id",
                     user: req.user.id,
                     postID: post.id
                 }
-                /*add comment to post.comments array*/
+                //add comment to post.comments array
                 post.comments.unshift(newComment)
                 post.save().then(post => res.json(post))
             })
@@ -277,7 +277,7 @@ router.post("/comment/:id",
 router.patch("/comment/:id/:comment_id", 
     passport.authenticate("jwt", { session: false}), 
     (req, res) => {
-        /*validates comment input*/
+        //validates comment input
         const { errors, isValid } = validPostInput(req.body)
 
         if (!isValid) {
@@ -286,11 +286,11 @@ router.patch("/comment/:id/:comment_id",
 
         Post.findById(req.params.id)
             .then(post => {
-                /*check if the user's comment exists*/
+                //check if the user's comment exists
                 if (post.comments.filter(comment => comment._id.toString() === req.params.comment_id).length === 0) {
                     return res.status(404).json({ nocomment: "Comment does not exist! "})
                 }
-                /*index is the index of user's comment in post.comments array*/
+                //index is the index of user's comment in post.comments array
                 const index = post.comments.map(item => item._id.toString()).indexOf(req.params.comment_id)
                 post.comments[index].text = req.body.text
                 post.comments[index].update = Date.now()
@@ -308,13 +308,13 @@ router.delete("/comment/:id/:comment_id",
     (req, res) => {
         Post.findById(req.params.id)
             .then(post => {
-                /*check if the user's comment exists*/
+                //check if the user's comment exists
                 if (post.comments.filter(comment => comment._id.toString() === req.params.comment_id).length === 0) {
                     return res.status(404).json({ nocomment: "Comment does not exist! "})
                 }
-                /*index is the index of user's comment in post.comments array*/
+                //index is the index of user's comment in post.comments array
                 const index = post.comments.map(item => item._id.toString()).indexOf(req.params.comment_id)
-                /*remove the comment*/
+                //remove the comment
                 post.comments.splice(index, 1)
                 post.save().then(post => res.json(post))
             })
