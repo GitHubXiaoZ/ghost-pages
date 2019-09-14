@@ -18,13 +18,14 @@ router.get("/test", (req, res) => res.json({ msg: "User route -- working." }))
  * register new users
  */
 router.post("/register", (req, res) => {
+    //validates register inputs
     const { errors, isValid } = validRegInput(req.body)
 
     if (!isValid) {
         return res.status(400).json(errors)
     }
 
-    /*checks if email has already been used */
+    //checks if email has already been used 
     User.findOne({ email: req.body.email }).then(user => {
         if (user) {
             errors.email = "Email has already been registered!"
@@ -36,9 +37,8 @@ router.post("/register", (req, res) => {
                 password: req.body.password
             })
 
-            /*hash password
-             *default: 10 rounds
-             */
+            //hash password
+            //default: 10 rounds
             bcrypt.genSalt((err, salt) => {
                 bcrypt.hash(newUser.password, salt, (err, hash) => {
                     if (err) throw err
@@ -58,7 +58,7 @@ router.post("/register", (req, res) => {
  * return jwt token
  */
 router.post("/login", (req, res) => {
-     /*validates login inputs */
+     //validates login inputs 
      const { errors, isValid } = validLogInput(req.body)
      
      if (!isValid) {
@@ -68,29 +68,28 @@ router.post("/login", (req, res) => {
     const email = req.body.email
     const password = req.body.password
 
-    /*determine if user email exists */
+    //determine if user email exists 
     User.findOne({ email }).then(user => {
-        /*user check*/
+        //if user doesn't exist
         if (!user) {
             errors.email = "Email not registered!"
             return res.status(404).json(errors)
         } 
 
-        /*password check*/
+        //password check
         bcrypt.compare(password, user.password).then(isEqual => {
             if (isEqual) {
-                /*jwt payload*/
                 const payload = {
                     id: user.id,
                     name: user.name
                 }
 
-                /*jwt sign token*/
+                //jwt sign token
                 jwt.sign (
                     payload,
                     keys.secretOrKey,
                     {
-                        /*expiration in a week*/
+                        //expires in a week
                         expiresIn: 604800 
                     },
                     (err, token) => {
