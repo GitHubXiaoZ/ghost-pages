@@ -5,7 +5,7 @@ const isEmpty = require("is-empty")
 /*exports*/
 module.exports = validateNovelInput = data => {
     let errors = {}
-    let status = ["On Going", "Completed", "Hiatus"]
+    const status = ["On Going", "Completed", "Hiatus"]
 
     /*sets fields
      *title
@@ -15,6 +15,8 @@ module.exports = validateNovelInput = data => {
     data.title = !isEmpty(data.title) ? data.title : ""
     data.synopsis = !isEmpty(data.synopsis) ? data.synopsis : ""
     data.status = !isEmpty(data.status) ? data.status : ""
+
+    const valid_status = status.includes(data.status)
 
     if (Validator.isEmpty(data.title)) {
         errors.title = "Title cannot be empty!"
@@ -36,6 +38,8 @@ module.exports = validateNovelInput = data => {
 
     if (Validator.isEmpty(data.status)) {
         errors.status = "Status cannot be empty!"
+    } else if (!valid_status) {
+        errors.status = "Status should only be \"On Going\", \"Completed\", or \"Hiatus\"."
     }
 
     return {
