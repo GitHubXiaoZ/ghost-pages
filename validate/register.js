@@ -6,6 +6,8 @@ const isEmpty = require("is-empty")
 module.exports = validateRegisterInput = data => {
     let errors = {}
     //acceptable characters
+    //alphabetic characters
+    //, . ' -
     const regex = /^[a-zA-z ,.'-]+$/g
 
     /*sets fields
