@@ -9,9 +9,11 @@ module.exports = validateChapterInput = data => {
     /*sets fields
      *title
      *text
+     *index
      *to empty string if no input is given*/
     data.title = !isEmpty(data.title) ? data.title : ""
     data.text = !isEmpty(data.text) ? data.text : ""
+    data.index = !isEmpty(data.index) ? data.index : ""
 
     if (Validator.isEmpty(data.title)) {
         errors.title = "Title cannot be empty!"
