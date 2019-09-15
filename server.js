@@ -9,27 +9,28 @@ const posts = require("./api/posts")
 const novels = require("./api/novels")
 const comments = require("./api/comments")
 
-/*app*/
+//express middleware
 const app = express()
 
-/*middleware*/
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
-/*database*/
+//database connection
 connectToDB()
 
-/*passport middleware*/
+//express with passport
 app.use(passport.initialize())
-/*config*/
+//passport configuration
 require("./config/passport")(passport)
 
+//api
 app.use("/api/users", users)
 app.use("/api/profiles", profiles)
 app.use("/api/posts", posts)
 app.use("/api/novels", novels)
 app.use("/api/comments", comments)
 
+//ports
 const port = process.env.PORT || 3001
 
 app.listen(port, () => console.log(`Server running on port ${port}.`))
