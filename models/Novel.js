@@ -10,6 +10,9 @@ const ChapterSchema = new Schema({
     name: {
         type: String
     },
+    index: {
+        type: Number
+    },
     title: {
         type: String
     },
