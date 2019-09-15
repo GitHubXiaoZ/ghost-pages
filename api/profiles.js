@@ -98,6 +98,7 @@ router.get("/user/:user_id",
 router.post("/",
     passport.authenticate("jwt", { session: false }),
     (req, res) => {
+        //validate profile input
         const { errors, isValid } = validProfileInput(req.body)
 
         if (!isValid) {
