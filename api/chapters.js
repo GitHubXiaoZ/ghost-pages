@@ -8,6 +8,8 @@ const { Chapter } = require("../models/Novel")
 const Profile = require("../models/Profile")
 const User = require("../models/User")
 
+const validChapterInput = require("../validate/chapter")
+
 /*test route*/
 router.get("/test", (req, res) => res.json({ msg: "Chapter route -- working." }))
 
