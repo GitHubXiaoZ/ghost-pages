@@ -3,7 +3,7 @@ import axios from "axios"
 
 /**
  * function setAuthToken
- * @param token jwt token
+ * @param token (jwt token)
  * authenticates user using jwt token
  */
 const setAuthToken = token => {
