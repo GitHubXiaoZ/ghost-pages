@@ -9,7 +9,7 @@ import {
     NOVEL_LOADING,
     GET_ERRORS } from "./types"
 
-/*add a novel*/
+//add a novel
 export const addNovel = novelData => dispatch => {
     axios
         .post("/api/novels", novelData)
@@ -27,7 +27,7 @@ export const addNovel = novelData => dispatch => {
         )
 }
 
-/*return a novel*/
+//return a novel
 export const getNovel = id => dispatch => {
     dispatch(setNovelLoading())
     axios
@@ -46,7 +46,7 @@ export const getNovel = id => dispatch => {
         )
 }
 
-/*return all novels*/
+//return all novels
 export const getNovelList = () => dispatch => {
     dispatch(setNovelLoading())
     axios
@@ -65,7 +65,7 @@ export const getNovelList = () => dispatch => {
         )
 }
 
-/*delete a novel*/
+//delete a novel
 export const deleteNovel = id => dispatch => {
     axios
         .delete(`/api/novels/${id}`)
@@ -83,7 +83,7 @@ export const deleteNovel = id => dispatch => {
         )
 }
 
-/*rate a novel*/
+//rate a novel
 export const rateNovel = id => dispatch => {
     axios
         .post(`/api/novels/rate/${id}`)
@@ -98,7 +98,7 @@ export const rateNovel = id => dispatch => {
         )
 }
 
-/*unrate a novel*/
+//unrate a novel
 export const unrateNovel = id => dispatch => {
     axios
         .post(`/api/posts/unrate/${id}`)
@@ -113,7 +113,7 @@ export const unrateNovel = id => dispatch => {
         )
 }
 
-/*add a comment to novel*/
+//add a comment to novel
 export const addComment = (novel_id, commentData) => dispatch => {
     axios
         .post(`/api/novels/comment/${novel_id}`, commentData)
@@ -131,7 +131,7 @@ export const addComment = (novel_id, commentData) => dispatch => {
         )
 }
 
-/*novel loading action*/
+//novel loading 
 export const setNovelLoading = () => {
     return {
         type: NOVEL_LOADING
