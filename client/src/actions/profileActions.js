@@ -9,7 +9,7 @@ import {
     RESET_CURRENT_PROFILE, 
     GET_ERRORS } from "./types"
 
-/*create new profile*/
+//create new profile
 export const newProfile = (profileData, history) => dispatch => {
     axios
         .post("/api/profiles", profileData)
@@ -22,7 +22,7 @@ export const newProfile = (profileData, history) => dispatch => {
         )
 }
 
-/*return current profile*/
+//return current profile
 export const getCurrentProfile = () => dispatch => {
     dispatch(setProfileLoading())
     axios
@@ -40,7 +40,7 @@ export const getCurrentProfile = () => dispatch => {
         )
 }
 
-/*return handle's profile*/
+//return handle's profile
 export const getProfileByHandle = handle => dispatch => {
     dispatch(setProfileLoading())
     axios
@@ -58,7 +58,7 @@ export const getProfileByHandle = handle => dispatch => {
         )
 }
 
-/*return id's profile*/
+//return id's profile
 export const getProfileByID = id => dispatch => {
     dispatch(setProfileLoading())
     axios
@@ -76,7 +76,7 @@ export const getProfileByID = id => dispatch => {
         )
 }
 
-/*return list of all profiles*/
+//return list of all profiles
 export const getProfileList = () => dispatch => {
     dispatch(setProfileLoading())
     axios
@@ -94,21 +94,21 @@ export const getProfileList = () => dispatch => {
         )
 }
 
-/*profile loading action*/
+//profile loading 
 export const setProfileLoading = () => {
     return {
         type: PROFILE_LOADING
     }
 }
 
-/*profile reset action*/
+//profile reset 
 export const resetCurrentProfile = () => {
     return {
         type: RESET_CURRENT_PROFILE
     }
 }
 
-/*delete profile action*/
+//delete profile action
 export const deleteAccount = () => dispatch => {
     axios
         .delete("/api/profiles")
