@@ -2,7 +2,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
 
-/*options available for user's profile*/
+//options available for user's profile
 const ProfilePreference = () => {
     return (
         <div>
@@ -13,5 +13,5 @@ const ProfilePreference = () => {
     )
 }
 
-/*export*/
+/*export profilepreference*/
 export default ProfilePreference
