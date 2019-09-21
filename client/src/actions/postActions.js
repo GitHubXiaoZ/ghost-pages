@@ -11,7 +11,7 @@ import {
     GET_ERRORS,
     RESET_ERRORS } from "./types"
 
-/*add a post*/
+//add a post
 export const addPost = postData => dispatch => {
     dispatch(resetErrors())
     axios
@@ -30,7 +30,7 @@ export const addPost = postData => dispatch => {
         )
 }
 
-/*edit a post*/
+//edit a post
 export const editPost = (postData, id, history) => dispatch => {
     dispatch(resetErrors())
     axios
@@ -50,7 +50,7 @@ export const editPost = (postData, id, history) => dispatch => {
         )
 }
 
-/*return a post*/
+//return a post
 export const getPost = id => dispatch => {
     dispatch(setPostLoading())
     axios
@@ -69,7 +69,7 @@ export const getPost = id => dispatch => {
         )
 }
 
-/*return all posts*/
+//return all posts
 export const getPostList = () => dispatch => {
     dispatch(setPostLoading())
     axios
@@ -88,7 +88,7 @@ export const getPostList = () => dispatch => {
         )
 }
 
-/*return all user's posts by user id*/
+//return all user's posts by user id
 export const getPostListByUser = user_id => dispatch => {
     dispatch(setPostLoading())
     axios
@@ -108,7 +108,7 @@ export const getPostListByUser = user_id => dispatch => {
 }
 
 
-/*return all user's posts by user handle*/
+//return all user's posts by user handle
 export const getPostListByHandle = handle => dispatch => {
     dispatch(setPostLoading())
     axios
@@ -127,7 +127,7 @@ export const getPostListByHandle = handle => dispatch => {
         )
 }
 
-/*return all posts containing tag*/
+//return all posts with filtered tag
 export const getPostListByTag = tag => dispatch => {
     dispatch(setPostLoading())
     axios
@@ -146,7 +146,7 @@ export const getPostListByTag = tag => dispatch => {
         )
 }
 
-/*delete a post*/
+//delete a post
 export const deletePost = id => dispatch => {
     axios
         .delete(`/api/posts/${id}`)
@@ -164,7 +164,7 @@ export const deletePost = id => dispatch => {
         )
 }
 
-/*like a post*/
+//like a post
 export const likePost = id => dispatch => {
     axios
         .post(`/api/posts/like/${id}`)
@@ -179,7 +179,7 @@ export const likePost = id => dispatch => {
         )
 }
 
-/*unlike a post*/
+//unlike a post
 export const unlikePost = id => dispatch => {
     axios
         .post(`/api/posts/unlike/${id}`)
@@ -194,7 +194,7 @@ export const unlikePost = id => dispatch => {
         )
 }
 
-/*add a comment to post*/
+//add a comment to post
 export const addComment = (post_id, commentData) => dispatch => {
     dispatch(resetErrors())
     axios
@@ -213,7 +213,7 @@ export const addComment = (post_id, commentData) => dispatch => {
         )
 }
 
-/*edit a comment*/
+//edit a comment
 export const editComment = (post_id, comment_id, commentData, history) => dispatch => {
     dispatch(resetErrors())
     axios
@@ -233,7 +233,7 @@ export const editComment = (post_id, comment_id, commentData, history) => dispat
         )
 }
 
-/*return a comment*/
+//return a comment
 export const getComment = (post_id, comment_id) => dispatch => {
     dispatch(setPostLoading())
     axios
@@ -252,7 +252,7 @@ export const getComment = (post_id, comment_id) => dispatch => {
         )
 }
 
-/*delete a comment*/
+//delete a comment
 export const deleteComment = (post_id, comment_id) => dispatch => {
     axios
         .delete(`/api/posts/comment/${post_id}/${comment_id}`)
@@ -270,7 +270,7 @@ export const deleteComment = (post_id, comment_id) => dispatch => {
         )
 }
 
-/*return all posts*/
+//return all tags
 export const getTagList = () => dispatch => {
     dispatch(setPostLoading())
     axios
@@ -289,14 +289,14 @@ export const getTagList = () => dispatch => {
         )
 }
 
-/*post loading action*/
+//post loading 
 export const setPostLoading = () => {
     return {
         type: POST_LOADING
     }
 }
 
-/*resets errors before new action*/
+//resets errors
 export const resetErrors = () => {
     return {
         type: RESET_ERRORS
