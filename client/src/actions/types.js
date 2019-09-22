@@ -1,4 +1,4 @@
-/*exports possible actions*/
+/*export possible actions*/
 //errors
 export const GET_ERRORS = "GET_ERRORS"
 export const RESET_ERRORS = "RESET_ERRORS"
@@ -9,7 +9,6 @@ export const SET_CURRENT_USER = "SET_CURRENT_USER"
 
 //profiles
 export const PROFILE_LOADING = "PROFILE_LOADING"
-
 export const GET_PROFILE = "GET_PROFILE"
 export const GET_PROFILE_LIST = "GET_PROFILE_LIST"
 
@@ -18,7 +17,6 @@ export const RESET_CURRENT_PROFILE = "RESET_CURRENT_PROFILE"
 
 //posts
 export const POST_LOADING = "POST_LOADING"
-
 export const GET_POST = "GET_POST"
 export const GET_POST_LIST = "GET_POST_LIST"
 export const ADD_POST = "ADD_POST"
@@ -26,7 +24,6 @@ export const DELETE_POST = "DELETE_POST"
 
 //novels
 export const NOVEL_LOADING = "NOVEL_LOADING"
-
 export const GET_NOVEL = "GET_NOVEL"
 export const GET_NOVEL_LIST = "GET_NOVEL_LIST"
 export const ADD_NOVEL = "ADD_NOVEL"
