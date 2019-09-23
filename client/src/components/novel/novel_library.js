@@ -19,5 +19,5 @@ NovelLibrary.propTypes = {
     novel_list: PropTypes.array.isRequired
 }
 
-/*export postfeed*/
+/*export novellibrary*/
 export default NovelLibrary
