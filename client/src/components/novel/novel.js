@@ -59,7 +59,7 @@ const mapStateToProps = state => ({
     auth: state.auth
 })
 
-/*export post*/
+/*export novel*/
 export default connect(
     mapStateToProps,
     { getNovel }
