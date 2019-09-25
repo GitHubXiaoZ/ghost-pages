@@ -50,7 +50,7 @@ const mapStateToProps = state => ({
     post: state.post
 })
 
-/*exports postlist*/
+/*exports taglist*/
 export default connect(
     mapStateToProps,
      { getTagList }
