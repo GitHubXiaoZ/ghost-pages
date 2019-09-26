@@ -30,5 +30,5 @@ class ProfileHeader extends Component {
     }
 }
 
-/*exports profile header*/
+/*export profile header*/
 export default ProfileHeader
