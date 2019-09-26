@@ -32,5 +32,5 @@ ProfileContent.propType = {
     profile: PropTypes.object.isRequired
 }
 
-/*exports profilecontent*/
+/*export profilecontent*/
 export default ProfileContent
