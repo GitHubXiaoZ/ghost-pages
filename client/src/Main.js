@@ -31,7 +31,7 @@ import EditPost from "./components/post/edit_post"
 import EditComment from "./components/post/comment/edit_comment"
 //Novels
 import Novel from "./components/novel/novel"
-import NovelList from "./components/novel/novel_list"
+import NovelList from "./components/novel/noveLlist"
 
 import TagList from "./components/post/tag_list"
 
