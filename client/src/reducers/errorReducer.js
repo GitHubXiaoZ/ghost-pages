@@ -1,10 +1,10 @@
-/*imports action*/
+/*imports actions*/
 import { GET_ERRORS, RESET_ERRORS } from "../actions/types"
 
-/*default*/
+//default state
 const initialState = {}
 
-/*exports error reducer*/
+/*export error reducer*/
 export default function(state = initialState, action) {
     switch (action.type) {
         case GET_ERRORS:
