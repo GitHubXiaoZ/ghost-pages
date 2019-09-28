@@ -6,14 +6,14 @@ import {
     DELETE_NOVEL,
     NOVEL_LOADING } from "../actions/types"
 
-/*inital state*/
+//inital state
 const initialState = {
     novel: {},
     novel_list: [],
     loading: false
 }
 
-/*exports novel reducer*/
+/*export novel reducer*/
 export default function(state = initialState, action) {
     switch (action.type) {
         case NOVEL_LOADING:
