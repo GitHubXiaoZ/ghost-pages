@@ -6,14 +6,14 @@ import {
 
 const isEmpty = require("is-empty")
 
-/*default state*/
+//default state
 const initialState = {
     isAuth: false,
     user: {},
     loading: false
 }
 
-/*exports user authentication reducer*/
+/*export user authentication reducer*/
 export default function(state = initialState, action) {
     switch (action.type) {
         case SET_CURRENT_USER:
