@@ -18,21 +18,25 @@ import Login from "./components/auth/Login"
 import Dashboard from "./components/dashboard/Dashboard"
 import PrivateRoute from "./components/protected-route/PrivateRoute"
 import NotFound from "./components/layout/NotFound"
-//Profiles
+
+//profiles
 import Profile from "./components/profile/Profile"
 import ProfileList from "./components/profile/profile_list"
 import NewProfile from "./components/profile/new_profile"
 import EditProfile from "./components/profile/edit_profile"
-//Posts
+
+//posts
 import Post from "./components/post/post"
 import PostList from "./components/post/post_list"
 import PostListFilter from "./components/post/post_list_filter"
 import EditPost from "./components/post/edit_post"
 import EditComment from "./components/post/comment/edit_comment"
-//Novels
+
+//novels
 import Novel from "./components/novel/novel"
 import NovelList from "./components/novel/noveLlist"
 
+//tags
 import TagList from "./components/post/tag_list"
 
 //check local storage for token
