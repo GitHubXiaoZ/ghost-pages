@@ -56,5 +56,5 @@ const mapStateToProps = state => ({
   auth: state.auth
 })
 
-/*exports home*/
+/*export home*/
 export default connect(mapStateToProps) (Home)
