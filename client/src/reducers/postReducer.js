@@ -7,7 +7,7 @@ import {
     DELETE_POST,
     POST_LOADING } from "../actions/types"
 
-/*inital state*/
+//inital state
 const initialState = {
     post: {},
     post_list: [],
@@ -15,7 +15,7 @@ const initialState = {
     loading: false
 }
 
-/*exports post reducer*/
+/*export post reducer*/
 export default function(state = initialState, action) {
     switch (action.type) {
         case POST_LOADING:
