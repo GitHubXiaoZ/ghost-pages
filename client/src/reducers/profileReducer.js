@@ -6,14 +6,14 @@ import {
     RESET_CURRENT_PROFILE 
 } from "../actions/types"
 
-/*inital state*/
+//inital state
 const initialState = {
     profile: null,
     profile_list: null,
     loading: false
 }
 
-/*exports profile reducer*/
+/*export profile reducer*/
 export default function(state = initialState, action) {
     switch (action.type) {
         case PROFILE_LOADING:
