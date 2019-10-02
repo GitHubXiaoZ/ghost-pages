@@ -65,7 +65,7 @@ class NovelForm extends Component {
                 <div className="form-body">
                     <form noValidate onSubmit={this.onSubmit}>
                         <textarea rows="1" cols="20"
-                            placeholder="..."
+                            placeholder="Title"
                             name="title"
                             type="text" 
                             onChange={this.onChange}
@@ -74,7 +74,7 @@ class NovelForm extends Component {
                             />
                         <br/>
                         <textarea rows="1" cols="20"
-                            placeholder="..."
+                            placeholder="Pub. Status"
                             name="status"
                             type="text" 
                             onChange={this.onChange}
@@ -92,7 +92,7 @@ class NovelForm extends Component {
                             />       
                         <br/>  
                         <textarea rows="5" cols="20"
-                            placeholder="..."
+                            placeholder="Synopsis"
                             name="synopsis"
                             type="text" 
                             onChange={this.onChange}
