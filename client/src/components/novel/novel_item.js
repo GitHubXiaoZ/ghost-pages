@@ -91,10 +91,13 @@ class NovelItem extends Component {
     }
 }
 
+
+//defaultprops
 NovelItem.defaultProps = {
     displayActions: true
 }
 
+//novelitem proptype
 NovelItem.propTypes = {
     novel: PropTypes.object.isRequired,
     auth: PropTypes.object.isRequired,
