@@ -41,6 +41,8 @@ class NovelList extends Component {
     }
 }
 
+
+//novellist proptype
 NovelList.propTypes = {
     novel: PropTypes.object.isRequired,
     getNovelList: PropTypes.func.isRequired,
