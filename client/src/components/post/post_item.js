@@ -116,10 +116,14 @@ class PostItem extends Component {
     }
 }
 
+
+//defaultprops
 PostItem.defaultProps = {
     displayActions: true
 }
 
+
+//postitem proptype
 PostItem.propTypes = {
     post: PropTypes.object.isRequired,
     auth: PropTypes.object.isRequired,
