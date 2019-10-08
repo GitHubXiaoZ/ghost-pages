@@ -132,6 +132,7 @@ class EditProfile extends Component {
     }
 }
 
+//editprofile proptypes
 EditProfile.propTypes = {
     newProfile: PropTypes.func.isRequired,
     getCurrentProfile: PropTypes.func.isRequired,
