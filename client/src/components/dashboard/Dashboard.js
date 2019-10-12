@@ -63,7 +63,12 @@ class Dashboard extends Component {
     }
 }
 
-//dashboard proptypes
+/* dashboard proptypes
+ * getcurrentprofile
+ * deleteaccount
+ * auth
+ * profile
+ */
 Dashboard.propTypes = {
     getCurrentProfile: PropTypes.func.isRequired,
     deleteAccount: PropTypes.func.isRequired,
