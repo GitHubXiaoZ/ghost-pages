@@ -16,6 +16,7 @@ class NovelLibrary extends Component {
 }
 
 //novellibrary proptype
+//novel_list
 NovelLibrary.propTypes = {
     novel_list: PropTypes.array.isRequired
 }
