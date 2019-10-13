@@ -97,7 +97,13 @@ NovelItem.defaultProps = {
     displayActions: true
 }
 
-//novelitem proptype
+/* novelitem proptypes
+ * novel
+ * auth
+ * ratenovel
+ * unratenovel
+ * deletenovel
+ */
 NovelItem.propTypes = {
     novel: PropTypes.object.isRequired,
     auth: PropTypes.object.isRequired,
