@@ -17,6 +17,7 @@ class PostFeed extends Component {
 
 
 //postfeed proptype
+//post_list
 PostFeed.propTypes = {
     post_list: PropTypes.array.isRequired
 }
