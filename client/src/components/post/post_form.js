@@ -88,6 +88,7 @@ class PostForm extends Component {
     }
 }
 
+//postform proptypes
 PostForm.propTypes = {
     addPost: PropTypes.func.isRequired,
     auth: PropTypes.object.isRequired,
