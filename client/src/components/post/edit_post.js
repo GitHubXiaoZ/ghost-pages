@@ -89,7 +89,14 @@ class EditPost extends Component {
     }
 }
 
-//editpost proptype
+/* editpost proptype
+ * editpost
+ * getpost
+ * post
+ * auth
+ * errors
+ */
+
 EditPost.propTypes = {
     editPost: PropTypes.func.isRequired,
     getPost: PropTypes.func.isRequired,
