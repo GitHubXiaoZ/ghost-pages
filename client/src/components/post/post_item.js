@@ -123,7 +123,13 @@ PostItem.defaultProps = {
 }
 
 
-//postitem proptype
+/* postitem proptype
+ * post
+ * auth
+ * likepost
+ * unlikepost
+ * deletepost
+ */
 PostItem.propTypes = {
     post: PropTypes.object.isRequired,
     auth: PropTypes.object.isRequired,
