@@ -49,7 +49,11 @@ class Post extends Component {
 }
 
 
-//post proptype
+/* post proptype
+ * getpost
+ * post
+ * auth
+ */
 Post.propTypes = {
     getPost: PropTypes.func.isRequired,
     post: PropTypes.object.isRequired,
