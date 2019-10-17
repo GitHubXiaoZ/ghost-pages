@@ -47,7 +47,12 @@ class PostListFilter extends Component {
 }
 
 
-//postlistfilter proptype
+/* postlistfilter proptype
+ * post
+ * getpostlistbyuser
+ * getpostlistbyhandle
+ * getpostlistbytag
+ */
 PostListFilter.propTypes = {
     post: PropTypes.object.isRequired,
     getPostListByUser: PropTypes.func.isRequired,
