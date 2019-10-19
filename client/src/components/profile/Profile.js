@@ -65,7 +65,13 @@ class Profile extends Component {
     }
 }
 
-//profile proptypes
+/* profile proptypes
+ * profile
+ * getprofilebyhandle
+ * getprofilebyid
+ * getpostlistbyuser
+ * getpostlistbyhandle
+ */
 Profile.propTypes = {
     profile: PropTypes.object.isRequired,
     getProfileByHandle: PropTypes.func.isRequired,
