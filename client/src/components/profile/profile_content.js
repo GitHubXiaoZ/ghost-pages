@@ -29,6 +29,7 @@ class ProfileContent extends Component {
 }
 
 //profilecontent proptype
+//profile
 ProfileContent.propType = {
     profile: PropTypes.object.isRequired
 }
