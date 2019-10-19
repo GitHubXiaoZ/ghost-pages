@@ -115,7 +115,10 @@ class NewProfile extends Component {
     }
 }
 
-//newprofile proptypes
+/* newprofile proptypes
+ * profile
+ * errors
+ */
 NewProfile.propTypes = {
     profile: PropTypes.object.isRequired,
     errors: PropTypes.object.isRequired
