@@ -63,16 +63,15 @@ class Dashboard extends Component {
     }
 }
 
-/* dashboard proptypes
- * getcurrentprofile
- * deleteaccount
- * auth
- * profile
- */
+//dashboard proptypes
 Dashboard.propTypes = {
+    //{function} returns the current user's profile
     getCurrentProfile: PropTypes.func.isRequired,
+    //{function} deletes users account from database
     deleteAccount: PropTypes.func.isRequired,
+    //{object} auth component prop
     auth: PropTypes.object.isRequired,
+    //{object} profile component prop
     profile: PropTypes.object.isRequired
 } 
 
