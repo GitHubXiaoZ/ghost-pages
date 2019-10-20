@@ -110,14 +110,13 @@ class Login extends Component {
     }
 }
 
-/* login proptypes
- * loginuser
- * auth
- * errors
- */
+//login proptypes
 Login.propTypes = {
+    //{function} called to login user using their data (email and password)
     loginUser: PropTypes.func.isRequired,
+    //{object} auth component prop
     auth: PropTypes.object.isRequired,
+    //{object} errors component prop
     errors: PropTypes.object.isRequired
 }
 
