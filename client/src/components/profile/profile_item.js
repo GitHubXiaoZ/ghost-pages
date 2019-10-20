@@ -26,6 +26,7 @@ class ProfileItem extends Component {
 
 
 //profileitem proptype
+//profile
 ProfileItem.propTypes = {
     profile: PropTypes.object.isRequired
 }
