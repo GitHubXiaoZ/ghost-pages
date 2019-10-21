@@ -151,7 +151,7 @@ const mapStateToProps = state => ({
     errors: state.errors
 })
 
-/*exports register */
+/*export register */
 export default connect(
     mapStateToProps,
     { registerUser }
