@@ -48,8 +48,7 @@ class Home extends Component {
   }
 }
 
-//home proptype
-//auth
+//home proptypes
 Home.propTypes = {
   auth: PropTypes.object.isRequired
 }
