@@ -80,7 +80,7 @@ const mapStateToProps = state => ({
     profile: state.profile
 })
 
-/*exports dashboard*/
+/*export dashboard*/
 export default connect(
     mapStateToProps,
     { getCurrentProfile,
