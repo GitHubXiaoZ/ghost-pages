@@ -103,7 +103,7 @@ const mapStateToProps = state => ({
     auth: state.auth
 })
 
-/*exports navbar*/
+/*export navbar*/
 export default connect(
     mapStateToProps,
     { logoutUser,
