@@ -47,6 +47,8 @@ class ProfileList extends Component {
 
 
 //profilelist proptype
+//getprofilelist
+//profile
 ProfileList.propTypes = {
     getProfileList: PropTypes.func.isRequired,
     profile:PropTypes.object.isRequired
