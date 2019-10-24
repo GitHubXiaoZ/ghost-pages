@@ -7,7 +7,7 @@ const ProfilePreference = () => {
     return (
         <div>
             <Link to="/edit_profile">
-            Edit Profile
+                Edit Profile
             </Link>
         </div>
     )
