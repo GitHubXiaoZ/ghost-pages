@@ -113,14 +113,13 @@ class NovelForm extends Component {
     }
 }
 
-/* novelform proptypes
- * addnovel
- * auth
- * errors
- */
+//novelform proptypes
 NovelForm.propTypes = {
+    //{function} called to add a novel to database
     addNovel: PropTypes.func.isRequired,
+    //{object} auth component prop
     auth: PropTypes.object.isRequired,
+    //{object} errors component prop
     errors: PropTypes.object.isRequired
 }
 
