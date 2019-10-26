@@ -48,10 +48,13 @@ class Novel extends Component {
     }
 }
 
-//novel proptype
+//novel proptypes
 Novel.propTypes = {
+    //{function} called to return a novel with corresponding id
     getNovel: PropTypes.func.isRequired,
+    //{object} novel component prop
     novel: PropTypes.object.isRequired,
+    //{object} auth component prop
     auth: PropTypes.object.isRequired
 }
 
