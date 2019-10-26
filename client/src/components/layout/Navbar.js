@@ -89,13 +89,11 @@ class Navbar extends Component {
     }
 }
 
-/* navbar proptypes
- * logoutuser
- * auth
- */
-
+//navbar proptypes 
 Navbar.propTypes = {
+    //{function} called to log out current user
     logoutUser: PropTypes.func.isRequired,
+    //{object} auth component prop
     auth: PropTypes.object.isRequired
 }
 
