@@ -1,4 +1,4 @@
-//import
+/*import*/
 import React, { Component } from "react";
 
 /* Class: NotFound
