@@ -89,7 +89,7 @@ class EditPost extends Component {
     }
 }
 
-/* editpost proptype
+/* editpost proptypes
  * editpost
  * getpost
  * post
