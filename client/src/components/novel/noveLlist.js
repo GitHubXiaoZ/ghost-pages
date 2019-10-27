@@ -58,7 +58,7 @@ const mapStateToProps = state => ({
     auth: state.auth
 })
 
-/*exports novellist*/
+/*export novellist*/
 export default connect(
     mapStateToProps,
      { getNovelList }
