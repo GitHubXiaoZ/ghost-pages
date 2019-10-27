@@ -97,18 +97,17 @@ NovelItem.defaultProps = {
     displayActions: true
 }
 
-/* novelitem proptypes
- * novel
- * auth
- * ratenovel
- * unratenovel
- * deletenovel
- */
+//novelitem proptypes
 NovelItem.propTypes = {
+    //{object} novel component prop
     novel: PropTypes.object.isRequired,
+    //{object} auth component prop
     auth: PropTypes.object.isRequired,
+    //{function} called to add a rating to a user novel on a scale of 1-5
     rateNovel: PropTypes.func.isRequired,
+    //{function} called to remove user rating from novel
     unrateNovel: PropTypes.func.isRequired,
+    //{function} called to delete user's own novel
     deleteNovel: PropTypes.func.isRequired
 }
 
