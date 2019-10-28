@@ -49,7 +49,7 @@ class Post extends Component {
 }
 
 
-/* post proptype
+/* post proptypes
  * getpost
  * post
  * auth
