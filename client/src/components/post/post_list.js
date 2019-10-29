@@ -42,7 +42,7 @@ class PostList extends Component {
 }
 
 
-/* postlist proptype
+/* postlist proptypes
  * post
  * getpostlist
  * auth
