@@ -123,7 +123,7 @@ PostItem.defaultProps = {
 }
 
 
-/* postitem proptype
+/* postitem proptypes
  * post
  * auth
  * likepost
