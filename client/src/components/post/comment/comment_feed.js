@@ -15,6 +15,11 @@ class CommentFeed extends Component {
     }
 }
 
+/* commentfeed proptypes
+ * post id
+ * novel id
+ * comments
+ */
 CommentFeed.propTypes = {
     post_id: PropTypes.string.isRequired,
     novel_id: PropTypes.string.isRequired,
