@@ -84,6 +84,13 @@ class EditComment extends Component {
     }
 }
 
+/* editcomment proptypes
+ * editcomment
+ * getcomment
+ * post
+ * auth
+ * errors
+ */
 EditComment.propTypes = {
     editComment: PropTypes.func.isRequired,
     getComment: PropTypes.func.isRequired,
