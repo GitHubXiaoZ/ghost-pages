@@ -47,7 +47,7 @@ class PostListFilter extends Component {
 }
 
 
-/* postlistfilter proptype
+/* postlistfilter proptypes
  * post
  * getpostlistbyuser
  * getpostlistbyhandle
