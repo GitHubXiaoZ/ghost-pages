@@ -89,18 +89,17 @@ class EditPost extends Component {
     }
 }
 
-/* editpost proptypes
- * editpost
- * getpost
- * post
- * auth
- * errors
- */
+//editpost proptypes
 EditPost.propTypes = {
+    //{function} called to edit user's post
     editPost: PropTypes.func.isRequired,
+    //{function} called to return a user post
     getPost: PropTypes.func.isRequired,
+    //{object} post component prop
     post: PropTypes.object.isRequired,
+    //{object} auth component prop
     auth: PropTypes.object.isRequired,
+    //{object} errors component prop
     errors: PropTypes.object.isRequired
 }
 
