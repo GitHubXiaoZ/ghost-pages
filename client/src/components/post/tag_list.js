@@ -41,7 +41,7 @@ class TagList extends Component {
     }
 }
 
-/* taglist proptype
+/* taglist proptypes
  * gettaglist
  * taglist
  */
