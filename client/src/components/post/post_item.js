@@ -123,18 +123,17 @@ PostItem.defaultProps = {
 }
 
 
-/* postitem proptypes
- * post
- * auth
- * likepost
- * unlikepost
- * deletepost
- */
+//postitem proptypes
 PostItem.propTypes = {
+    //{object} post component prop
     post: PropTypes.object.isRequired,
+    //{object} auth component prop
     auth: PropTypes.object.isRequired,
+    //{function} called to add user's like to a post
     likePost: PropTypes.func.isRequired,
+    //{function} called to remove user's like from a post 
     unlikePost: PropTypes.func.isRequired,
+    //{function} called to delete and remove user post from database
     deletePost: PropTypes.func.isRequired
 }
 
