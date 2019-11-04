@@ -47,16 +47,15 @@ class PostListFilter extends Component {
 }
 
 
-/* postlistfilter proptypes
- * post
- * getpostlistbyuser
- * getpostlistbyhandle
- * getpostlistbytag
- */
+//postlistfilter proptypes
 PostListFilter.propTypes = {
+    //{object} post component prop
     post: PropTypes.object.isRequired,
+    //{function} called to return a list of user's posts based on id
     getPostListByUser: PropTypes.func.isRequired,
+    //{function} called to return a list of user's posts based on user's handle
     getPostListByHandle: PropTypes.func.isRequired,
+    //{function} called to return a list of posts based on tag
     getPostListByTag: PropTypes.func.isRequired
 }
 
