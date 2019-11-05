@@ -15,14 +15,13 @@ class CommentFeed extends Component {
     }
 }
 
-/* commentfeed proptypes
- * post id
- * novel id
- * comments
- */
+//commentfeed proptypes
 CommentFeed.propTypes = {
+    //{string} post id component prop
     post_id: PropTypes.string.isRequired,
+    //{string} novel component prop
     novel_id: PropTypes.string.isRequired,
+    //{array} comments component prop
     comments: PropTypes.array.isRequired
 }
 
