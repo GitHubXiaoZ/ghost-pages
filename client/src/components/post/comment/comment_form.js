@@ -76,16 +76,15 @@ class CommentForm extends Component {
     }
 }
 
-/* commentform proptypes
- * addcomment
- * post id
- * auth
- * errors
- */
+//commentform proptypes
 CommentForm.propTypes = {
+    //{function} called to add comment to post
     addComment: PropTypes.func.isRequired,
+    //{string} post id component prop
     post_id: PropTypes.string.isRequired,
+    //{object} auth component prop
     auth: PropTypes.object.isRequired,
+    //{object} errors component prop
     errors: PropTypes.object.isRequired
 }
 
