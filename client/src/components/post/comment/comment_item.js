@@ -73,16 +73,15 @@ class CommentItem extends Component {
     }
 }
 
-/* commentitem proptypes
- * post id
- * comment
- * auth
- * deletecomment
- */
+//commentitem proptypes
 CommentItem.propTypes = {
+    //{string} post id component prop
     post_id: PropTypes.string.isRequired,
+    //{object} comment component prop
     comment: PropTypes.object.isRequired,
+    //{object} auth component prop
     auth: PropTypes.object.isRequired,
+    //{function} called to delete comment from post
     deleteComment: PropTypes.func.isRequired
 }
 
