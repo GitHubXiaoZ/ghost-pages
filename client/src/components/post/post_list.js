@@ -57,7 +57,7 @@ const mapStateToProps = state => ({
     auth: state.auth
 })
 
-/*exports postlist*/
+/*export postlist*/
 export default connect(
     mapStateToProps,
      { getPostList }
