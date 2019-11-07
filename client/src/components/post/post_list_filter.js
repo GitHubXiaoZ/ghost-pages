@@ -63,7 +63,7 @@ const mapStateToProps = state => ({
     post: state.post
 })
 
-/*exports postlistfiltered*/
+/*export postlistfiltered*/
 export default connect(
     mapStateToProps,
      { getPostListByUser,
