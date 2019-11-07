@@ -41,12 +41,11 @@ class TagList extends Component {
     }
 }
 
-/* taglist proptypes
- * gettaglist
- * taglist
- */
+//taglist proptypes
 TagList.propTypes = {
+    //{function} called to return a list of post tags
     getTagList: PropTypes.func.isRequired,
+    //{array} tag list component prop
     tag_list: PropTypes.array.isRequired
 }
 
