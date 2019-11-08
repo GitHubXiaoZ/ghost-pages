@@ -8,7 +8,7 @@ import millsToDaysHoursMinutes from "../../../utils/millsToDaysHoursMinutes"
 import { deleteComment } from "../../../actions/postActions"
 
 /* Class: CommentItem
- * Single comment
+ * Comment Item component
  * Comment contains username, text, delete function
  */
 class CommentItem extends Component {
