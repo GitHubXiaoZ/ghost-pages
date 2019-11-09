@@ -7,7 +7,7 @@ import millsToDaysHoursMinutes from "../../utils/millsToDaysHoursMinutes"
 import { likePost, unlikePost, deletePost } from "../../actions/postActions"
 
 /* Class: PostItem
- * Single Post
+ * Post Item component
  * Post contains username, content, like/dislike, delete function
  */
 class PostItem extends Component {
