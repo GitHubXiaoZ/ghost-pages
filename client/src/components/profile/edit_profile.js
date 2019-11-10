@@ -132,16 +132,15 @@ class EditProfile extends Component {
     }
 }
 
-/* editprofile proptypes
- * newProfile
- * getCurrentProfile
- * profile
- * errors
- */
+//editprofile proptypes
 EditProfile.propTypes = {
+    //{function} called to append/overwrite new user data to profile 
     newProfile: PropTypes.func.isRequired,
+    //{function} called to return current login user's profile
     getCurrentProfile: PropTypes.func.isRequired,
+    //{object} profile component prop
     profile: PropTypes.object.isRequired,
+    //{object} errors component prop
     errors: PropTypes.object.isRequired
 }
 
