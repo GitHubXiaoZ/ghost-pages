@@ -5,7 +5,7 @@ import { Link } from "react-router-dom"
 import isEmpty from "is-empty"
 
 /* Class: ProfileItem
- * Single Profile
+ * Profile Item component
  * Profile contains username, status, and location
  */
 class ProfileItem extends Component {
