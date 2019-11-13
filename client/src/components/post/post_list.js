@@ -10,7 +10,7 @@ import PostFeed from "./post_feed"
 import { getPostList } from "../../actions/postActions"
 
 /* Class: PostList
- * Post component
+ * Post list component
  * Displays post feed containing all posts
  */
 class PostList extends Component {
