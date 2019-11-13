@@ -7,8 +7,8 @@ import { newProfile, getCurrentProfile } from "../../actions/profileActions"
 import isEmpty from "is-empty"
 
 /* Class: EditProfile
- * Profile form
- * edits the profile of a existing user
+ * Profile field form
+ * Allows user to edit their own profile data
  */
 class EditProfile extends Component {
     constructor(props) {
