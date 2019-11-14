@@ -13,7 +13,7 @@ import { getPostListByUser, getPostListByHandle } from "../../actions/postAction
 
 /* Class: Profile
  * Profile component
- * Displays the profile of the user's handle
+ * Displays the profile of the user
  */
 class Profile extends Component {
     componentDidMount() {
