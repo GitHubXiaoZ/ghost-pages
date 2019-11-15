@@ -8,7 +8,7 @@ import ProfileItem from "./profile_item"
 import { getProfileList } from "../../actions/profileActions"
 
 /* Class: ProfileList
- * List of Profiles
+ * Profile list component
  * Allows user to search through profiles
  */
 class ProfileList extends Component {
@@ -46,7 +46,7 @@ class ProfileList extends Component {
 }
 
 
-//profilelist proptype
+//profilelist proptypes
 //getprofilelist
 //profile
 ProfileList.propTypes = {
