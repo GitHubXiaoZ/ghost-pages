@@ -5,8 +5,8 @@ import isEmpty from "is-empty"
 import { Link } from "react-router-dom"
 
 /* Class: ProfileContent
- * Profile body component
- * Content of user profile containing name and bio
+ * Profile content component
+ * Content of user profile containing user name and bio
  */
 class ProfileContent extends Component {
     render() {
