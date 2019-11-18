@@ -5,7 +5,7 @@ import NovelItem from "./novel_item"
 
 /* Class: NovelLibrary
  * Array of novels
- * Render a novel item for each novel in novel list
+ * Render a novel for each novel in novel list
  */
 class NovelLibrary extends Component {
     render() {
