@@ -7,8 +7,9 @@ import millsToDaysHoursMinutes from "../../utils/millsToDaysHoursMinutes"
 import { rateNovel, unrateNovel, deleteNovel } from "../../actions/novelActions"
 
 /* Class: NovelItem
- * Single novel
- * Novel contains username, content, rate, and unrate
+ * Novel item component
+ * Novel contains username, posted date, post content, 
+ * rate and unrate novel functions
  */
 class NovelItem extends Component {
     onDelete = id => {
