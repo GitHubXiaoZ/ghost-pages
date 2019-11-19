@@ -13,7 +13,7 @@ import CommentFeed from "../post/comment/comment_feed"
 
 /* Class: Novel
  * Novel component
- * Display a novel from novel_library
+ * Display a novel
  */
 class Novel extends Component {
     componentDidMount() {
