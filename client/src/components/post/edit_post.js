@@ -8,7 +8,7 @@ import { editPost, getPost } from "../../actions/postActions"
 
 /* Class: EditPost
  * Post field form
- * Post contains a text field for user to edit notes
+ * Allow user to edit/update post content through text field form
  */
 class EditPost extends Component {
     constructor(props) {
