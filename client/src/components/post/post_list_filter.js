@@ -11,8 +11,8 @@ import { getPostListByUser,
          getPostListByTag } from "../../actions/postActions"
 
 /* Class: PostListFilter
- * Post component
- * Displays post feed containing filtered posts
+ * Post list component
+ * Display post feed containing a list of filtered posts
  */
 class PostListFilter extends Component {
     componentDidMount() {
