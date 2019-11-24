@@ -8,7 +8,7 @@ import { loginUser } from "../../actions/authActions"
 
 /* Class: Login
  * Login form
- * Logs in users using their email and password
+ * Log in users using email and password
  */
 class Login extends Component {
     constructor() {
