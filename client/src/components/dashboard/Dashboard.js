@@ -9,8 +9,9 @@ import { getCurrentProfile, deleteAccount } from "../../actions/profileActions"
 import ProfilePreference from "./ProfilePreference"
 
 /* Class: Dashboard
- * User account page
- * Contains functions such as logout
+ * Dashboard web page
+ * Account page displays current user's profile activities
+ * Activities include edit user's profile, logout session, and delete account
  */
 class Dashboard extends Component {
     componentDidMount() {
