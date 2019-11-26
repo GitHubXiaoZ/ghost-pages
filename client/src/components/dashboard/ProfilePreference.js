@@ -2,7 +2,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
 
-//edit user profile in user's profile preference
+//edit user profile on user's dashboard page
 const ProfilePreference = () => {
     return (
         <div>
