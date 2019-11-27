@@ -1,12 +1,13 @@
 /*imports*/
 import React, { Component } from "react"
 import { Link } from "react-router-dom"
-import { PropTypes } from 'prop-types';
-import { connect } from 'react-redux';
+import { PropTypes } from 'prop-types'
+import { connect } from 'react-redux'
 
 /* Class: Home
- * Home page
- * Page containing register and login routes
+ * Home web page
+ * GhostPage's home page 
+ * Links routes to login and register component
  */
 class Home extends Component {
   componentDidMount() {
