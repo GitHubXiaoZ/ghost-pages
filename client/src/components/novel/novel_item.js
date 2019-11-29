@@ -9,7 +9,7 @@ import { rateNovel, unrateNovel, deleteNovel } from "../../actions/novelActions"
 /* Class: NovelItem
  * Novel item component
  * Novel contains username, posted date, post content, 
- * rate and unrate novel functions
+ * rate, unrate, and delete novel functions
  */
 class NovelItem extends Component {
     onDelete = id => {
