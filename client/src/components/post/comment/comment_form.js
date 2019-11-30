@@ -7,7 +7,7 @@ import { addComment } from "../../../actions/postActions"
 
 /* Class: CommentForm
  * Comment field form
- * Comment contains a text field for user to post on stories
+ * Allow user to add comment to post through text field form 
  */
 class CommentForm extends Component {
     constructor(props) {
