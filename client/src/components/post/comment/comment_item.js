@@ -9,7 +9,8 @@ import { deleteComment } from "../../../actions/postActions"
 
 /* Class: CommentItem
  * Comment Item component
- * Comment contains username, text, delete function
+ * Comment contains username, comment date, comment text
+ * delete function
  */
 class CommentItem extends Component {
     onDelete = (post_id, comment_id) => {
