@@ -8,7 +8,8 @@ import { likePost, unlikePost, deletePost } from "../../actions/postActions"
 
 /* Class: PostItem
  * Post Item component
- * Post contains username, content, like/dislike, delete function
+ * Post contains username, posted date, post content, 
+ * like/unlike and delete function
  */
 class PostItem extends Component {
     onDelete = id => {
