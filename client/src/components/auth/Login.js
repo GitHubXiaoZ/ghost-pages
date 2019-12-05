@@ -63,7 +63,7 @@ class Login extends Component {
                         <div>
                             <h1> Log in </h1>
                             <p className="register">
-                                Don't have an account? <Link to="/register">Register here</Link>
+                                Don't have an account? <Link to="/register">Register here.</Link>
                             </p>
                         </div>
                         <form noValidate onSubmit={this.onSubmit}>
@@ -112,7 +112,7 @@ class Login extends Component {
 
 //login proptypes
 Login.propTypes = {
-    //{function} called to login user using their data (email and password)
+    //{function} called to login exisiting user (email and password)
     loginUser: PropTypes.func.isRequired,
     //{object} auth component prop
     auth: PropTypes.object.isRequired,
