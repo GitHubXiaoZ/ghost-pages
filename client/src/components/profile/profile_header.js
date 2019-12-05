@@ -4,7 +4,8 @@ import isEmpty from "is-empty"
 
 /* Class: ProfileHeader
  * Profile header component
- * Header of user profile containing user's status and location
+ * Header of user profile
+ * user's status, location
  */
 class ProfileHeader extends Component {
     render() {
