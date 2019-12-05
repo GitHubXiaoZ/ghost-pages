@@ -6,7 +6,8 @@ import { Link } from "react-router-dom"
 
 /* Class: ProfileContent
  * Profile content component
- * Content of user profile containing user name and bio
+ * Content of user profile
+ * username, bio
  */
 class ProfileContent extends Component {
     render() {
