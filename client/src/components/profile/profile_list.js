@@ -9,7 +9,7 @@ import { getProfileList } from "../../actions/profileActions"
 
 /* Class: ProfileList
  * Profile list component
- * Allows user to search through profiles
+ * List of all public user profiles
  */
 class ProfileList extends Component {
     componentDidMount() {
