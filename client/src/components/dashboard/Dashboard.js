@@ -9,7 +9,7 @@ import { getCurrentProfile, deleteAccount } from "../../actions/profileActions"
 import ProfilePreference from "./ProfilePreference"
 
 /* Class: Dashboard
- * Dashboard web page
+ * Dashboard component
  * Account page displays current user's profile activities
  * Activities include edit user's profile, logout session, and delete account
  */
@@ -68,7 +68,7 @@ class Dashboard extends Component {
 Dashboard.propTypes = {
     //{function} returns the current user's profile
     getCurrentProfile: PropTypes.func.isRequired,
-    //{function} deletes users account from database
+    //{function} deletes current user's account from database
     deleteAccount: PropTypes.func.isRequired,
     //{object} auth component prop
     auth: PropTypes.object.isRequired,
