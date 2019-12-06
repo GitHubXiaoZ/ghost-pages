@@ -65,7 +65,7 @@ class Register extends Component {
                         <div className="register">
                             <h1> Register </h1>
                             <p className="">
-                            Already have an account? <Link to="/login">Log in</Link>
+                            Already have an account? <Link to="/login">Log in.</Link>
                             </p>
                         </div>
                         <form noValidate onSubmit={this.onSubmit}>
@@ -109,7 +109,7 @@ class Register extends Component {
                                     <span className="passwordError"> {errors.password} </span>
                             </div>
                             <div className="confirm">
-                                Confirmation
+                                Confirm Password
                                 <br/>
                                 <input 
                                     placeholder="Confirm your password"
@@ -125,7 +125,7 @@ class Register extends Component {
                                 <button
                                     type="submit"
                                 >
-                                Sign up
+                                Sign up!
                                 </button>
                             </div>
                         </form>
@@ -151,7 +151,7 @@ const mapStateToProps = state => ({
     errors: state.errors
 })
 
-/*export register */
+/*export register*/
 export default connect(
     mapStateToProps,
     { registerUser }
