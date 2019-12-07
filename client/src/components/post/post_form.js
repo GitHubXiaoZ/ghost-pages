@@ -7,7 +7,7 @@ import { addPost } from "../../actions/postActions"
 
 /* Class: PostForm
  * Post field form
- * Allow user to add post to database through text field form 
+ * Add post to database through text field form 
  */
 class PostForm extends Component {
     constructor(props) {
