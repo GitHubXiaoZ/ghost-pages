@@ -4,7 +4,7 @@ import jwt_decode from "jwt-decode"
 import setAuthToken from "../utils/setAuthToken"
 import { GET_ERRORS, SET_CURRENT_USER, USER_LOADING } from "./types"
 
-//sets the logged user as current user
+//set the logged user as current user
 export const setCurrentUser = decoded => {
     return {
         type: SET_CURRENT_USER,
@@ -19,7 +19,7 @@ export const setUserLoading = () => {
     }
 }
 
-//registers user
+//register user
 export const registerUser = (userData, history) => dispatch => {
     axios
         .post("/api/users/register", userData)
@@ -31,7 +31,7 @@ export const registerUser = (userData, history) => dispatch => {
             }))
 }
 
-//logs in user
+//log in user
 export const loginUser = userData => dispatch => {
     axios
         .post("/api/users/login", userData)
@@ -54,7 +54,7 @@ export const loginUser = userData => dispatch => {
             }))
 }
 
-//logs out user
+//log out user
 export const logoutUser = () => dispatch => {
     //remove token from local storage
     localStorage.removeItem("jwtToken")
