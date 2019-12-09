@@ -5,8 +5,8 @@ import { PropTypes } from 'prop-types'
 import { connect } from 'react-redux'
 
 /* Class: Home
- * Home web page
- * GhostPage's home page 
+ * Home component
+ * GhostPage's home web page 
  * Links routes to login and register component
  */
 class Home extends Component {
