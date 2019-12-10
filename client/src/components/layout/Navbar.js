@@ -7,7 +7,7 @@ import { logoutUser } from "../../actions/authActions"
 import { resetCurrentProfile } from "../../actions/profileActions"
 
 /* Class: Navbar
- * Navigation bar
+ * Navigation bar component
  * Display guest and user options for webpage navigation
  */
 class Navbar extends Component {
