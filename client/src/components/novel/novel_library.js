@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import NovelItem from "./novel_item"
 
 /* Class: NovelLibrary
- * Array of novels
+ * Novel Library component
  * Render a novel item for each novel in novel_list array
  */
 class NovelLibrary extends Component {
