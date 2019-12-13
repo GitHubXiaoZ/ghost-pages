@@ -4,7 +4,7 @@ import PropTypes from "prop-types"
 import CommentItem from "./comment_item"
 
 /* Class: CommentFeed
- * Array of comments
+ * Comment Feed component
  * Render a commentitem for each comment in comment_list array
  */
 class CommentFeed extends Component {
