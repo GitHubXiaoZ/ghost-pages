@@ -4,7 +4,7 @@ import jwt_decode from "jwt-decode"
 import setAuthToken from "../utils/setAuthToken"
 import { GET_ERRORS, SET_CURRENT_USER, USER_LOADING } from "./types"
 
-//set the logged user as current user
+//set current user
 export const setCurrentUser = decoded => {
     return {
         type: SET_CURRENT_USER,
@@ -12,12 +12,7 @@ export const setCurrentUser = decoded => {
     }
 }
 
-//user loading 
-export const setUserLoading = () => {
-    return {
-        type: USER_LOADING
-    }
-}
+
 
 //register user
 export const registerUser = (userData, history) => dispatch => {
@@ -60,4 +55,11 @@ export const logoutUser = () => dispatch => {
     localStorage.removeItem("jwtToken")
     setAuthToken(false)
     dispatch(setCurrentUser({}))
+}
+
+//user loading 
+export const setUserLoading = () => {
+    return {
+        type: USER_LOADING
+    }
 }
