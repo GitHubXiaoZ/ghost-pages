@@ -9,7 +9,7 @@ import {
     NOVEL_LOADING,
     GET_ERRORS } from "./types"
 
-//add a novel
+//add a novel to database
 export const addNovel = novelData => dispatch => {
     axios
         .post("/api/novels", novelData)
@@ -27,7 +27,7 @@ export const addNovel = novelData => dispatch => {
         )
 }
 
-//return a novel
+//return a novel by id
 export const getNovel = id => dispatch => {
     dispatch(setNovelLoading())
     axios
@@ -98,7 +98,7 @@ export const rateNovel = id => dispatch => {
         )
 }
 
-//unrate a novel
+//remove rating from a novel
 export const unrateNovel = id => dispatch => {
     axios
         .post(`/api/posts/unrate/${id}`)
