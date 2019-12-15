@@ -11,7 +11,7 @@ import {
     GET_ERRORS,
     RESET_ERRORS } from "./types"
 
-//add a post
+//add a post to database
 export const addPost = postData => dispatch => {
     dispatch(resetErrors())
     axios
@@ -30,7 +30,7 @@ export const addPost = postData => dispatch => {
         )
 }
 
-//edit a post
+//edit user's post
 export const editPost = (postData, id, history) => dispatch => {
     dispatch(resetErrors())
     axios
@@ -50,7 +50,7 @@ export const editPost = (postData, id, history) => dispatch => {
         )
 }
 
-//return a post
+//return a post by id
 export const getPost = id => dispatch => {
     dispatch(setPostLoading())
     axios
@@ -88,7 +88,7 @@ export const getPostList = () => dispatch => {
         )
 }
 
-//return all user's posts by user id
+//return all post uploaded by user id
 export const getPostListByUser = user_id => dispatch => {
     dispatch(setPostLoading())
     axios
@@ -108,7 +108,7 @@ export const getPostListByUser = user_id => dispatch => {
 }
 
 
-//return all user's posts by user handle
+//return all posts uploaded by user handle
 export const getPostListByHandle = handle => dispatch => {
     dispatch(setPostLoading())
     axios
@@ -179,7 +179,7 @@ export const likePost = id => dispatch => {
         )
 }
 
-//unlike a post
+//remove like from a post
 export const unlikePost = id => dispatch => {
     axios
         .post(`/api/posts/unlike/${id}`)
@@ -213,7 +213,7 @@ export const addComment = (post_id, commentData) => dispatch => {
         )
 }
 
-//edit a comment
+//edit user's comment
 export const editComment = (post_id, comment_id, commentData, history) => dispatch => {
     dispatch(resetErrors())
     axios
@@ -233,7 +233,7 @@ export const editComment = (post_id, comment_id, commentData, history) => dispat
         )
 }
 
-//return a comment
+//return a comment by post id and comment id
 export const getComment = (post_id, comment_id) => dispatch => {
     dispatch(setPostLoading())
     axios
@@ -252,7 +252,7 @@ export const getComment = (post_id, comment_id) => dispatch => {
         )
 }
 
-//delete a comment
+//delete a comment from post
 export const deleteComment = (post_id, comment_id) => dispatch => {
     axios
         .delete(`/api/posts/comment/${post_id}/${comment_id}`)
