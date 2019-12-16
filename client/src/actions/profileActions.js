@@ -9,7 +9,7 @@ import {
     RESET_CURRENT_PROFILE, 
     GET_ERRORS } from "./types"
 
-//create new profile
+//create new profile for current user
 export const newProfile = (profileData, history) => dispatch => {
     axios
         .post("/api/profiles", profileData)
@@ -22,7 +22,7 @@ export const newProfile = (profileData, history) => dispatch => {
         )
 }
 
-//return current profile
+//return current user's profile
 export const getCurrentProfile = () => dispatch => {
     dispatch(setProfileLoading())
     axios
@@ -40,7 +40,7 @@ export const getCurrentProfile = () => dispatch => {
         )
 }
 
-//return handle's profile
+//return user handle's profile
 export const getProfileByHandle = handle => dispatch => {
     dispatch(setProfileLoading())
     axios
@@ -58,7 +58,7 @@ export const getProfileByHandle = handle => dispatch => {
         )
 }
 
-//return id's profile
+//return user id's profile
 export const getProfileByID = id => dispatch => {
     dispatch(setProfileLoading())
     axios
