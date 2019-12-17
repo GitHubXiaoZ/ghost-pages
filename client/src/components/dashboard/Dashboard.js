@@ -11,7 +11,8 @@ import ProfilePreference from "./ProfilePreference"
 /* Class: Dashboard
  * Dashboard component
  * Account page displays current user's profile activities
- * Activities include edit user's profile, logout session, and delete account
+ * Activities include edit current user's profile, logout current session, 
+ * and delete current user's account
  */
 class Dashboard extends Component {
     componentDidMount() {
