@@ -3,7 +3,7 @@ import React, { Component } from "react";
 
 /* Class: NotFound
  * 404 component
- * Page catches all broken links on GhostPage domain
+ * Redirect all broken links on GhostPage domain
  */
 class NotFound extends Component {
     render() {
