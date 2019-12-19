@@ -94,13 +94,6 @@ export const getProfileList = () => dispatch => {
         )
 }
 
-//profile loading 
-export const setProfileLoading = () => {
-    return {
-        type: PROFILE_LOADING
-    }
-}
-
 //profile reset 
 export const resetCurrentProfile = () => {
     return {
@@ -123,4 +116,11 @@ export const deleteAccount = () => dispatch => {
                 payload: err.response.data
             })
         )
+}
+
+//profile loading 
+export const setProfileLoading = () => {
+    return {
+        type: PROFILE_LOADING
+    }
 }
