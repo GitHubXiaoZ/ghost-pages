@@ -12,12 +12,11 @@ export const setCurrentUser = decoded => {
     }
 }
 
-
-
 //register user
 export const registerUser = (userData, history) => dispatch => {
     axios
         .post("/api/users/register", userData)
+        //redirects to login page
         .then(res => history.push("/login"))
         .catch(err =>
             dispatch({
