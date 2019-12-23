@@ -5,7 +5,7 @@ import CommentItem from "./comment_item"
 
 /* Class: CommentFeed
  * Comment Feed component
- * Render a commentitem for each comment in comment_list array
+ * Render a commentitem for each comment in comment_list array under post or novel
  */
 class CommentFeed extends Component {
     render() {
