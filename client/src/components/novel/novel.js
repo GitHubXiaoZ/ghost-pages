@@ -13,7 +13,7 @@ import CommentFeed from "../post/comment/comment_feed"
 
 /* Class: Novel
  * Novel component
- * User submitted text novel
+ * Link to user submitted text novel in novel library
  */
 class Novel extends Component {
     componentDidMount() {
@@ -50,7 +50,7 @@ class Novel extends Component {
 
 //novel proptypes
 Novel.propTypes = {
-    //{function} called to return a novel with corresponding id
+    //{function} called to return a novel by id
     getNovel: PropTypes.func.isRequired,
     //{object} novel component prop
     novel: PropTypes.object.isRequired,
