@@ -13,7 +13,7 @@ import CommentFeed from "./comment/comment_feed"
 
 /* Class: Post
  * Post component
- * User submitted text post
+ * Link to user submitted text post in post feed
  */
 class Post extends Component {
     componentDidMount() {
