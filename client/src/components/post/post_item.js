@@ -8,7 +8,7 @@ import { likePost, unlikePost, deletePost } from "../../actions/postActions"
 
 /* Class: PostItem
  * Post Item component
- * Post contains username, posted date, post content, 
+ * Post contains username, date, content, 
  * like/unlike and delete function
  */
 class PostItem extends Component {
