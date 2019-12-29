@@ -11,7 +11,7 @@ const User = require("../models/User")
 const validChapterInput = require("../validate/chapter")
 
 /*test route*/
-router.get("/test", (req, res) => res.json({ msg: "Chapter route -- working." }))
+router.get("/test", (req, res) => res.json({ msg: "Chapter route -- test." }))
 
 /* GET api: chapters
  * returns all chapters
