@@ -13,7 +13,7 @@ const validPostInput = require("../validate/post")
 const validRatingInput = require("../validate/rating")
 
 /*test route*/
-router.get("/test", (req, res) => res.json({ msg: "Novel route -- working." }))
+router.get("/test", (req, res) => res.json({ msg: "Novel route -- test." }))
 
 /* GET api: novels
  * returns all novels
