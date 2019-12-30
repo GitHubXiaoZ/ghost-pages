@@ -11,7 +11,7 @@ const User = require("../models/User")
 const validPostInput = require("../validate/post")
 
 /*test route*/
-router.get("/test", (req, res) => res.json({ msg: "Post route -- working." }))
+router.get("/test", (req, res) => res.json({ msg: "Post route -- test." }))
 
 /* GET api: posts
  * returns all posts
