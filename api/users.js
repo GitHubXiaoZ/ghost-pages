@@ -12,7 +12,7 @@ const validLogInput = require("../validate/login")
 const User = require("../models/User")
 
 /*test route*/
-router.get("/test", (req, res) => res.json({ msg: "User route -- working." }))
+router.get("/test", (req, res) => res.json({ msg: "User route -- test." }))
 
 /* POST api: register
  * register new users
