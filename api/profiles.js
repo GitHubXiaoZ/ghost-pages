@@ -9,7 +9,7 @@ const User = require("../models/User")
 const Profile = require("../models/Profile")
 
 /*test route*/
-router.get("/test", (req, res) => res.json({ msg: "Profile route -- working." }))
+router.get("/test", (req, res) => res.json({ msg: "Profile route -- test." }))
 
 /* GET api: profile
  * returns the current user's profile
