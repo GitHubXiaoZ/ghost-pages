@@ -131,7 +131,7 @@ export const addComment = (novel_id, commentData) => dispatch => {
         )
 }
 
-//novel loading 
+//loading 
 export const setNovelLoading = () => {
     return {
         type: NOVEL_LOADING
