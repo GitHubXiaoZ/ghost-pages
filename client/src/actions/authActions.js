@@ -56,7 +56,7 @@ export const logoutUser = () => dispatch => {
     dispatch(setCurrentUser({}))
 }
 
-//user loading 
+//loading 
 export const setUserLoading = () => {
     return {
         type: USER_LOADING
