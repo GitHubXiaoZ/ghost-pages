@@ -289,7 +289,7 @@ export const getTagList = () => dispatch => {
         )
 }
 
-//post loading 
+//loading 
 export const setPostLoading = () => {
     return {
         type: POST_LOADING
