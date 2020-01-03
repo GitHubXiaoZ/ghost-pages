@@ -8,7 +8,7 @@ import { loginUser } from "../../actions/authActions"
 
 /* Class: Login
  * Login form
- * Input email and password to login to user's account
+ * Input email and password to access user's account
  * Redirects to user's dashboard
  */
 class Login extends Component {
