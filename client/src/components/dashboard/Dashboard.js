@@ -11,7 +11,7 @@ import ProfilePreference from "./ProfilePreference"
 /* Class: Dashboard
  * Dashboard component
  * Account page display current user's profile available actions
- * Actions include edit current user's profile, logout current session, 
+ * Actions include edit current user's profile, log out of current session, 
  * and delete current user's account
  */
 class Dashboard extends Component {
