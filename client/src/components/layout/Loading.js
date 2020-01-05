@@ -1,7 +1,7 @@
 /*import*/
 import React from "react"
 
-/*export loading icon*/
+/*export loading*/
 export default () => {
     return (
         <div>
