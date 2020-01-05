@@ -8,7 +8,7 @@ import { addNovel } from "../../actions/novelActions"
 /* Class: NovelForm
  * Novel field form
  * Form contains text data fields for title, status, tags, 
- * and synopsis for user submitted novels
+ * and synopsis for novels
  */
 class NovelForm extends Component {
     constructor(props) {
