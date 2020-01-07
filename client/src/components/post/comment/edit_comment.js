@@ -7,7 +7,7 @@ import { editComment, getComment } from "../../../actions/postActions"
 
 /* Class: EditComment
  * Comment field form
- * Edit/update comment through text field form
+ * Edit/update comment through text field 
  */
 class EditComment extends Component {
     constructor(props) {
