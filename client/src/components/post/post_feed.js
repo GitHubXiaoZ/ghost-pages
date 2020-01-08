@@ -5,7 +5,7 @@ import PostItem from "./post_item"
 
 /* Class: PostFeed
  * Post Feed Component
- * Render a postitem for each post in post_list array
+ * Render a post item for each post in post_list array
  */
 class PostFeed extends Component {
     render() {
