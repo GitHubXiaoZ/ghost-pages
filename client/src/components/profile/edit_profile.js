@@ -8,7 +8,7 @@ import isEmpty from "is-empty"
 
 /* Class: EditProfile
  * Profile field form
- * Edit user's profile data
+ * Edit user's profile data throught text field 
  */
 class EditProfile extends Component {
     constructor(props) {
