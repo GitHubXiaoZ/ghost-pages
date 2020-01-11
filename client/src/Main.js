@@ -10,6 +10,7 @@ import { resetCurrentProfile } from "./actions/profileActions"
 import { Provider } from "react-redux"
 import store from "./store"
 
+//layout
 import Navbar from "./components/layout/Navbar"
 import Home from "./components/layout/Home"
 import Footer from "./components/layout/Footer"
