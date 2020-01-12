@@ -1,4 +1,4 @@
-/*imports actions*/
+/*import actions*/
 import {
     SET_CURRENT_USER,
     USER_LOADING
