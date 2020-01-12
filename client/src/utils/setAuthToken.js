@@ -1,8 +1,7 @@
 /*import*/
 import axios from "axios"
 
-/**
- * function setAuthToken
+/**function setAuthToken
  * @param token (jwt token)
  * authenticates user using jwt token
  */
