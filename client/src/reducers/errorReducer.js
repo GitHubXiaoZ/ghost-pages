@@ -1,4 +1,4 @@
-/*imports actions*/
+/*import actions*/
 import { GET_ERRORS, RESET_ERRORS } from "../actions/types"
 
 //default state
