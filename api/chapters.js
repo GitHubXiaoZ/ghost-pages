@@ -14,7 +14,7 @@ const validChapterInput = require("../validate/chapter")
 router.get("/test", (req, res) => res.json({ msg: "Chapter route -- test." }))
 
 /* GET api: chapters
- * returns all chapters
+ * return all chapters
  */
 router.get("/", (req, res) => {
     //sorts by query
@@ -27,7 +27,7 @@ router.get("/", (req, res) => {
 })
 
 /* GET api: chapters/id
- * returns a chapter by id
+ * return a chapter by id
  */
 router.get("/:id", (req, res) => {
     Chapter.findOneAndUpdate({ _id: req.params.id }, { $inc: { views: 1 } })
