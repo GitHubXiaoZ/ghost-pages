@@ -14,7 +14,7 @@ const validPostInput = require("../validate/post")
 router.get("/test", (req, res) => res.json({ msg: "Comment route -- test." }))
 
 /* GET api: comments
- * returns all comments
+ * return all comments
  */
 router.get("/", (req, res) => {
     //sorts by query
@@ -27,7 +27,7 @@ router.get("/", (req, res) => {
 })
 
 /* GET api: comments/id
- * returns a specific comment
+ * return a specific comment
  */
 router.get("/:id", (req, res) => {
     Comment.findById(req.params.id)
@@ -36,7 +36,7 @@ router.get("/:id", (req, res) => {
 })
 
 /* DELETE api: comments/id
- * deletes a specific comment
+ * delete a specific comment
  */
 router.delete("/:id", 
     passport.authenticate("jwt", { session: false }),
