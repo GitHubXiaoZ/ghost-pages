@@ -8,6 +8,7 @@ const TagSchema =  new Schema({
     }
 })
 
+//comment model
 const CommentSchema = new Schema({
     postID: {
         type: Schema.Types.ObjectId,
@@ -43,6 +44,7 @@ const CommentSchema = new Schema({
     }
 })
 
+//post model
 const PostSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
