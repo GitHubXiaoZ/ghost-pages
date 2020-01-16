@@ -16,7 +16,7 @@ const validRatingInput = require("../validate/rating")
 router.get("/test", (req, res) => res.json({ msg: "Novel route -- test." }))
 
 /* GET api: novels
- * returns all novels
+ * return all novels
  */
 router.get("/", (req, res) => {
     //sorts by query
@@ -29,7 +29,7 @@ router.get("/", (req, res) => {
 })
 
 /* GET api: novels/id
- * returns a novel by novel id
+ * return a novel by novel id
  */
 router.get("/:id", (req, res) => {
     Novel.findOneAndUpdate({ _id: req.params.id }, { $inc: { views: 1 } })
@@ -38,7 +38,7 @@ router.get("/:id", (req, res) => {
 })
 
 /* GET api: novels/tags/all
- * returns all tags
+ * return all tags
  */
 router.get("/tags/all", (req, res) => {
     Novel.find()
@@ -52,7 +52,7 @@ router.get("/tags/all", (req, res) => {
 })
 
 /* GET api: novels/tag/tag
- * returns all novels with requested tag
+ * return all novels with requested tag
  */
 router.get("/tag/:tag", (req, res) => {
     let sort = req.query.sort ? req.query.sort : -1
@@ -63,7 +63,7 @@ router.get("/tag/:tag", (req, res) => {
 })
 
 /* GET api: novels/user/id
- * returns all novels created by user's id
+ * return all novels created by user's id
  */
 router.get("/user/:id", (req, res) => {
     let sort = req.query.sort ? req.query.sort : -1
@@ -75,7 +75,7 @@ router.get("/user/:id", (req, res) => {
 })
 
 /* GET api: novels/users/handle
- * returns all novels created by user's handle
+ * return all novels created by user's handle
  */
 router.get("/users/:handle", (req, res) => {
     let sort = req.query.sort ? req.query.sort : -1
@@ -129,7 +129,7 @@ router.post("/",
 )
 
 /* DELETE api: novels/id
- * deletes a specific novel
+ * delete a specific novel
  */
 router.delete("/:id", 
     passport.authenticate("jwt", { session: false }),
