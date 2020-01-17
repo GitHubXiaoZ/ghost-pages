@@ -14,7 +14,7 @@ const validPostInput = require("../validate/post")
 router.get("/test", (req, res) => res.json({ msg: "Post route -- test." }))
 
 /* GET api: posts
- * returns all posts
+ * return all posts
  */
 router.get("/", (req, res) => {
     //sorts by query
@@ -27,7 +27,7 @@ router.get("/", (req, res) => {
 })
 
 /* GET api: posts/id
- * returns a post by post id
+ * return a post by post id
  */
 router.get("/:id", (req, res) => {
     Post.findOneAndUpdate({ _id: req.params.id }, { $inc: { views: 1 } })
@@ -36,7 +36,7 @@ router.get("/:id", (req, res) => {
 })
 
 /* GET api: posts/tags/all
- * returns all tags
+ * return all tags
  */
 router.get("/tags/all", (req, res) => {
     Post.find()
@@ -50,7 +50,7 @@ router.get("/tags/all", (req, res) => {
 })
 
 /* GET api: posts/tag/tag
- * returns all posts with requested tag
+ * return all posts with requested tag
  */
 router.get("/tag/:tag", (req, res) => {
     let sort = req.query.sort ? req.query.sort : -1
@@ -61,7 +61,7 @@ router.get("/tag/:tag", (req, res) => {
 })
 
 /* GET api: posts/user/id
- * returns all posts created by user's id
+ * return all posts created by user's id
  */
 router.get("/user/:id", (req, res) => {
     let sort = req.query.sort ? req.query.sort : -1
@@ -73,7 +73,7 @@ router.get("/user/:id", (req, res) => {
 })
 
 /* GET api: posts/users/handle
- * returns all posts created by user's handle
+ * return all posts created by user's handle
  */
 router.get("/users/:handle", (req, res) => {
     let sort = req.query.sort ? req.query.sort : -1
@@ -125,7 +125,7 @@ router.post("/",
 )
 
 /* PATCH api: posts/id
- * edits a specific post
+ * edit a specific post
  */
 router.patch("/:id", 
     passport.authenticate("jwt", { session: false }),
@@ -155,7 +155,7 @@ router.patch("/:id",
 )
 
 /* DELETE api: posts/id
- * deletes a specific post
+ * delete a specific post
  */
 router.delete("/:id", 
     passport.authenticate("jwt", { session: false }),
@@ -225,7 +225,7 @@ router.post("/unlike/:id",
 )
 
 /* GET api: posts/comment/id/comment_id
- * returns a specific comment in a post
+ * return a specific comment in a post
  */
 router.get("/comment/:id/:comment_id", (req, res) => {
     Post.findById(req.params.id)
