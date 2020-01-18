@@ -12,7 +12,7 @@ const Profile = require("../models/Profile")
 router.get("/test", (req, res) => res.json({ msg: "Profile route -- test." }))
 
 /* GET api: profile
- * returns the current user's profile
+ * return the current user's profile
  */
 router.get("/", 
     passport.authenticate("jwt", { session: false }), 
@@ -53,7 +53,7 @@ router.get("/all",
 )
 
 /* GET api: profile/handle
- * returns the profile of the handle
+ * return the profile of the handle
  */
 router.get("/handle/:handle", 
     (req, res) => {
@@ -73,7 +73,7 @@ router.get("/handle/:handle",
 )
 
 /* GET api: profile/user_id
- * returns the profile of the user id
+ * return the profile of the user id
  */
 router.get("/user/:user_id", 
     (req, res) => {
@@ -93,7 +93,7 @@ router.get("/user/:user_id",
 )
 
 /* POST api: profile
- * creates/updates the user's profile
+ * create/update the user's profile
  */
 router.post("/",
     passport.authenticate("jwt", { session: false }),
@@ -135,7 +135,7 @@ router.post("/",
 )
 
 /* DELETE api: profile
- * deletes the user's profile
+ * delete the user's profile
  */
 router.delete('/',
     passport.authenticate("jwt", { session: false }),
