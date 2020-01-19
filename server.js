@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: false }))
 //database connection
 connectToDB()
 
-//express with passport
+//passport
 app.use(passport.initialize())
 //passport configuration
 require("./config/passport")(passport)
