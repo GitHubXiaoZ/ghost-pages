@@ -108,7 +108,7 @@ router.post("/login", (req, res) => {
 })
 
 /* GET api: current
- * returns the current user's id, name, and email
+ * return the current user's id, name, and email
  */
 router.get("/current", 
     passport.authenticate("jwt", { session: false }), 
