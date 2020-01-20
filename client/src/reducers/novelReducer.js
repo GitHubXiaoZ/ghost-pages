@@ -1,4 +1,4 @@
-/*imports*/
+/*import actions*/
 import { 
     ADD_NOVEL,
     GET_NOVEL, 
