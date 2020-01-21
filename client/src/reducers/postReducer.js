@@ -1,4 +1,4 @@
-/*imports*/
+/*import actions*/
 import {
     ADD_POST,
     GET_POST,
