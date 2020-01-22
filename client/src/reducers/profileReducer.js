@@ -1,4 +1,4 @@
-/*imports*/
+/*import actions*/
 import { 
     GET_PROFILE, 
     GET_PROFILE_LIST,
