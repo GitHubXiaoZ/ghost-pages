@@ -2,7 +2,7 @@
 const Validator = require("validator")
 const isEmpty = require("is-empty")
 
-/*exports*/
+/*export*/
 module.exports = validRatingInput = data => {
     let errors = {}
 
