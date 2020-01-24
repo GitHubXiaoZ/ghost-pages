@@ -1,7 +1,6 @@
-/**
- * function millsToDaysHoursMinutes
+/**function millsToDaysHoursMinutes
  * @param ms (milliseconds)
- * returns days, hours, minutes, and seconds based on time lapsed in milliseconds
+ * return days, hours, minutes, and seconds based on time lapsed in milliseconds
  */
 const millsToDaysHoursMinutes = ms => {
     //total time lapsed in days, hours, minutes, seconds
