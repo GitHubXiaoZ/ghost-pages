@@ -296,7 +296,7 @@ export const setPostLoading = () => {
     }
 }
 
-//resets errors
+//reset errors
 export const resetErrors = () => {
     return {
         type: RESET_ERRORS
