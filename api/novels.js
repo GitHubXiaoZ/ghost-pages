@@ -19,7 +19,7 @@ router.get("/test", (req, res) => res.json({ msg: "Novel route -- test." }))
  * return all novels
  */
 router.get("/", (req, res) => {
-    //sorts by query
+    //sort by query
     //default by new
     let sort = req.query.sort ? req.query.sort : -1
     Novel.find()
