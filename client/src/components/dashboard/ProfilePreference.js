@@ -2,7 +2,7 @@
 import React from "react"
 import { Link } from "react-router-dom"
 
-//display on user's dashboard 
+//display on user's dashboard
 const ProfilePreference = () => {
     return (
         <div>
