@@ -18,14 +18,14 @@ router.get("/test", (req, res) => res.json({ msg: "User route -- test." }))
  * register new users
  */
 router.post("/register", (req, res) => {
-    //validates register inputs
+    //validate register inputs
     const { errors, isValid } = validRegInput(req.body)
 
     if (!isValid) {
         return res.status(400).json(errors)
     }
 
-    //checks if email has already been used 
+    //check if email has already been used 
     User.findOne({ email: req.body.email }).then(user => {
         if (user) {
             errors.email = "Email has already been registered!"
