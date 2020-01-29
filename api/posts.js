@@ -17,7 +17,7 @@ router.get("/test", (req, res) => res.json({ msg: "Post route -- test." }))
  * return all posts
  */
 router.get("/", (req, res) => {
-    //sorts by query
+    //sort by query
     //default by new
     let sort = req.query.sort ? req.query.sort : -1
     Post.find()
