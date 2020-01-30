@@ -101,7 +101,7 @@ export const resetCurrentProfile = () => {
     }
 }
 
-//delete profile action
+//delete user profile
 export const deleteAccount = () => dispatch => {
     axios
         .delete("/api/profiles")
