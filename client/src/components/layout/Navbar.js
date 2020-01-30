@@ -8,7 +8,7 @@ import { resetCurrentProfile } from "../../actions/profileActions"
 
 /* Class: Navbar
  * Navigation bar component
- * Display guest and user options for webpage navigation
+ * Display guest and user options for navigation
  */
 class Navbar extends Component {
     onLogoutClick = e => {
