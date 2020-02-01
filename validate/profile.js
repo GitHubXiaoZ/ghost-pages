@@ -9,7 +9,7 @@ module.exports = validateProfileInput = data => {
     //alphanumeric characters
     const regex = /^[a-zA-z0-9-]+$/g
 
-    /*sets field
+    /*set field
      *handle
      *to empty string if no input is given*/
     data.handle = !isEmpty(data.handle) ? data.handle : ""
