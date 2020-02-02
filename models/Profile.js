@@ -32,5 +32,5 @@ const ProfileSchema = new Schema({
     }
 })
 
-/*exports*/
+/*export*/
 module.exports = Profile = mongoose.model("profile", ProfileSchema)
