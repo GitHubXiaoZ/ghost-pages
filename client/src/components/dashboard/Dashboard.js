@@ -10,7 +10,7 @@ import ProfilePreference from "./ProfilePreference"
 
 /* Class: Dashboard
  * Dashboard component
- * Account page display current user's profile available actions
+ * Account dashboard display current user's profile available actions
  * Actions include edit current user's profile, log out of current session, 
  * and delete current user's account
  */
