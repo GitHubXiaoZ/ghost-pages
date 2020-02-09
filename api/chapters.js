@@ -27,7 +27,7 @@ router.get("/", (req, res) => {
 })
 
 /* GET api: chapters/id
- * return a chapter by id
+ * return the chapter by chapter id
  */
 router.get("/:id", (req, res) => {
     Chapter.findOneAndUpdate({ _id: req.params.id }, { $inc: { views: 1 } })
