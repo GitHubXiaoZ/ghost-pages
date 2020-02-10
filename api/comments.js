@@ -27,7 +27,7 @@ router.get("/", (req, res) => {
 })
 
 /* GET api: comments/id
- * return a specific comment
+ * return the comment by comment id
  */
 router.get("/:id", (req, res) => {
     Comment.findById(req.params.id)
