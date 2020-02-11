@@ -29,7 +29,7 @@ router.get("/", (req, res) => {
 })
 
 /* GET api: novels/id
- * return a novel by novel id
+ * return the novel by novel id
  */
 router.get("/:id", (req, res) => {
     Novel.findOneAndUpdate({ _id: req.params.id }, { $inc: { views: 1 } })
