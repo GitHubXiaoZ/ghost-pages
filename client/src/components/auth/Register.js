@@ -9,7 +9,7 @@ import { registerUser } from "../../actions/authActions"
 
 /* Class: Register
  * Register form
- * Create new user account given user's username, email, and password
+ * Create a new user account given user's username, email, and password
  * Redirect to dashboard after registration
  */
 class Register extends Component {
@@ -139,7 +139,7 @@ class Register extends Component {
 
 //register proptypes
 Register.propTypes = {
-    //{function} called to register new users
+    //{function} called to register new user
     registerUser: PropTypes.func.isRequired,
     //{object} auth component prop
     auth: PropTypes.object.isRequired,
