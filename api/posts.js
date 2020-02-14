@@ -27,7 +27,7 @@ router.get("/", (req, res) => {
 })
 
 /* GET api: posts/id
- * return a post by post id
+ * return the post by post id
  */
 router.get("/:id", (req, res) => {
     Post.findOneAndUpdate({ _id: req.params.id }, { $inc: { views: 1 } })
