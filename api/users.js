@@ -58,7 +58,7 @@ router.post("/register", (req, res) => {
  * return jwt token
  */
 router.post("/login", (req, res) => {
-     //validates login inputs 
+     //validate login inputs 
      const { errors, isValid } = validLogInput(req.body)
      
      if (!isValid) {
