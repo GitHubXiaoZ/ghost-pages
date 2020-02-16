@@ -40,7 +40,7 @@ export const getCurrentProfile = () => dispatch => {
         )
 }
 
-//return user handle's profile
+//return the profile of user handle's
 export const getProfileByHandle = handle => dispatch => {
     dispatch(setProfileLoading())
     axios
@@ -94,13 +94,6 @@ export const getProfileList = () => dispatch => {
         )
 }
 
-//profile reset 
-export const resetCurrentProfile = () => {
-    return {
-        type: RESET_CURRENT_PROFILE
-    }
-}
-
 //delete user profile
 export const deleteAccount = () => dispatch => {
     axios
@@ -116,6 +109,13 @@ export const deleteAccount = () => dispatch => {
                 payload: err.response.data
             })
         )
+}
+
+//profile reset 
+export const resetCurrentProfile = () => {
+    return {
+        type: RESET_CURRENT_PROFILE
+    }
 }
 
 //loading 
