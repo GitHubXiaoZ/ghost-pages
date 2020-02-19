@@ -106,7 +106,7 @@ NovelItem.propTypes = {
     auth: PropTypes.object.isRequired,
     //{function} called to add a rating to a user novel on a scale of 1-5
     rateNovel: PropTypes.func.isRequired,
-    //{function} called to remove user rating from novel
+    //{function} called to remove user's rating from novel
     unrateNovel: PropTypes.func.isRequired,
     //{function} called to delete user's own novel
     deleteNovel: PropTypes.func.isRequired
