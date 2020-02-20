@@ -105,7 +105,7 @@ const NovelSchema = new Schema({
 Novel = mongoose.model("novel", NovelSchema)
 Chapter = mongoose.model("chapter", ChapterSchema)
 
-/*export*/
+/*exports*/
 module.exports = {
     Novel: Novel,
     Chapter: Chapter
