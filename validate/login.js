@@ -6,10 +6,11 @@ const isEmpty = require("is-empty")
 module.exports = validateLoginInput = data => {
     let errors = {}
 
-    /*set fields
+    /*set
      *email
      *password
-     *to empty string if no input was given*/
+     *to empty string if no input was given
+     */
     data.email = !isEmpty(data.email) ? data.email : ""
     data.password = !isEmpty(data.password) ? data.password : ""
 
