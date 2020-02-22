@@ -20,7 +20,7 @@ connectToDB()
 
 //passport
 app.use(passport.initialize())
-//passport configuration
+//configurate passport setting using jwt token
 require("./config/passport")(passport)
 
 //api
