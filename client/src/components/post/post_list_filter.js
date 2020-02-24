@@ -13,8 +13,7 @@ import { getPostListByUser,
 /* Class: PostListFilter
  * Post list component
  * Display post feed containing a list of filtered posts
- * Posts are filtered through url params by options including
- * user id, user handle, and post tag
+ * Posts are filtered through url params 
  */
 class PostListFilter extends Component {
     componentDidMount() {
