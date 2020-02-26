@@ -6,9 +6,10 @@ const isEmpty = require("is-empty")
 module.exports = validRatingInput = data => {
     let errors = {}
 
-    /*set fields
+    /*set
      *rating
-     *to empty string if no input is given*/
+     *to empty string if no input is given
+     */
     data.rating = !isEmpty(data.rating) ? data.rating : ""
     
     if (Validator.isEmpty(data.rating)) {
