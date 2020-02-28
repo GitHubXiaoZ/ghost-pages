@@ -7,11 +7,12 @@ module.exports = validateNovelInput = data => {
     let errors = {}
     const status = ["On Going", "Completed", "Hiatus"]
 
-    /*set fields
+    /*set
      *title
      *synopsis
      *status
-     *to empty string if no input is given*/
+     *to empty string if no input is given
+     */
     data.title = !isEmpty(data.title) ? data.title : ""
     data.synopsis = !isEmpty(data.synopsis) ? data.synopsis : ""
     data.status = !isEmpty(data.status) ? data.status : ""
