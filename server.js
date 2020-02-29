@@ -18,9 +18,8 @@ app.use(express.urlencoded({ extended: false }))
 //database connection
 connectToDB()
 
-//passport
+//configurate passport using jwt token
 app.use(passport.initialize())
-//configurate passport setting using jwt token
 require("./config/passport")(passport)
 
 //api
