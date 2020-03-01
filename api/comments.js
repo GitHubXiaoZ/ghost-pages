@@ -8,8 +8,6 @@ const { Comment } = require("../models/Post")
 const Profile = require("../models/Profile")
 const User = require("../models/User")
 
-const validPostInput = require("../validate/post")
-
 /*test route*/
 router.get("/test", (req, res) => res.json({ msg: "Comment route -- test." }))
 
