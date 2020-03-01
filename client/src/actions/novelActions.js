@@ -98,7 +98,7 @@ export const rateNovel = id => dispatch => {
         )
 }
 
-//remove user's rating from novel
+//remove user's rating
 export const unrateNovel = id => dispatch => {
     axios
         .post(`/api/posts/unrate/${id}`)
