@@ -9,7 +9,7 @@ import { registerUser } from "../../actions/authActions"
 
 /* Class: Register
  * Register form
- * Create a new user account given user's username, email, and password
+ * Create a new user account
  * Redirect to dashboard after registration
  */
 class Register extends Component {
