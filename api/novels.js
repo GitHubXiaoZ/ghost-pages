@@ -176,7 +176,7 @@ router.post("/rate/:id",
                         rating: req.body.rating,
                         user: req.user.id
                     }
-                    //adds the user to novel.ratings indicating they rated the novel
+                    //adds the user to novel.ratings
                     novel.ratings.unshift(score)
                     //calculate average rating
                     novel.avg_rating = ((Number(novel.avg_rating) * (novel.ratings.length - 1)) + Number(score.rating))
