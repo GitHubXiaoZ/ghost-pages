@@ -98,7 +98,7 @@ router.get("/users/:handle", (req, res) => {
 router.post("/",
     passport.authenticate("jwt", { session: false }),
     (req, res) => {
-        //validates post input
+        //validate post input
         const { errors, isValid } = validPostInput(req.body)
 
         if (!isValid) {
