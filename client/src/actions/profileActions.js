@@ -111,7 +111,7 @@ export const deleteAccount = () => dispatch => {
         )
 }
 
-//profile reset 
+//reset current user's profile
 export const resetCurrentProfile = () => {
     return {
         type: RESET_CURRENT_PROFILE
