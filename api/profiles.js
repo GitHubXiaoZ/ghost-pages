@@ -3,10 +3,10 @@ const express = require("express")
 const router = express.Router()
 const passport = require("passport")
 
-const validProfileInput = require("../validate/profile")
-
 const User = require("../models/User")
 const Profile = require("../models/Profile")
+
+const validProfileInput = require("../validate/profile")
 
 /*test route*/
 router.get("/test", (req, res) => res.json({ msg: "Profile route -- test." }))
