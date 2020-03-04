@@ -11,7 +11,7 @@ import { getNovelList } from "../../actions/novelActions"
 
 /* Class: NovelList
  * Novel component
- * Display novel library containing a list of all public novels
+ * A list of all public novels
  */
 class NovelList extends Component {
     componentDidMount() {
