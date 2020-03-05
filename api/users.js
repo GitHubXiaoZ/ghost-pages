@@ -70,7 +70,6 @@ router.post("/login", (req, res) => {
 
     //determine if user email exists 
     User.findOne({ email }).then(user => {
-        //if user doesn't exist
         if (!user) {
             errors.email = "Email not registered!"
             return res.status(404).json(errors)
@@ -89,7 +88,7 @@ router.post("/login", (req, res) => {
                     payload,
                     keys.secretOrKey,
                     {
-                        //expires in a week
+                        //expire in a week
                         expiresIn: 604800 
                     },
                     (err, token) => {
