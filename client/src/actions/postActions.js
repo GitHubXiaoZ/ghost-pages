@@ -179,7 +179,7 @@ export const likePost = id => dispatch => {
         )
 }
 
-//remove user's like from post
+//remove user's like 
 export const unlikePost = id => dispatch => {
     axios
         .post(`/api/posts/unlike/${id}`)
