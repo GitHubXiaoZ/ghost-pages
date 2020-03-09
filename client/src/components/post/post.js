@@ -25,6 +25,7 @@ class Post extends Component {
         const { isAuth } = this.props.auth
         let postThread
 
+        //display loading icon if post could not be found or action is set to loading
         if (post === null || loading || Object.keys(post).length === 0) {
             postThread = <Loading/>
         } else {
