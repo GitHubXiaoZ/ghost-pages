@@ -7,7 +7,7 @@ import { addComment } from "../../../actions/postActions"
 
 /* Class: CommentForm
  * Comment field form
- * Add comment to post
+ * Form contains text data fields for text for comment
  */
 class CommentForm extends Component {
     constructor(props) {
