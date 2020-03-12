@@ -53,7 +53,7 @@ if (localStorage.jwtToken) {
   const currentTime = Date.now() / 1000
   if (decoded.exp < currentTime) {
     /*log out user
-     *reset the logged in profile
+     *reset the current session
      *redirect to login page
      */
     store.dispatch(logoutUser())
