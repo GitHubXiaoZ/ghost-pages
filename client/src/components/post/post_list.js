@@ -11,7 +11,7 @@ import { getPostList } from "../../actions/postActions"
 
 /* Class: PostList
  * Post list component
- * Display post feed containing a list of all public posts
+ * A list of all public posts
  */
 class PostList extends Component {
     componentDidMount() {
