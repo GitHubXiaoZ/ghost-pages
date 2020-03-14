@@ -29,7 +29,7 @@ app.use("/api/posts", posts)
 app.use("/api/novels", novels)
 app.use("/api/comments", comments)
 
-//connect to port 3001
+//connect to port
 const port = process.env.PORT || 3001
 
 app.listen(port, () => console.log(`Server running on port ${port}.`))
