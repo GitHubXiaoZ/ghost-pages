@@ -6,7 +6,7 @@ const isEmpty = require("is-empty")
 module.exports = validateChapterInput = data => {
     let errors = {}
 
-    /*set
+    /*set the fields
      *title
      *text
      *index
