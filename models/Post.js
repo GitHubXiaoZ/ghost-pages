@@ -2,13 +2,14 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
+//tag 
 const TagSchema =  new Schema({
     name: {
             type: String
     }
 })
 
-//comment model
+//comment 
 const CommentSchema = new Schema({
     postID: {
         type: Schema.Types.ObjectId,
@@ -44,7 +45,7 @@ const CommentSchema = new Schema({
     }
 })
 
-//post model
+//post 
 const PostSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
@@ -119,7 +120,7 @@ const Post = mongoose.model("post", PostSchema)
 const Comment = mongoose.model("comment", CommentSchema)
 const Tag = mongoose.model("tag", TagSchema)
 
-/*export*/
+/*exports*/
 module.exports = {
     Post: Post,
     Comment: Comment,
