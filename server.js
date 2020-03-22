@@ -15,7 +15,7 @@ const app = express()
 app.use(express.json())
 app.use(express.urlencoded({ extended: false }))
 
-//database connection
+//connect to mongoDB
 connectToDB()
 
 //configurate passport using jwt token
