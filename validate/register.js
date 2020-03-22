@@ -10,12 +10,13 @@ module.exports = validateRegisterInput = data => {
     //, . ' -
     const regex = /^[a-zA-z ,.'-]+$/g
 
-    /*set fields
+    /*set the fields
      *name
      *email
      *password
      *password2
-     *to empty strings if no input was given*/
+     *to empty strings if no input was given
+     */
     data.name = !isEmpty(data.name) ? data.name : ""
     data.email = !isEmpty(data.email) ? data.email : ""
     data.password = !isEmpty(data.password) ? data.password : ""
