@@ -32,7 +32,6 @@ export const loginUser = userData => dispatch => {
         .then(res => {
             //save jwt token to local storage
             const { token } = res.data
-            //set token
             localStorage.setItem("jwtToken", token)
             setAuthToken(token)
             //decode token to get user data
