@@ -34,3 +34,25 @@ router.get("/:id", (req, res) => {
         .then(chapters => res.json(chapters))
         .catch(err => res.status(404).json({ nochapters: "Chapters does not exist!" }))
 })
+
+/* DELETE api: chapters/id
+ * delete a chapter by id
+ */
+router.delete("/:id", 
+    passport.authenticate("jwt", { session: false }),
+    (req, res) => {
+        Profile.findOne({ user: req.user.id })
+        .then(profile => {
+            Chapter.findById(req.params.id)
+                .then(chapter => {
+                    //checks if user is the one who created the chapter
+                    if (chapter.user.toString() !== req.user.id) {
+                        return res.status(401).json({ nopermission: "Not allowed to delete this chapter!" })
+                    }
+                    //delete chapter
+                    chapter.remove().then(() => res.json({ success: true }))
+                })
+                .catch(err => res.status(404).json({ nochapters: "Chapter does not exist!" }))
+        })
+    }
+)
