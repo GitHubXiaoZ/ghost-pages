@@ -54,7 +54,7 @@ router.post("/register", (req, res) => {
 })
 
 /* POST api: login
- * login in existing users
+ * login in existing user
  * return jwt token
  */
 router.post("/login", (req, res) => {
