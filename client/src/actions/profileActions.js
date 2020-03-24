@@ -94,7 +94,7 @@ export const getProfileList = () => dispatch => {
         )
 }
 
-//delete user profile
+//delete current user's profile
 export const deleteAccount = () => dispatch => {
     axios
         .delete("/api/profiles")
