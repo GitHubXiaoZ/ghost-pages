@@ -34,7 +34,7 @@ router.get("/:id", (req, res) => {
 })
 
 /* DELETE api: comments/id
- * delete a specific comment
+ * delete a comment by id
  */
 router.delete("/:id", 
     passport.authenticate("jwt", { session: false }),
