@@ -223,7 +223,7 @@ router.post("/unrate/:id",
 )
 
 /* POST api: novels/comment/id
- * comment on a specific novel
+ * comment on novel by id
  */
 router.post("/comment/:id", 
     passport.authenticate("jwt", { session: false}), 
