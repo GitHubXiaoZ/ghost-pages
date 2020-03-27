@@ -125,7 +125,7 @@ router.post("/",
 )
 
 /* PATCH api: posts/id
- * edit a specific post
+ * edit a post by id
  */
 router.patch("/:id", 
     passport.authenticate("jwt", { session: false }),
