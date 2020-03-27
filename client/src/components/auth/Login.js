@@ -113,7 +113,7 @@ class Login extends Component {
 
 //login proptypes
 Login.propTypes = {
-    //{function} called to log in existing user
+    //{function} called to log in user
     loginUser: PropTypes.func.isRequired,
     //{object} auth component prop
     auth: PropTypes.object.isRequired,
