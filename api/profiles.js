@@ -53,7 +53,7 @@ router.get("/all",
 )
 
 /* GET api: profile/handle
- * return the profile of the user handle
+ * return the profile of user's handle
  */
 router.get("/handle/:handle", 
     (req, res) => {
@@ -73,7 +73,7 @@ router.get("/handle/:handle",
 )
 
 /* GET api: profile/user_id
- * return the profile of the user id
+ * return the profile of user's id
  */
 router.get("/user/:user_id", 
     (req, res) => {
