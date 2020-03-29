@@ -65,7 +65,7 @@ export const getNovelList = () => dispatch => {
         )
 }
 
-//delete a novel
+//delete a novel by id
 export const deleteNovel = id => dispatch => {
     axios
         .delete(`/api/novels/${id}`)
