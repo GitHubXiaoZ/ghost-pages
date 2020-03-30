@@ -146,7 +146,7 @@ export const getPostListByTag = tag => dispatch => {
         )
 }
 
-//delete a post
+//delete a post by id
 export const deletePost = id => dispatch => {
     axios
         .delete(`/api/posts/${id}`)
