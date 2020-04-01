@@ -32,7 +32,7 @@ class Novel extends Component {
             library =(
                 <div>
                     <NovelItem novel={novel} displayActions={false}/>
-                    { isAuth ? <CommentForm novel_id={novel._id}/> : <Link to="/login">Sign in to comment.</Link> }
+                    { isAuth ? <CommentForm novel_id={novel._id}/> : <Link to="/login">Sign in to comment</Link> }
                     <CommentFeed novel_id={novel._id} comments={novel.comments}/>
                 </div>
             )
