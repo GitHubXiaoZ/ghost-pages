@@ -32,7 +32,7 @@ class Post extends Component {
             postThread =(
                 <div>
                     <PostItem post={post} displayActions={false}/>
-                    { isAuth ? <CommentForm post_id={post._id}/> : <Link to="/login">Sign in to comment.</Link> }
+                    { isAuth ? <CommentForm post_id={post._id}/> : <Link to="/login">Sign in to comment</Link> }
                     <CommentFeed post_id={post._id} comments={post.comments}/>
                 </div>
             )
