@@ -76,7 +76,7 @@ Profile.propTypes = {
     //{function} called to return a list of posts submitted by user id
     getPostListByUser: PropTypes.func.isRequired,
     //{function} called to return a list of posts submitted by user handle
-    getPostListByHandle: PropTypes.func.isRequired,
+    getPostListByHandle: PropTypes.func.isRequired
 }
 
 const mapStateToProps = state => ({
