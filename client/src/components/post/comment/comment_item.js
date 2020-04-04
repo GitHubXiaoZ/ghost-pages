@@ -9,7 +9,7 @@ import { deleteComment } from "../../../actions/postActions"
 
 /* Class: CommentItem
  * Comment Item component
- * Comment contains username, comment date, comment text
+ * Comment contains username, comment date, comment text,
  * delete function
  */
 class CommentItem extends Component {
