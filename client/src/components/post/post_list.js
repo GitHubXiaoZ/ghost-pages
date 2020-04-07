@@ -11,7 +11,7 @@ import { getPostList } from "../../actions/postActions"
 
 /* Class: PostList
  * Post list component
- * A list of all public posts
+ * List of all public posts
  */
 class PostList extends Component {
     componentDidMount() {
