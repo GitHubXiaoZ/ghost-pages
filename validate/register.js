@@ -14,7 +14,6 @@ module.exports = validateRegisterInput = data => {
      *name
      *email
      *password
-     *password2
      *to empty strings if no input was given
      */
     data.name = !isEmpty(data.name) ? data.name : ""
