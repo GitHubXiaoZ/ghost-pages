@@ -12,7 +12,7 @@ import { getPostListByUser,
 
 /* Class: PostListFilter
  * Post list component
- * A list of filtered posts
+ * List of filtered posts
  * Posts are filtered through url params 
  */
 class PostListFilter extends Component {
