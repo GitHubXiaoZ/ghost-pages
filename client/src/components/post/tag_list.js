@@ -9,7 +9,7 @@ import { getTagList } from "../../actions/postActions"
 
 /* Class: TagList
  * Tag component
- * A list of all user generated tags
+ * List of all user generated tags
  */
 class TagList extends Component {
     componentDidMount() {
