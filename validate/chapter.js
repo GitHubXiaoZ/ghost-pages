@@ -26,7 +26,7 @@ module.exports = validateChapterInput = data => {
     }
 
     if (Validator.isEmpty(data.text)) {
-        errors.text = "Chapter cannot be empty!"
+        errors.text = "Chapter content cannot be empty!"
     }
 
     //index data type should be int
