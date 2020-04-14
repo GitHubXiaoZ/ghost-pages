@@ -29,7 +29,7 @@ module.exports = validateNovelInput = data => {
     }
 
     if (Validator.isEmpty(data.synopsis)) {
-        errors.synopsis = "Synopsis cannot be empty!"
+        errors.synopsis = "Synopsis content cannot be empty!"
     }
     
     //synopsis should not be longer than 1000
