@@ -6,8 +6,7 @@ import isEmpty from "is-empty"
 
 /* Class: ProfileItem
  * Profile item component
- * Profile contain
- * user's username, status, and location
+ * Profile contain user's username, status, and location
  */
 class ProfileItem extends Component {
     render() {
