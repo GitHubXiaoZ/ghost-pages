@@ -45,7 +45,7 @@ router.delete("/:id",
         .then(profile => {
             Chapter.findById(req.params.id)
                 .then(chapter => {
-                    //checks if user is the one who created the chapter
+                    //if user created the chapter
                     if (chapter.user.toString() !== req.user.id) {
                         return res.status(401).json({ nopermission: "Not allowed to delete this chapter!" })
                     }
