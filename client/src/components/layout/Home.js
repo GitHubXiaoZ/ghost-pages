@@ -7,7 +7,6 @@ import { connect } from 'react-redux'
 /* Class: Home
  * Home component
  * GhostPage's home webpage 
- * Link route to login and register component
  * Signed in users are redirected to user's dashboard
  */
 class Home extends Component {
