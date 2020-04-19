@@ -59,7 +59,7 @@ class NovelForm extends Component {
     
     render() {
         const { errors } = this.state
-
+        //novel form
         return(
             <div className="post-form">
                 <div className="form-body">
