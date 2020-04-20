@@ -40,7 +40,7 @@ export const getCurrentProfile = () => dispatch => {
         )
 }
 
-//return the profile of user handle's
+//return profile of user handle's
 export const getProfileByHandle = handle => dispatch => {
     dispatch(setProfileLoading())
     axios
