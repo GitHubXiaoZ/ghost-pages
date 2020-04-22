@@ -53,6 +53,7 @@ class PostForm extends Component {
     render() {
         const { errors } = this.state
 
+        //post form
         return(
             <div className="post-form">
                 <div className="form-body">
