@@ -29,6 +29,7 @@ class Novel extends Component {
         if (novel === null || loading || Object.keys(novel).length === 0) {
             library = <Loading/>
         } else {
+            //link to novels
             library =(
                 <div>
                     <NovelItem novel={novel} displayActions={false}/>
