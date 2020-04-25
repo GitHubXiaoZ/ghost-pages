@@ -20,6 +20,7 @@ class ProfileList extends Component {
         const { profile_list, loading } = this.props.profile
         let profileItems
 
+        //display loading icon if there are no profiles or if action is set to loading
         if (profile_list === null || loading) {
             profileItems = <Loading/>
         } else {
