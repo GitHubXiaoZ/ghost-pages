@@ -49,6 +49,7 @@ class CommentForm extends Component {
     render() {
         const { errors } = this.state
 
+        //comment form
         return(
             <div className="comment-form">
                 <div className="form-header">Comments</div>
