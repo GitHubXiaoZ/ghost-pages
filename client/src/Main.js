@@ -40,7 +40,7 @@ import NovelList from "./components/novel/noveLlist"
 //tag
 import TagList from "./components/post/tag_list"
 
-//check local storage for token
+//if jwt token is in local storage
 if (localStorage.jwtToken) {
   const token = localStorage.jwtToken
   //decode token
