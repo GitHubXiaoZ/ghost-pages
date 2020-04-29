@@ -23,6 +23,7 @@ class PostList extends Component {
         const { isAuth } = this.props.auth
         let postFeed
 
+        //display loading icon if there are no posts or if action is set to loading
         if (post_list === null || loading) {
             postFeed = <Loading/>
         } else {
