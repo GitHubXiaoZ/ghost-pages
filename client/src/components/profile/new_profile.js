@@ -49,6 +49,7 @@ class NewProfile extends Component {
     render() {
         const { errors } = this.state
 
+        //profile form
         return (
             <div className="profile-form">
                 <div className="form">
