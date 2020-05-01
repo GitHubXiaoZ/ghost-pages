@@ -20,6 +20,7 @@ class TagList extends Component {
         const { tag_list, loading } = this.props.post
         let tagFeed
 
+        //display loading icon if there are no tags or if action is set to loading
         if (tag_list === null || loading) {
             tagFeed = <Loading/>
         } else {
