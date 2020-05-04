@@ -102,6 +102,7 @@ const NovelSchema = new Schema({
     } 
 })
 
+//model
 Novel = mongoose.model("novel", NovelSchema)
 Chapter = mongoose.model("chapter", ChapterSchema)
 
