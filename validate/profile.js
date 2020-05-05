@@ -26,7 +26,7 @@ module.exports = validateProfileInput = data => {
         errors.handle = "Profile handle length must be between 2 and 20 characters!"
     }
 
-    /*returns errors*/
+    //return errors
     return {
         errors,
         isValid: isEmpty(errors)
