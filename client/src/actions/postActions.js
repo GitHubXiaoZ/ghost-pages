@@ -40,6 +40,7 @@ export const editPost = (postData, id, history) => dispatch => {
                 type: GET_POST,
                 payload: res.data
             }),
+            //redirect back to post
             history.push(`/notes/${id}`)
         )
         .catch(err =>
