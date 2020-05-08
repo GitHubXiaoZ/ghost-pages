@@ -138,7 +138,7 @@ router.delete("/:id",
         .then(profile => {
             Novel.findById(req.params.id)
                 .then(novel => {
-                    //if user created the novel
+                    //if novel was created by user
                     if (novel.user.toString() !== req.user.id) {
                         return res.status(401).json({ nopermission: "Not allowed to delete this novel!" })
                     }
