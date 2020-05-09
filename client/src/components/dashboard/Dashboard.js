@@ -29,6 +29,7 @@ class Dashboard extends Component {
 
         let dashboardFeed
 
+        //if profile does not exist or action is set to loading
         if (profile === null || loading) {
             dashboardFeed = <Loading/>
         } else {
