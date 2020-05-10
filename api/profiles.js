@@ -105,6 +105,7 @@ router.post("/",
             return res.status(400).json(errors)
         }
 
+        //user profile
         const profileInfo = {}
         profileInfo.user = req.user.id
         if (req.body.handle) profileInfo.handle = req.body.handle
