@@ -13,6 +13,7 @@ import {
 export const newProfile = (profileData, history) => dispatch => {
     axios
         .post("/api/profiles", profileData)
+        //redirect to dashboard
         .then(res => history.push("/dashboard"))
         .catch(err => 
             dispatch({
