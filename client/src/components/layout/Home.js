@@ -10,6 +10,7 @@ import { connect } from 'react-redux'
  * Signed in users are redirected to user's dashboard
  */
 class Home extends Component {
+  //redirect to dashboard
   componentDidMount() {
     if (this.props.auth.isAuth) {
       this.props.history.push('/dashboard')
