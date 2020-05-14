@@ -116,7 +116,6 @@ const PostSchema = new Schema({
     } 
 })
 
-//model
 const Post = mongoose.model("post", PostSchema)
 const Comment = mongoose.model("comment", CommentSchema)
 const Tag = mongoose.model("tag", TagSchema)
