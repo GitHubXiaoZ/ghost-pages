@@ -28,7 +28,7 @@ class NovelItem extends Component {
         const { novel, auth, displayActions } = this.props
         let timelapsed = Date.now() - Date.parse(novel.date)
 
-        //novel
+        //novel template
          return (
              <div className="novel-user">
                  <h4>
