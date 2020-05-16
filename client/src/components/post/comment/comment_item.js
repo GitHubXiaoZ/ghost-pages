@@ -21,7 +21,7 @@ class CommentItem extends Component {
         const { comment, auth, post_id } = this.props
         let timelapsed = Date.now() - Date.parse(comment.date)
 
-        //comment
+        //comment template
          return (
              <div className="comment-user">
                 <span>
