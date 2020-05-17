@@ -7,7 +7,7 @@ module.exports = validateNovelInput = data => {
     let errors = {}
     const status = ["On Going", "Completed", "Hiatus"]
 
-    /*set the fields
+    /*set
      *title
      *synopsis
      *status
