@@ -58,7 +58,7 @@ class EditComment extends Component {
     render() {
         const { errors } = this.state
 
-        //comment form
+        //comment form layout
         return(
             <div className="post-form">
                 <div className="form-body">
