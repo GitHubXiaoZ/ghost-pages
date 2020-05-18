@@ -61,7 +61,7 @@ class EditPost extends Component {
     render() {
         const { errors } = this.state
 
-        //post form
+        //post form layout
         return(
             <div className="post-form">
                 <Link to="/notes">Return</Link>
