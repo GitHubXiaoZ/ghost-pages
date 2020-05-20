@@ -10,7 +10,7 @@ module.exports = validateRegisterInput = data => {
     //, . ' -
     const regex = /^[a-zA-z ,.'-]+$/g
 
-    /*set the fields
+    /*set
      *name
      *email
      *password
