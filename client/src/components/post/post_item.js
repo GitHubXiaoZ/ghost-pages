@@ -34,7 +34,7 @@ class PostItem extends Component {
         const { post, auth, displayActions } = this.props
         let timelapsed = Date.now() - Date.parse(post.date)
 
-        //post
+        //post template
          return (
              <div className="post-user">
                 <h4>
