@@ -38,7 +38,7 @@ class Profile extends Component {
         let profileFeed 
         let postFeed
 
-        //display loading icon if there are no profiles or if action is set to loading
+        //if there are no profiles or if action is set to loading
         if (profile === null || loading) {
             profileFeed = <Loading/>
             postFeed = <Loading/>
