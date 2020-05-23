@@ -30,7 +30,7 @@ class PostListFilter extends Component {
         const { post_list, loading } = this.props.post
         let postFeed
 
-        //display loading icon if there are no posts or if action is set to loading
+        //if there are no posts or if action is set to loading
         if (post_list === null || loading) {
             postFeed = <Loading/>
         } else {
