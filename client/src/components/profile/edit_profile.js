@@ -67,7 +67,7 @@ class EditProfile extends Component {
     render() {
         const { errors } = this.state
 
-        //profile form
+        //profile form layout
         return (
             <div className="profile-form">
                 <div className="form">
