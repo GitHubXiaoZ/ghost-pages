@@ -109,7 +109,7 @@ router.post("/",
 
         const tag_list = []
         if (req.body.tags) {
-            //prevent duplicate tags
+            //no duplicate tags
             tags.map(tag => tag_list.includes(tag) ? null : tag_list.unshift(tag))
         } 
 
