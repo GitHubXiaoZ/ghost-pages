@@ -37,10 +37,12 @@ class Login extends Component {
             this.setState({ errors: nextProps.errors })
         }
     }
+
     onChange = e => {
         this.setState({ [e.target.name]: e.target.value })
     }
 
+    //login
     onSubmit = e => {
         e.preventDefault()
 
