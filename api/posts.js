@@ -168,7 +168,7 @@ router.delete("/:id",
                     if (post.user.toString() !== req.user.id) {
                         return res.status(401).json({ nopermission: "Not allowed to delete this post!" })
                     }
-                    //deletes post
+                    //delete post
                     post.remove().then(() => res.json({ success: true }))
                 })
                 .catch(err => res.status(404).json({ nopost: "Post does not exist!" }))
