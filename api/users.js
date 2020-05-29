@@ -68,7 +68,7 @@ router.post("/login", (req, res) => {
     const email = req.body.email
     const password = req.body.password
 
-    //if user email exists 
+    //if user email exist
     User.findOne({ email }).then(user => {
         if (!user) {
             errors.email = "Email not registered!"
