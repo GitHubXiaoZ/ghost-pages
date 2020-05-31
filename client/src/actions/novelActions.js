@@ -9,7 +9,7 @@ import {
     NOVEL_LOADING,
     GET_ERRORS } from "./types"
 
-//add a novel to database
+//add a novel 
 export const addNovel = novelData => dispatch => {
     axios
         .post("/api/novels", novelData)
