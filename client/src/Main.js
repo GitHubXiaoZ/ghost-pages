@@ -43,7 +43,6 @@ import TagList from "./components/post/tag_list"
 //if jwt token is in local storage
 if (localStorage.jwtToken) {
   const token = localStorage.jwtToken
-  //decode token
   setAuthToken(token)
   const decoded = jwt_decode(token)
   //set user and authenicate
