@@ -14,14 +14,12 @@ module.exports = validateProfileInput = data => {
 
     const valid_profile = data.handle.match(regex)
 
-    //validate profile handle
     if (Validator.isEmpty(data.handle)) {
         errors.handle = "Profile handle required!"
     } else if (!valid_profile) {
         errors.handle = "Profile handle can only include alphanumeric characters, _(underscore), and -(hyphen)!"
     }
 
-    //handle should be between 2 - 20 characters
     if (!Validator.isLength(data.handle, { min: 2, max: 20 })) {
         errors.handle = "Profile handle length must be between 2 and 20 characters!"
     }
