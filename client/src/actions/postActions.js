@@ -11,7 +11,7 @@ import {
     GET_ERRORS,
     RESET_ERRORS } from "./types"
 
-//add a post to database
+//add a post 
 export const addPost = postData => dispatch => {
     dispatch(resetErrors())
     axios
