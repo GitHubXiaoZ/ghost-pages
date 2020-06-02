@@ -23,7 +23,6 @@ module.exports = validateNovelInput = data => {
         errors.title = "Title cannot be empty!"
     }
 
-    //title should not be longer than 250 characters
     if (!Validator.isLength(data.title, { max: 250 })) {
         errors.title = "Title cannot exceed 250 characters!"
     }
@@ -32,7 +31,6 @@ module.exports = validateNovelInput = data => {
         errors.synopsis = "Synopsis content cannot be empty!"
     }
     
-    //synopsis should not be longer than 1000
     if (!Validator.isLength(data.synopsis, { max: 1000 })) {
         errors.synopsis = "Synopsis cannot exceed 1000 characters!"
     }
