@@ -11,6 +11,7 @@ import { resetCurrentProfile } from "../../actions/profileActions"
  * Display guest and user options for site navigation
  */
 class Navbar extends Component {
+    //log out
     onLogoutClick = e => {
         e.preventDefault()
         this.props.logoutUser()
