@@ -27,6 +27,7 @@ class Novel extends Component {
 
         //if novel does not exist or action is set to loading
         if (novel === null || loading || Object.keys(novel).length === 0) {
+            //set loading icon
             library = <Loading/>
         } else {
             //link to novels
