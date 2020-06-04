@@ -23,7 +23,6 @@ module.exports = validateRegisterInput = data => {
 
     const valid_name = data.name.match(regex)
 
-    //validate name 
     if (Validator.isEmpty(data.name)) {
         errors.name = "Name required!"
     } else if (!valid_name) {
@@ -31,19 +30,16 @@ module.exports = validateRegisterInput = data => {
         errors.name += "spaces( ), commas(,), periods(.), apostrophes('), underscores(_), and hypens(-)"
     }
 
-    //name should be between 2 - 15 characters
     if (!Validator.isLength(data.name, { min: 2, max: 15})) {
         errors.name = "Name must be between 2 and 15 characters!"
     }
 
-    //validate email 
     if (Validator.isEmpty(data.email)) {
         errors.email = "Email required!"
     } else if (!Validator.isEmail(data.email)) {
         errors.email = "Enter a valid email address!"
     }
 
-    //validate password
     if (Validator.isEmpty(data.password)) {
         errors.password = "Password required!"
     }
