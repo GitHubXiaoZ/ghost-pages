@@ -35,6 +35,7 @@ class NovelForm extends Component {
         this.setState({ [e.target.name]: e.target.value })
     }
 
+    //add novel
     onSubmit = e => {
         e.preventDefault()
 
