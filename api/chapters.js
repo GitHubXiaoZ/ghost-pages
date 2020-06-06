@@ -49,7 +49,6 @@ router.delete("/:id",
                     if (chapter.user.toString() !== req.user.id) {
                         return res.status(401).json({ nopermission: "Not allowed to delete this chapter!" })
                     }
-                    //delete chapter
                     chapter.remove().then(() => res.json({ success: true }))
                 })
                 .catch(err => res.status(404).json({ nochapters: "Chapter does not exist!" }))
