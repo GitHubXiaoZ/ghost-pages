@@ -9,12 +9,10 @@ module.exports = validatePostInput = data => {
     //set text to empty string if no input is given
     data.text = !isEmpty(data.text) ? data.text : ""
 
-    //post should not be empty
     if (Validator.isEmpty(data.text)) {
         errors.text = "Post content cannot be empty!"
     }
 
-    //post cannot exceed 750 characters
     if (!Validator.isLength(data.text, { max: 750 })) {
         errors.text = "Post cannot exceed 750 characters!"
     }
