@@ -47,7 +47,6 @@ router.delete("/:id",
                     if (comment.user.toString() !== req.user.id) {
                         return res.status(401).json({ nopermission: "Not allowed to delete this comment!" })
                     }
-                    //delete comment
                     comment.remove().then(() => res.json({ success: true }))
                 })
                 .catch(err => res.status(404).json({ nopost: "Comment does not exist!" }))
