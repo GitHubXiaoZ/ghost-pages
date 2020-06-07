@@ -22,6 +22,7 @@ class ProfileList extends Component {
 
         //if there are no profiles or if action is set to loading
         if (profile_list === null || loading) {
+            //set loading icon
             profileItems = <Loading/>
         } else {
             if (profile_list.length > 0) {
