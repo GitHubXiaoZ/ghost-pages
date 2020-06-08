@@ -260,7 +260,7 @@ router.delete("/comment/:id/:comment_id",
     (req, res) => {
         Novel.findById(req.params.id)
             .then(novel => {
-                //check if the user's comment exists
+                //if the user's comment exist
                 if (novel.comments.filter(comment => comment._id.toString() === req.params.comment_id).length === 0) {
                     return res.status(404).json({ nocomment: "Comment does not exist! "})
                 }
