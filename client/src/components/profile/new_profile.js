@@ -34,6 +34,7 @@ class NewProfile extends Component {
         this.setState({ [e.target.name]: e.target.value })
     }
 
+    //add profile
     onSubmit = e => {
         e.preventDefault()
 
