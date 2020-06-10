@@ -115,7 +115,7 @@ router.post("/",
 
         Profile.findOne({ user: req.user.id })
             .then(profile => {
-                //if profile exists update
+                //if profile exist
                 if (profile) {
                     Profile.findOneAndUpdate(
                         { user: req.user.id }, 
