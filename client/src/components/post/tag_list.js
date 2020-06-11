@@ -22,6 +22,7 @@ class TagList extends Component {
 
         //if there are no tags or if action is set to loading
         if (tag_list === null || loading) {
+            //set loading icon
             tagFeed = <Loading/>
         } else {
             tagFeed = tag_list.map(tag => 
