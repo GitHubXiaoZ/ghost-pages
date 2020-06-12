@@ -31,6 +31,7 @@ class CommentForm extends Component {
         this.setState({ [e.target.name]: e.target.value })
     }
 
+    //add comment
     onSubmit = e => {
         e.preventDefault()
 
