@@ -32,6 +32,7 @@ class PostListFilter extends Component {
 
         //if there are no posts or if action is set to loading
         if (post_list === null || loading) {
+            //set loading icon
             postFeed = <Loading/>
         } else {
             postFeed = <PostFeed post_list={post_list}/>
