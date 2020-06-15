@@ -32,6 +32,7 @@ class PostForm extends Component {
         this.setState({ [e.target.name]: e.target.value })
     }
 
+    //add post
     onSubmit = e => {
         e.preventDefault()
 
