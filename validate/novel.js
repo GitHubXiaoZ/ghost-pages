@@ -42,6 +42,7 @@ module.exports = validateNovelInput = data => {
         errors.status = "Status should only be \"On Going\", \"Completed\", or \"Hiatus\"."
     }
 
+    /*return errors*/
     return {
         errors,
         isValid: isEmpty(errors)
