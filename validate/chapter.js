@@ -33,6 +33,7 @@ module.exports = validateChapterInput = data => {
         errors.index = "Index should be a numeral!"
     }
 
+    /*return errors*/
     return {
         errors,
         isValid: isEmpty(errors)
