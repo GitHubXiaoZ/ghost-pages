@@ -308,7 +308,7 @@ router.delete("/comment/:id/:comment_id",
     (req, res) => {
         Post.findById(req.params.id)
             .then(post => {
-                //check if the user's comment exists
+                //if the user's comment exist
                 if (post.comments.filter(comment => comment._id.toString() === req.params.comment_id).length === 0) {
                     return res.status(404).json({ nocomment: "Comment does not exist! "})
                 }
