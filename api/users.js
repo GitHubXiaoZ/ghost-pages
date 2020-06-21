@@ -75,7 +75,6 @@ router.post("/login", (req, res) => {
             return res.status(404).json(errors)
         } 
 
-        //password check
         bcrypt.compare(password, user.password).then(isEqual => {
             if (isEqual) {
                 const payload = {
@@ -83,7 +82,7 @@ router.post("/login", (req, res) => {
                     name: user.name
                 }
 
-                //jwt sign token
+                //jwt token
                 jwt.sign (
                     payload,
                     keys.secretOrKey,
