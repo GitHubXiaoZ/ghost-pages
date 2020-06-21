@@ -2,7 +2,7 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
-//profile
+//profiles
 const ProfileSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
