@@ -4,7 +4,7 @@ import jwt_decode from "jwt-decode"
 import setAuthToken from "../utils/setAuthToken"
 import { GET_ERRORS, SET_CURRENT_USER, USER_LOADING } from "./types"
 
-//set current user
+//current user
 export const setCurrentUser = decoded => {
     return {
         type: SET_CURRENT_USER,
