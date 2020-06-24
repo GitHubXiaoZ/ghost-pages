@@ -9,7 +9,7 @@ import {
     RESET_CURRENT_PROFILE, 
     GET_ERRORS } from "./types"
 
-//create new profile for current user
+//create new profile
 export const newProfile = (profileData, history) => dispatch => {
     axios
         .post("/api/profiles", profileData)
