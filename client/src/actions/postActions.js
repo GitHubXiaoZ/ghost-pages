@@ -11,7 +11,7 @@ import {
     GET_ERRORS,
     RESET_ERRORS } from "./types"
 
-//add a post 
+//add a post
 export const addPost = postData => dispatch => {
     dispatch(resetErrors())
     axios
@@ -51,7 +51,7 @@ export const editPost = (postData, id, history) => dispatch => {
         )
 }
 
-//return a post by id
+//return post by id
 export const getPost = id => dispatch => {
     dispatch(setPostLoading())
     axios
