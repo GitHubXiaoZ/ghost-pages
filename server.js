@@ -18,7 +18,7 @@ app.use(express.urlencoded({ extended: false }))
 //mongoDB
 connectToDB()
 
-//passport using jwt token
+//passport using jwt
 app.use(passport.initialize())
 require("./config/passport")(passport)
 
