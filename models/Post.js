@@ -2,14 +2,14 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
-//tag
+//tags
 const TagSchema =  new Schema({
     name: {
             type: String
     }
 })
 
-//comment
+//comments
 const CommentSchema = new Schema({
     postID: {
         type: Schema.Types.ObjectId,
@@ -45,7 +45,7 @@ const CommentSchema = new Schema({
     }
 })
 
-//post
+//posts
 const PostSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
