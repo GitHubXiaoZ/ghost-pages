@@ -5,7 +5,6 @@ const isEmpty = require("is-empty")
 /*export*/
 module.exports = validateProfileInput = data => {
     let errors = {}
-    //acceptable characters
     //alphanumeric characters
     const regex = /^[a-zA-z0-9-]+$/g
 
@@ -24,7 +23,7 @@ module.exports = validateProfileInput = data => {
         errors.handle = "Profile handle length must be between 2 and 20 characters!"
     }
 
-    //return errors
+    /*return errors*/
     return {
         errors,
         isValid: isEmpty(errors)
