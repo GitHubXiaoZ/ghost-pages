@@ -25,7 +25,6 @@ class Novel extends Component {
         const { isAuth } = this.props.auth
         let library
 
-        //if novel does not exist or action is set to loading
         if (novel === null || loading || Object.keys(novel).length === 0) {
             //set loading icon
             library = <Loading/>
