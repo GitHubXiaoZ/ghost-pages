@@ -17,7 +17,7 @@ module.exports = validRatingInput = data => {
         errors.rating = "Ratings must be between a value of 1 and 5!"
     }
 
-    //return errors
+    /*return errors*/
     return {
         errors,
         isValid: isEmpty(errors)
