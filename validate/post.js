@@ -17,6 +17,7 @@ module.exports = validatePostInput = data => {
         errors.text = "Post cannot exceed 750 characters!"
     }
 
+    /*return errors*/
     return {
         errors,
         isValid: isEmpty(errors)
