@@ -60,6 +60,7 @@ class NovelForm extends Component {
     
     render() {
         const { errors } = this.state
+        
         //novel form layout
         return(
             <div className="post-form">
