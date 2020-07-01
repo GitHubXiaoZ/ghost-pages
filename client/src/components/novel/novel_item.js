@@ -12,15 +12,18 @@ import { rateNovel, unrateNovel, deleteNovel } from "../../actions/novelActions"
  * rate, unrate, and delete novel functions
  */
 class NovelItem extends Component {
+
     //delete novel
     onDelete = id => {
         this.props.deleteNovel(id)
     }
 
+    //rate novel
     onRate = id => {
         this.props.rateNovel(id)
     }
 
+    //unrate novel
     onUnrate = id => {
         this.props.unrateNovel(id)
     }
