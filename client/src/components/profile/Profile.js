@@ -38,8 +38,8 @@ class Profile extends Component {
         let profileFeed 
         let postFeed
 
-        //if there are no profiles or if action is set to loading
         if (profile === null || loading) {
+            //set loading
             profileFeed = <Loading/>
             postFeed = <Loading/>
         } else {
