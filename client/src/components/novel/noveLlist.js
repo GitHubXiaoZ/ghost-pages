@@ -23,8 +23,8 @@ class NovelList extends Component {
         const { isAuth } = this.props.auth
         let library
 
-        //if there are no novels or action is set to loading
         if (novel_list === null || loading) {
+            //set to loading
             library = <Loading/>
         } else {
             library = <NovelLibrary novel_list={novel_list}/>
