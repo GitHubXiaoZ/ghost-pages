@@ -7,7 +7,7 @@ import { newProfile } from "../../actions/profileActions"
 
 /* Class: NewProfile
  * Profile field form
- * Create a new profile for current user
+ * Create a new profile
  */
 class NewProfile extends Component {
     constructor(props) {
