@@ -29,6 +29,7 @@ class EditProfile extends Component {
         this.props.getCurrentProfile()
     }
 
+    //edit profile info
     componentWillReceiveProps(nextProps) {
         if (nextProps.errors) {
             this.setState({ errors: nextProps.errors })
@@ -52,7 +53,7 @@ class EditProfile extends Component {
         this.setState({ [e.target.name]: e.target.value })
       }
 
-      //edit profile
+      //submit edit
     onSubmit = e => {
         e.preventDefault()
 
