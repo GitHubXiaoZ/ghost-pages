@@ -25,6 +25,7 @@ class EditComment extends Component {
         this.props.getComment(this.props.match.params.id, this.props.match.params.comment_id)
     }
 
+    //edit comment
     componentWillReceiveProps(newProps) {
         if (newProps.errors) {
             this.setState({ errors: newProps.errors })
@@ -43,7 +44,7 @@ class EditComment extends Component {
         this.setState({ [e.target.name]: e.target.value })
     }
 
-    //edit comment
+    //submit edit
     onSubmit = e => {
         e.preventDefault()
 
