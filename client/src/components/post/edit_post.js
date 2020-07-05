@@ -27,6 +27,7 @@ class EditPost extends Component {
         this.props.getPost(this.props.match.params.id)
     }
 
+    //edit post
     componentWillReceiveProps(newProps) {
         if (newProps.errors) {
             this.setState({ errors: newProps.errors })
@@ -46,7 +47,7 @@ class EditPost extends Component {
         this.setState({ [e.target.name]: e.target.value })
     }
 
-    //edit post
+    //submit edits
     onSubmit = e => {
         e.preventDefault()
 
