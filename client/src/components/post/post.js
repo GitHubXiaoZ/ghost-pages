@@ -25,7 +25,6 @@ class Post extends Component {
         const { isAuth } = this.props.auth
         let postThread
 
-        //if post does not exist or action is set to loading
         if (post === null || loading || Object.keys(post).length === 0) {
             //set loading icon
             postThread = <Loading/>
