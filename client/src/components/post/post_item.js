@@ -12,15 +12,18 @@ import { likePost, unlikePost, deletePost } from "../../actions/postActions"
  * like/unlike and delete function
  */
 class PostItem extends Component {
+
     //delete post
     onDelete = id => {
         this.props.deletePost(id)
     }
 
+    //like post
     onLike = id => {
         this.props.likePost(id)
     }
 
+    //unlike post
     onUnlike = id => {
         this.props.unlikePost(id)
     }
