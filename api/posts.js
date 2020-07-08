@@ -130,7 +130,7 @@ router.post("/",
 router.patch("/:id", 
     passport.authenticate("jwt", { session: false }),
     (req, res) => {
-        //validates post input
+        //validate post input
         const { errors, isValid } = validPostInput(req.body)
 
         if (!isValid) {
@@ -247,7 +247,7 @@ router.get("/comment/:id/:comment_id", (req, res) => {
 router.post("/comment/:id", 
     passport.authenticate("jwt", { session: false}), 
     (req, res) => {
-        //validates comment input
+        //validate comment input
         const { errors, isValid } = validPostInput(req.body)
 
         if (!isValid) {
@@ -277,7 +277,7 @@ router.post("/comment/:id",
 router.patch("/comment/:id/:comment_id", 
     passport.authenticate("jwt", { session: false}), 
     (req, res) => {
-        //validates comment input
+        //validate comment input
         const { errors, isValid } = validPostInput(req.body)
 
         if (!isValid) {
