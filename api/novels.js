@@ -156,7 +156,7 @@ router.delete("/:id",
 router.post("/rate/:id", 
     passport.authenticate("jwt", { session: false }),
     (req, res) => {
-        //validates rating input
+        //validate rating input
         const { errors, isValid } = validRatingInput(req.body)
 
         if (!isValid) {
