@@ -105,7 +105,6 @@ router.post("/",
             return res.status(400).json(errors)
         }
 
-        //user profile
         const profileInfo = {}
         profileInfo.user = req.user.id
         if (req.body.handle) profileInfo.handle = req.body.handle
@@ -115,14 +114,14 @@ router.post("/",
 
         Profile.findOne({ user: req.user.id })
             .then(profile => {
-                //if profile exist
+                //update existing profile
                 if (profile) {
                     Profile.findOneAndUpdate(
                         { user: req.user.id }, 
                         { $set: profileInfo },
                         { new: true }
                      ).then(profile => res.json(profile))
-                //create new profile
+                //otherwise create new profile
                 } else {
                     Profile.findOne({ handle: profileInfo.handle }).then(profile => {
                         if (profile) {
