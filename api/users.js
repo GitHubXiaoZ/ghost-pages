@@ -18,7 +18,7 @@ router.get("/test", (req, res) => res.json({ msg: "User route -- test." }))
  * register new users
  */
 router.post("/register", (req, res) => {
-    //validate register inputs
+    //validate register input
     const { errors, isValid } = validRegInput(req.body)
 
     if (!isValid) {
@@ -58,7 +58,7 @@ router.post("/register", (req, res) => {
  * return jwt token
  */
 router.post("/login", (req, res) => {
-     //validate login inputs 
+     //validate login input
      const { errors, isValid } = validLogInput(req.body)
      
      if (!isValid) {
