@@ -25,7 +25,7 @@ export const registerUser = (userData, history) => dispatch => {
             }))
 }
 
-//log in user
+//login user
 export const loginUser = userData => dispatch => {
     axios
         .post("/api/users/login", userData)
