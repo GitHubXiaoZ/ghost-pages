@@ -128,7 +128,7 @@ export const getPostListByHandle = handle => dispatch => {
         )
 }
 
-//return all posts with filtered tag
+//return all posts filtered by tag
 export const getPostListByTag = tag => dispatch => {
     dispatch(setPostLoading())
     axios
