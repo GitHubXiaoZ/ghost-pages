@@ -16,6 +16,7 @@ module.exports = validateChapterInput = data => {
     data.text = !isEmpty(data.text) ? data.text : ""
     data.index = !isEmpty(data.index) ? data.index : ""
 
+    //validators
     if (Validator.isEmpty(data.title)) {
         errors.title = "Title cannot be empty!"
     }
