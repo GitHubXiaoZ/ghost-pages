@@ -59,7 +59,7 @@ export const getProfileByHandle = handle => dispatch => {
         )
 }
 
-//return user id's profile
+//return profile of user id
 export const getProfileByID = id => dispatch => {
     dispatch(setProfileLoading())
     axios
