@@ -19,6 +19,7 @@ module.exports = validateNovelInput = data => {
 
     const valid_status = status.includes(data.status)
 
+    //validators
     if (Validator.isEmpty(data.title)) {
         errors.title = "Title cannot be empty!"
     }
