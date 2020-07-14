@@ -198,7 +198,7 @@ router.post("/unrate/:id",
         .then(profile => {
             Novel.findById(req.params.id)
                 .then(novel => {
-                    //checks if the user has rated the novel
+                    //if the user has rated the novel
                     if (novel.ratings.filter(rating => rating.user.toString() === req.user.id).length === 0) {
                         return res.status(400).json({ rated: "Novel has not been rated!" })
                     }
@@ -206,7 +206,6 @@ router.post("/unrate/:id",
                     const index = novel.ratings.map(item => item.user.toString()).indexOf(req.user.id)
                     //value of rating being removed
                     const value = novel.ratings[index].rating
-                    //checks items in novel.ratings
                     if (novel.ratings.length > 1) {
                         //recalculate rating
                         novel.avg_rating = ((Number(novel.avg_rating) * (novel.ratings.length)) - Number(value)) 
