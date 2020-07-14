@@ -186,7 +186,7 @@ router.post("/like/:id",
         .then(profile => {
             Post.findById(req.params.id)
                 .then(post => {
-                    //checks if the user has already liked the post
+                    //if the user has already liked the post
                     if (post.likes.filter(like => like.user.toString() === req.user.id).length > 0) {
                         return res.status(400).json({ liked: "Post already liked!" })
                     }
