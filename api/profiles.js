@@ -121,7 +121,7 @@ router.post("/",
                         { $set: profileInfo },
                         { new: true }
                      ).then(profile => res.json(profile))
-                //otherwise create new profile
+                //create new profile
                 } else {
                     Profile.findOne({ handle: profileInfo.handle }).then(profile => {
                         if (profile) {
