@@ -2,7 +2,6 @@
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema
 
-//chapters
 const ChapterSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
@@ -35,7 +34,6 @@ const ChapterSchema = new Schema({
     } 
 })
 
-//novels
 const NovelSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
