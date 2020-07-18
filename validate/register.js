@@ -23,6 +23,7 @@ module.exports = validateRegisterInput = data => {
 
     const valid_name = data.name.match(regex)
 
+    //validators
     if (Validator.isEmpty(data.name)) {
         errors.name = "Name required!"
     } else if (!valid_name) {
