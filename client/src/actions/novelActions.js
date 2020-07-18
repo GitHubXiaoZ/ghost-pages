@@ -46,7 +46,7 @@ export const getNovel = id => dispatch => {
         )
 }
 
-//return all novels
+//return list of all novels
 export const getNovelList = () => dispatch => {
     dispatch(setNovelLoading())
     axios
