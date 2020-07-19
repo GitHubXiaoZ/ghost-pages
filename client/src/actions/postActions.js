@@ -70,7 +70,7 @@ export const getPost = id => dispatch => {
         )
 }
 
-//return all posts
+//return list of all posts
 export const getPostList = () => dispatch => {
     dispatch(setPostLoading())
     axios
