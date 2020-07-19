@@ -13,6 +13,7 @@ module.exports = validateProfileInput = data => {
 
     const valid_profile = data.handle.match(regex)
 
+    //validators
     if (Validator.isEmpty(data.handle)) {
         errors.handle = "Profile handle required!"
     } else if (!valid_profile) {
