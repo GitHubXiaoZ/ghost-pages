@@ -23,7 +23,7 @@ export const newProfile = (profileData, history) => dispatch => {
         )
 }
 
-//return current user's profile
+//return current user profile
 export const getCurrentProfile = () => dispatch => {
     dispatch(setProfileLoading())
     axios
