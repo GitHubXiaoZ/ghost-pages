@@ -39,7 +39,7 @@ class Profile extends Component {
         let postFeed
 
         if (profile === null || loading) {
-            //set loading
+            //set to loading
             profileFeed = <Loading/>
             postFeed = <Loading/>
         } else {
