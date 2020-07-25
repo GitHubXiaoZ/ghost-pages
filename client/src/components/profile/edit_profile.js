@@ -53,7 +53,7 @@ class EditProfile extends Component {
         this.setState({ [e.target.name]: e.target.value })
       }
 
-      //submit edit
+    //submit edit
     onSubmit = e => {
         e.preventDefault()
 
