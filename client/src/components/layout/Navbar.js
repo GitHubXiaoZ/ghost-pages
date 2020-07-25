@@ -21,7 +21,7 @@ class Navbar extends Component {
     render() {
         const { isAuth } = this.props.auth
 
-        //user
+        //user option
         const userLinks = (
             <div>
                 <ul>
@@ -54,7 +54,7 @@ class Navbar extends Component {
             </div>
         )
 
-        //guest
+        //guest option
         const guestLinks = (
             <div>
                 <ul>
