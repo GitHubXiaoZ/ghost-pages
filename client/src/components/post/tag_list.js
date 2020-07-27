@@ -21,7 +21,7 @@ class TagList extends Component {
         let tagFeed
 
         if (tag_list === null || loading) {
-            //set loading icon
+            //set to loading
             tagFeed = <Loading/>
         } else {
             tagFeed = tag_list.map(tag => 
