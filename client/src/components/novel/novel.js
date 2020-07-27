@@ -26,10 +26,10 @@ class Novel extends Component {
         let library
 
         if (novel === null || loading || Object.keys(novel).length === 0) {
-            //set loading icon
+            //set to loading
             library = <Loading/>
         } else {
-            //link to novels
+            //link to novel
             library =(
                 <div>
                     <NovelItem novel={novel} displayActions={false}/>
