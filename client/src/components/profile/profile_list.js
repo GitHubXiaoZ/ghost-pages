@@ -21,7 +21,7 @@ class ProfileList extends Component {
         let profileItems
 
         if (profile_list === null || loading) {
-            //set loading icon
+            //set to loading
             profileItems = <Loading/>
         } else {
             if (profile_list.length > 0) {
