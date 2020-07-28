@@ -50,6 +50,7 @@ class NovelForm extends Component {
         }
 
         this.props.addNovel(newNovel)
+        
         this.setState({ 
             title: "",
             status: "",
