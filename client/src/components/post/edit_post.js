@@ -8,7 +8,7 @@ import { editPost, getPost } from "../../actions/postActions"
 
 /* Class: EditPost
  * Post field form
- * Edit user's post content 
+ * Edit post content 
  */
 class EditPost extends Component {
     constructor(props) {
