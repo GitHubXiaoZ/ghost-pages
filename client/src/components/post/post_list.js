@@ -24,7 +24,7 @@ class PostList extends Component {
         let postFeed
 
         if (post_list === null || loading) {
-            //set loading icon
+            //set to loading
             postFeed = <Loading/>
         } else {
             postFeed = <PostFeed post_list={post_list}/>
