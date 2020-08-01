@@ -45,6 +45,7 @@ class PostForm extends Component {
         }
 
         this.props.addPost(newPost)
+        
         this.setState({ 
             text: "",
             tags: ""
