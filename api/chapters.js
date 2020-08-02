@@ -27,7 +27,7 @@ router.get("/", (req, res) => {
 })
 
 /* GET api: chapters/id
- * return the chapter by chapter id
+ * return chapter by chapter id
  */
 router.get("/:id", (req, res) => {
     Chapter.findOneAndUpdate({ _id: req.params.id }, { $inc: { views: 1 } })
@@ -36,7 +36,7 @@ router.get("/:id", (req, res) => {
 })
 
 /* DELETE api: chapters/id
- * delete a chapter by id
+ * delete chapter by id
  */
 router.delete("/:id", 
     passport.authenticate("jwt", { session: false }),
