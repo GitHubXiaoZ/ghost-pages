@@ -20,6 +20,7 @@ module.exports = validateNovelInput = data => {
     const valid_status = status.includes(data.status)
 
     //validators
+    //title
     if (Validator.isEmpty(data.title)) {
         errors.title = "Title cannot be empty!"
     }
@@ -36,7 +37,6 @@ module.exports = validateNovelInput = data => {
         errors.synopsis = "Synopsis cannot exceed 1000 characters!"
     }
 
-    //status should only be one of the following
     if (Validator.isEmpty(data.status)) {
         errors.status = "Status cannot be empty!"
     } else if (!valid_status) {
