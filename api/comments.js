@@ -25,7 +25,7 @@ router.get("/", (req, res) => {
 })
 
 /* GET api: comments/id
- * return the comment by comment id
+ * return comment by comment id
  */
 router.get("/:id", (req, res) => {
     Comment.findById(req.params.id)
@@ -34,7 +34,7 @@ router.get("/:id", (req, res) => {
 })
 
 /* DELETE api: comments/id
- * delete a comment by id
+ * delete comment by id
  */
 router.delete("/:id", 
     passport.authenticate("jwt", { session: false }),
