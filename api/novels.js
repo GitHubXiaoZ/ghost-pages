@@ -206,8 +206,8 @@ router.post("/unrate/:id",
                     const index = novel.ratings.map(item => item.user.toString()).indexOf(req.user.id)
                     //value of rating being removed
                     const value = novel.ratings[index].rating
+                    //recalculate rating
                     if (novel.ratings.length > 1) {
-                        //recalculate rating
                         novel.avg_rating = ((Number(novel.avg_rating) * (novel.ratings.length)) - Number(value)) 
                                             / (novel.ratings.length - 1)
                     } else {
