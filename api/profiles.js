@@ -12,7 +12,7 @@ const validProfileInput = require("../validate/profile")
 router.get("/test", (req, res) => res.json({ msg: "Profile route -- test." }))
 
 /* GET api: profile
- * return the current user's profile
+ * return current user's profile
  */
 router.get("/", 
     passport.authenticate("jwt", { session: false }), 
@@ -53,7 +53,7 @@ router.get("/all",
 )
 
 /* GET api: profile/handle
- * return the profile of user's handle
+ * return profile of user's handle
  */
 router.get("/handle/:handle", 
     (req, res) => {
@@ -73,7 +73,7 @@ router.get("/handle/:handle",
 )
 
 /* GET api: profile/user_id
- * return the profile of user's id
+ * return profile of user's id
  */
 router.get("/user/:user_id", 
     (req, res) => {
@@ -93,7 +93,7 @@ router.get("/user/:user_id",
 )
 
 /* POST api: profile
- * create/update the user's profile
+ * create/update user's profile
  */
 router.post("/",
     passport.authenticate("jwt", { session: false }),
@@ -137,7 +137,7 @@ router.post("/",
 )
 
 /* DELETE api: profile
- * delete the user's profile
+ * delete user's profile
  */
 router.delete('/',
     passport.authenticate("jwt", { session: false }),
