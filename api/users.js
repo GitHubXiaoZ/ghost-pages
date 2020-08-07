@@ -54,7 +54,7 @@ router.post("/register", (req, res) => {
 })
 
 /* POST api: login
- * login in existing user
+ * log in user
  * return jwt token
  */
 router.post("/login", (req, res) => {
@@ -106,7 +106,7 @@ router.post("/login", (req, res) => {
 })
 
 /* GET api: current
- * return the current user's id, name, and email
+ * return current user's id, name, and email
  */
 router.get("/current", 
     passport.authenticate("jwt", { session: false }), 
