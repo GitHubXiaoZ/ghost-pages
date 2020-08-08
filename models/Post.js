@@ -1,7 +1,7 @@
 /*imports*/
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema
-
+/*models*/
 const TagSchema =  new Schema({
     name: {
             type: String
