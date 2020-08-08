@@ -9,7 +9,7 @@ import {
     NOVEL_LOADING,
     GET_ERRORS } from "./types"
 
-//add a novel
+//add novel
 export const addNovel = novelData => dispatch => {
     axios
         .post("/api/novels", novelData)
@@ -65,7 +65,7 @@ export const getNovelList = () => dispatch => {
         )
 }
 
-//delete a novel by id
+//delete novel by id
 export const deleteNovel = id => dispatch => {
     axios
         .delete(`/api/novels/${id}`)
@@ -83,7 +83,7 @@ export const deleteNovel = id => dispatch => {
         )
 }
 
-//rate a novel
+//rate novel
 export const rateNovel = id => dispatch => {
     axios
         .post(`/api/novels/rate/${id}`)
@@ -113,7 +113,7 @@ export const unrateNovel = id => dispatch => {
         )
 }
 
-//add a comment to novel
+//add comment to novel
 export const addComment = (novel_id, commentData) => dispatch => {
     axios
         .post(`/api/novels/comment/${novel_id}`, commentData)
