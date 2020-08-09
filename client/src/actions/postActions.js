@@ -11,7 +11,7 @@ import {
     GET_ERRORS,
     RESET_ERRORS } from "./types"
 
-//add a post
+//add post
 export const addPost = postData => dispatch => {
     dispatch(resetErrors())
     axios
@@ -147,7 +147,7 @@ export const getPostListByTag = tag => dispatch => {
         )
 }
 
-//delete a post by id
+//delete post by id
 export const deletePost = id => dispatch => {
     axios
         .delete(`/api/posts/${id}`)
@@ -165,7 +165,7 @@ export const deletePost = id => dispatch => {
         )
 }
 
-//like a post
+//like post
 export const likePost = id => dispatch => {
     axios
         .post(`/api/posts/like/${id}`)
@@ -195,7 +195,7 @@ export const unlikePost = id => dispatch => {
         )
 }
 
-//add a comment to post
+//add comment to post
 export const addComment = (post_id, commentData) => dispatch => {
     dispatch(resetErrors())
     axios
@@ -234,7 +234,7 @@ export const editComment = (post_id, comment_id, commentData, history) => dispat
         )
 }
 
-//return a comment by post id and comment id
+//return comment by post id and comment id
 export const getComment = (post_id, comment_id) => dispatch => {
     dispatch(setPostLoading())
     axios
@@ -253,7 +253,7 @@ export const getComment = (post_id, comment_id) => dispatch => {
         )
 }
 
-//delete a comment from post
+//delete comment from post
 export const deleteComment = (post_id, comment_id) => dispatch => {
     axios
         .delete(`/api/posts/comment/${post_id}/${comment_id}`)
