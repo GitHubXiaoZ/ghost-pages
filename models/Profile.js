@@ -1,7 +1,7 @@
 /*imports*/
 const mongoose = require("mongoose")
 const Schema = mongoose.Schema
-
+/*models*/
 const ProfileSchema = new Schema({
     user: {
         type: Schema.Types.ObjectId,
