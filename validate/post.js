@@ -10,6 +10,7 @@ module.exports = validatePostInput = data => {
     data.text = !isEmpty(data.text) ? data.text : ""
 
     //validators
+    //post
     if (Validator.isEmpty(data.text)) {
         errors.text = "Post content cannot be empty!"
     }
