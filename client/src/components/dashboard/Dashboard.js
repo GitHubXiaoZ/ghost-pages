@@ -12,7 +12,7 @@ import ProfilePreference from "./ProfilePreference"
  * Dashboard component
  * Account dashboard display actions avaliable to users
  * Actions include edit current user's profile data, log out
- * of current user's session, and delete current user's account
+ * of current session, and delete current user's account
  */
 class Dashboard extends Component {
     componentDidMount() {
@@ -30,7 +30,6 @@ class Dashboard extends Component {
 
         let dashboardFeed
 
-        //if profile does not exist or action is set to loading
         if (profile === null || loading) {
             dashboardFeed = <Loading/>
         } else {
