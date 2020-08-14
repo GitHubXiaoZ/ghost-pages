@@ -10,6 +10,7 @@ module.exports = validRatingInput = data => {
     data.rating = !isEmpty(data.rating) ? data.rating : ""
     
     //validators
+    //rating
     if (Validator.isEmpty(data.rating)) {
         errors.rating = "Rating cannot be empty!"
     }
