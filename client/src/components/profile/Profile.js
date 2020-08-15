@@ -39,10 +39,11 @@ class Profile extends Component {
         let postFeed
 
         if (profile === null || loading) {
-            //set to loading
+            //set loading
             profileFeed = <Loading/>
             postFeed = <Loading/>
         } else {
+            //link to profile
             profileFeed = (
                 <div>
                     <div className="user-feed">
