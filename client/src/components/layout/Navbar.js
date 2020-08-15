@@ -47,7 +47,7 @@ class Navbar extends Component {
                     </li>
                     <li>
                         <button onClick={this.onLogoutClick.bind(this)}>
-                        Log out
+                        Log Out
                         </button>
                     </li>
                 </ul>
@@ -65,7 +65,7 @@ class Navbar extends Component {
                     </li>
                     <li>
                         <Link to="/login">
-                        Log in
+                        Log In
                         </Link>
                     </li>
                 </ul>
