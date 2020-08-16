@@ -7,7 +7,6 @@ import React, { Component } from "react";
  */
 class NotFound extends Component {
     render() {
-        //404
         return (
             <div className="404">
                 <h2>404</h2>
