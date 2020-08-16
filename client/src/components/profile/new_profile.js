@@ -38,6 +38,7 @@ class NewProfile extends Component {
     onSubmit = e => {
         e.preventDefault()
 
+        /*profile*/
         const profileData = {
             handle: this.state.handle,
             location: this.state.location,
