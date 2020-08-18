@@ -41,6 +41,7 @@ class NovelForm extends Component {
 
         const { user } = this.props.auth
 
+        /*novel*/
         const newNovel = {
             title: this.state.title,
             status: this.state.status,
