@@ -21,9 +21,10 @@ class TagList extends Component {
         let tagFeed
 
         if (tag_list === null || loading) {
-            //set to loading
+            //set loading
             tagFeed = <Loading/>
         } else {
+            //link to tags
             tagFeed = tag_list.map(tag => 
             <li>
                 <Link to={`notes/tag/${tag}`}>{tag}</Link>
