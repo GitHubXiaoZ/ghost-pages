@@ -24,10 +24,10 @@ class NovelList extends Component {
         let library
 
         if (novel_list === null || loading) {
-            //set to loading
+            //loading
             library = <Loading/>
         } else {
-            //link to novels
+            //novel collection
             library = <NovelLibrary novel_list={novel_list}/>
         }
 
