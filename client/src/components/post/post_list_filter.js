@@ -31,9 +31,10 @@ class PostListFilter extends Component {
         let postFeed
 
         if (post_list === null || loading) {
-            //set to loading
+            //set loading
             postFeed = <Loading/>
         } else {
+            //filtered post collection
             postFeed = <PostFeed post_list={post_list}/>
         }
 
