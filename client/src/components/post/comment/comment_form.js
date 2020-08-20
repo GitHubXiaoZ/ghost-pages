@@ -38,6 +38,7 @@ class CommentForm extends Component {
         const { user } = this.props.auth
         const { post_id } = this.props
 
+        /*comment*/
         const newComment = {
             text: this.state.text,
             name: user.name
