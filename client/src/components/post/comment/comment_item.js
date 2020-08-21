@@ -13,7 +13,6 @@ import { deleteComment } from "../../../actions/postActions"
  * delete function
  */
 class CommentItem extends Component {
-    
     //delete comment
     onDelete = (post_id, comment_id) => {
         this.props.deleteComment(post_id, comment_id)
