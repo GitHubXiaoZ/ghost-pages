@@ -43,7 +43,7 @@ class EditComment extends Component {
         this.setState({ [e.target.name]: e.target.value })
     }
 
-    //submit edit
+    //submit edit comment
     onSubmit = e => {
         e.preventDefault()
 
