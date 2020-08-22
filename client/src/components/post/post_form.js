@@ -38,6 +38,7 @@ class PostForm extends Component {
 
         const { user } = this.props.auth
 
+        /*post*/
         const newPost = {
             text: this.state.text,
             tags: this.state.tags,
