@@ -47,7 +47,7 @@ class EditPost extends Component {
         this.setState({ [e.target.name]: e.target.value })
     }
 
-    //submit edits
+    //submit edit post
     onSubmit = e => {
         e.preventDefault()
 
