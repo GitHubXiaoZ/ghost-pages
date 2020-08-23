@@ -26,9 +26,10 @@ class Post extends Component {
         let postThread
 
         if (post === null || loading || Object.keys(post).length === 0) {
-            //set loading icon
+            //set loading 
             postThread = <Loading/>
         } else {
+            //link to post
             postThread =(
                 <div>
                     <PostItem post={post} displayActions={false}/>
