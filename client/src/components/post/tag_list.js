@@ -21,7 +21,7 @@ class TagList extends Component {
         let tagFeed
 
         if (tag_list === null || loading) {
-            //set loading
+            //loading
             tagFeed = <Loading/>
         } else {
             //link to tags
