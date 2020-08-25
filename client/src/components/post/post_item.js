@@ -28,7 +28,6 @@ class PostItem extends Component {
         this.props.unlikePost(id)
     }
 
-    //get user
     findLike = likes => {
         const { auth } = this.props
 
