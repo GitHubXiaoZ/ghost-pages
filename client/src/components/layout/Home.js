@@ -6,9 +6,10 @@ import { connect } from 'react-redux'
 
 /* Class: Home
  * Home component
- * GhostPage's home webpage 
+ * GhostPage's home webpage
  */
 class Home extends Component {
+  
   //redirect to dashboard
   componentDidMount() {
     if (this.props.auth.isAuth) {
