@@ -32,7 +32,7 @@ router.get("/", (req, res) => {
 router.get("/:id", (req, res) => {
     Chapter.findOneAndUpdate({ _id: req.params.id }, { $inc: { views: 1 } })
         .then(chapters => res.json(chapters))
-        .catch(err => res.status(404).json({ nochapters: "Chapters does not exist!" }))
+        .catch(err => res.status(404).json({ nochapters: "Chapter does not exist!" }))
 })
 
 /* DELETE api: chapters/id
