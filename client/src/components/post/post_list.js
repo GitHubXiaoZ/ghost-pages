@@ -24,10 +24,10 @@ class PostList extends Component {
         let postFeed
 
         if (post_list === null || loading) {
-            //set loading
+            //loading
             postFeed = <Loading/>
         } else {
-            //post collection
+            //post
             postFeed = <PostFeed post_list={post_list}/>
         }
 
