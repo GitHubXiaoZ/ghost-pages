@@ -64,7 +64,7 @@ class Login extends Component {
                             Home
                         </Link>
                         <div>
-                            <h1> Log in </h1>
+                            <h1> Log In </h1>
                             <p className="register">
                                 Don't have an account? <Link to="/register">Register here.</Link>
                             </p>
