@@ -40,7 +40,7 @@ class Register extends Component {
         this.setState({ [e.target.name]: e.target.value })
     }
 
-    //register
+    //register user
     onSubmit = e => {
         e.preventDefault()
 
