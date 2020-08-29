@@ -31,6 +31,7 @@ class Dashboard extends Component {
         let dashboardFeed
 
         if (profile === null || loading) {
+            //loading
             dashboardFeed = <Loading/>
         } else {
             if (Object.keys(profile).length > 0) {
