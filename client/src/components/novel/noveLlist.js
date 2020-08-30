@@ -27,7 +27,7 @@ class NovelList extends Component {
             //loading
             library = <Loading/>
         } else {
-            //novel collection
+            //novel
             library = <NovelLibrary novel_list={novel_list}/>
         }
 
