@@ -46,7 +46,7 @@ export const loginUser = userData => dispatch => {
 
 //log out user
 export const logoutUser = () => dispatch => {
-    //remove token from local storage
+    //reset
     localStorage.removeItem("jwtToken")
     setAuthToken(false)
     dispatch(setCurrentUser({}))
