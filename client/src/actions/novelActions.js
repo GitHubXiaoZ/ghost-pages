@@ -98,7 +98,7 @@ export const rateNovel = id => dispatch => {
         )
 }
 
-//remove user's rating
+//remove rating
 export const unrateNovel = id => dispatch => {
     axios
         .post(`/api/posts/unrate/${id}`)
@@ -131,7 +131,7 @@ export const addComment = (novel_id, commentData) => dispatch => {
         )
 }
 
-//loading 
+//loading
 export const setNovelLoading = () => {
     return {
         type: NOVEL_LOADING
