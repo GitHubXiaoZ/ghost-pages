@@ -234,7 +234,7 @@ export const editComment = (post_id, comment_id, commentData, history) => dispat
         )
 }
 
-//return comment by post id and comment id
+//return comment by post id/ comment id
 export const getComment = (post_id, comment_id) => dispatch => {
     dispatch(setPostLoading())
     axios
