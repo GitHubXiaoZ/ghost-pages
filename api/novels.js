@@ -44,7 +44,7 @@ router.get("/tags/all", (req, res) => {
     Novel.find()
         .then(novels => {
             const tag_list = []
-            //append the unique tag of each novel separately into the master tag list
+            //append the unique tag of each novel separately into tag list
             novels.forEach(novel => novel.tags.forEach(tag => tag_list.includes(tag) ? null : tag_list.unshift(tag)))
             res.json(tag_list.sort())
         })
