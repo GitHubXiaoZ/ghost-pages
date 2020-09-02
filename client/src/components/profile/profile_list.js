@@ -21,10 +21,10 @@ class ProfileList extends Component {
         let profileItems
 
         if (profile_list === null || loading) {
-            //set loading
+            //loading
             profileItems = <Loading/>
         } else {
-            //profile collection
+            //profile
             if (profile_list.length > 0) {
                 profileItems = profile_list.map(profile => (
                     <ProfileItem key={profile.id} profile={profile}/>
