@@ -125,7 +125,7 @@ router.post("/",
                 } else {
                     Profile.findOne({ handle: profileInfo.handle }).then(profile => {
                         if (profile) {
-                            errors.handle = "Handle already exists!"
+                            errors.handle = "Handle taken!"
                             res.status(400).json(errors)
                         }
 
