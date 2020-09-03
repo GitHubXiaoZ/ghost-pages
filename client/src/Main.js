@@ -43,16 +43,12 @@ if (localStorage.jwtToken) {
   const token = localStorage.jwtToken
   setAuthToken(token)
   const decoded = jwt_decode(token)
-  //set user and authenicate
   store.dispatch(setCurrentUser(decoded))
 
   //check token expiration
   const currentTime = Date.now() / 1000
   if (decoded.exp < currentTime) {
-    /*log out user
-     *reset the current session
-     *redirect to login page
-     */
+    //logout user
     store.dispatch(logoutUser())
     store.dispatch(resetCurrentProfile())
     window.location.href = "./login"
