@@ -209,7 +209,7 @@ router.post("/unlike/:id",
         .then(profile => {
             Post.findById(req.params.id)
                 .then(post => {
-                    //checks if the user has not liked the post
+                    //if the user has not liked the post
                     if (post.likes.filter(like => like.user.toString() === req.user.id).length === 0) {
                         return res.status(400).json({ liked: "Post has not been liked!" })
                     }
@@ -230,7 +230,7 @@ router.post("/unlike/:id",
 router.get("/comment/:id/:comment_id", (req, res) => {
     Post.findById(req.params.id)
         .then(post => {
-            //check if the user's comment exists
+            //if the user's comment exists
             if (post.comments.filter(comment => comment._id.toString() === req.params.comment_id).length === 0) {
                 return res.status(404).json({ nocomment: "Comment does not exist! "})
             }
